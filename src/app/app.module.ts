@@ -1,3 +1,4 @@
+import { SlowaService } from './slowa/shared/slowa.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
@@ -34,7 +35,7 @@ import { DefinicjeListaComponent } from './definicje/definicje-lista/definicje-l
     AngularFirestoreModule,
     ReactiveFormsModule
   ],
-  providers: [],
+  providers: [SlowaService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
