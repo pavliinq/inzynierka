@@ -1,8 +1,16 @@
-<form>
-  <div class = "form group">
-  <label for="pierwszeSlowo">Wprowadź slowo</label>
-  <input id="pierwszeSlowo" type = "text" class = "form-control">
-</div>
+<form ngForm #f="ngForm" (ngSubmit)="dodajSlowo(f)" style="margin: 20px">
+  <div class="form-group col-sm-6">
+    <!-- <label for="pierwszeSlowo">Wprowadź słowo</label> -->
+    <input 
+      id="slowo" 
+      type="text" 
+      class="form-control" 
+      placeholder="Wprowadz słowo"
+      ngModel 
+      name="slowo" 
+      #slowo="ngModel" >
+  </div>
 
-<button class = "btn btn-primary">Dodaj slowo</button>
+  <button class="btn btn-primary">Dodaj slowo</button>
+  <!-- {{f.value|json}} -->
 </form>

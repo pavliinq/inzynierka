@@ -11,35 +11,41 @@ export class SlowaService {
   slowoDocument: AngularFirestoreDocument<Slowo>;
   slowoCollection: AngularFirestoreCollection<Slowo[]>;
   slowo: Observable<Slowo[]>;
-  constructor(public db: AngularFirestore) { 
-    this.slowoCollection = db.collection<Slowo[]>('/slowo');
+  constructor(public db: AngularFirestore) {
+    this.slowoCollection = db.collection<Slowo[]>('/slowa');
     this.slowo = this.slowoCollection.snapshotChanges().map(actions => {
       return actions.map(a => {
         const data = a.payload.doc.data() as Slowo;
         const id = a.payload.doc.id;
         return { id, ...data };
-
       })
-
     });
 
 
+
+
   }
 
-  getSlowa()
-  {
+  // utworzStruktureDefinicji(id:string){
+  //   let defCollection = this.db.collection<any>('/slowa/'+id+"/definicje").add('');
+    
+  // }
+  getSlowa() {
     return this.slowo;
   }
-  DeleteSlowo(idDokumentu){
+  DeleteSlowo(idDokumentu) {
+    this.slowoDocument = this.db.doc('/slowa/' + idDokumentu);
+    this.slowoDocument.delete();
+  }
 
-    this.slowoDocument = this.db.doc('/slowo/' + idDokumentu);
+
+
+  updateSlowo(slo: Slowo, idDokumentu) {
+    this.slowoDocument = this.db.doc('/slowa/' + idDokumentu);
+    this.slowoDocument.update(slo);
   }
-  
-  updateSlowo( turn:Slowo, idDokumentu){
-  this.slowoDocument = this.db.doc('/slowo/' + idDokumentu);
-  }
-  
-  setSlowo( turn:Slowo){
+
+  setSlowo(turn: Slowo) {
     this.slowoCollection.add(JSON.parse(JSON.stringify(turn)));
   }
 
