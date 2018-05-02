@@ -10,27 +10,35 @@ import { NgForm } from '@angular/forms';
   styleUrls: ['./slowo.component.css']
 })
 export class SlowoComponent implements OnInit {
-  // selectedSlowo: Slowo = new Slowo();
-  // public current: string = window.location.href.substr(window.location.href.lastIndexOf('/') + 1);
-  autorzy = ['mua', 'kicia', 'piesku', 'ann', 'mat'];
-  autor: string;
+
+  // autor: string;
+  @Input('autor') autor: string;
   @Input('slowo') slowo: Slowo;
 
   constructor(private db: AngularFirestore, public slowoServe: SlowaService) {
-    this.autor = this.autorzy[Math.floor(Math.random() * this.autorzy.length)];
+
   }
   dajLajka() {
+    console.log(this.autor);
     if (this.slowo.likes.indexOf(this.autor) == -1) {
       this.slowo.likes.push(this.autor);
-      console.log(this.slowo.likes)
-      this.slowoServe.updateSlowo(this.slowo, this.slowo.id);
     }
+    else {
+      let index = this.slowo.likes.indexOf(this.autor);
+      this.slowo.likes.splice(index, 1);
+    }
+    this.slowoServe.updateSlowo(this.slowo, this.slowo.id);
   }
+  
   dajDisLajka() {
     if (this.slowo.dislikes.indexOf(this.autor) == -1) {
       this.slowo.dislikes.push(this.autor);
-      this.slowoServe.updateSlowo(this.slowo, this.slowo.id);
     }
+    else {
+      let index = this.slowo.dislikes.indexOf(this.autor);
+      this.slowo.dislikes.splice(index, 1);
+    }
+    this.slowoServe.updateSlowo(this.slowo, this.slowo.id);
   }
 
 

@@ -1,17 +1,20 @@
 <form ngForm #f="ngForm" (ngSubmit)="dodajSlowo(f)" style="margin: 20px">
-  <div class="form-group col-sm-6">
-    <label for="slowo">Wprowadź słowo</label>
-    <input 
+  <!-- <div class="row"> -->
+
+    <div class="form-group row">
+      <!-- <label for="slowo">Wprowadź słowo</label> -->
+      <input 
       id="slowo" 
       type="text" 
-      class="form-control" 
+      class="form-control col-4" 
       placeholder="Wprowadz słowo"
       ngModel 
       name="slowo" 
       #slowo="ngModel" >
-  </div>
-
-  <button class="btn btn-primary">Dodaj slowo</button>
+      <button class="btn btn-light">+</button>
+    </div>
+    
+  <!-- </div> -->
   <!-- {{f.value|json}} -->
 </form>
 <!-- {{slowa|json}} -->

@@ -1,6 +1,6 @@
-<span>
-  <div class="col-sm-5" >{{slowo.slowo}}</div>
-  <button class="btn btn-primary" (click)="dajLajka()">{{slowo.likes.length}} like</button>
-  <button class="btn btn-primary" (click)="dajDisLajka()"> {{slowo.dislikes.length}} dislike</button>
-</span>
+<div class="row">
+  <div class="col-sm" >{{slowo.slowo}}</div>
+  <button class="btn btn-primary" (click)="dajLajka()">{{slowo.likes.length}} +</button>
+  <button class="btn btn-primary" (click)="dajDisLajka()"> {{slowo.dislikes.length}} -</button>
+</div>
 

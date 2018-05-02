@@ -9,12 +9,13 @@ import { Slowo } from '../shared/slowo.model';
   styleUrls: ['./slowa-lista.component.css']
 })
 export class SlowaListaComponent implements OnInit {
-
+  autorzy = ['mua', 'bleble', 'ann', 'me'];
   slowa: Slowo[];
+  autor: string;
 
-  
   constructor(private db: AngularFirestore, public slowoServe: SlowaService) {
     this.slowoServe.getSlowa().subscribe(data => { this.slowa = data; });
+    this.autor = this.autorzy[Math.floor(Math.random() * this.autorzy.length)]
   }
 
   ngOnInit() {

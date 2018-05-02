@@ -1,5 +1,8 @@
-<ul class="list-group">
-  <li class="list-group-item" *ngFor="let slo of slowa" > <app-slowo [slowo]="slo" ></app-slowo> </li>
+<h1 class="display-4">Ostatnie</h1>
 
+<ul class="list-group">
+  <li class="list-group-item col-sm-7 slowko"  *ngFor="let slo of slowa"  >
+     <app-slowo [slowo]="slo" [autor]="autor" ></app-slowo> 
+    </li>
 </ul>
 <!-- {{slowa|json}} -->

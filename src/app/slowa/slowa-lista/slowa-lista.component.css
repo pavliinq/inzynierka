@@ -1,0 +1,12 @@
+.slowko{
+    margin: 10px;
+    /* -moz-border-radius-topright: 5px;
+    -moz-border-radius-bottomright: 5px;*/
+    border-radius: 10px;
+    /* border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px; */
+}
+.slowko:hover{
+    background:#f0f8ff;
+    cursor: pointer;
+}
