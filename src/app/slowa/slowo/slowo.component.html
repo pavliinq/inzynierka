@@ -1,16 +1,6 @@
-<form ngForm #f="ngForm" (ngSubmit)="dodajSlowo(f)" style="margin: 20px">
-  <div class="form-group col-sm-6">
-    <!-- <label for="pierwszeSlowo">Wprowadź słowo</label> -->
-    <input 
-      id="slowo" 
-      type="text" 
-      class="form-control" 
-      placeholder="Wprowadz słowo"
-      ngModel 
-      name="slowo" 
-      #slowo="ngModel" >
-  </div>
+<span>
+  <div class="col-sm-5" >{{slowo.slowo}}</div>
+  <button class="btn btn-primary" (click)="dajLajka()">{{slowo.likes.length}} like</button>
+  <button class="btn btn-primary" (click)="dajDisLajka()"> {{slowo.dislikes.length}} dislike</button>
+</span>
 
-  <button class="btn btn-primary">Dodaj slowo</button>
-  <!-- {{f.value|json}} -->
-</form>

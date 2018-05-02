@@ -15,6 +15,7 @@ import { SlowoComponent } from './slowa/slowo/slowo.component';
 import { SlowaListaComponent } from './slowa/slowa-lista/slowa-lista.component';
 import { DefinicjaComponent } from './definicje/definicja/definicja.component';
 import { DefinicjeListaComponent } from './definicje/definicje-lista/definicje-lista.component';
+import { FormDodajSlowoComponent } from './slowa/form-dodaj-slowo/form-dodaj-slowo.component';
 
 
 
@@ -24,7 +25,8 @@ import { DefinicjeListaComponent } from './definicje/definicje-lista/definicje-l
     SlowoComponent,
     SlowaListaComponent,
     DefinicjaComponent,
-    DefinicjeListaComponent
+    DefinicjeListaComponent,
+    FormDodajSlowoComponent
   ],
   imports: [
     NgbModule.forRoot(),

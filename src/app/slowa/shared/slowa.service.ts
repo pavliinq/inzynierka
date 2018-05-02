@@ -26,10 +26,7 @@ export class SlowaService {
 
   }
 
-  // utworzStruktureDefinicji(id:string){
-  //   let defCollection = this.db.collection<any>('/slowa/'+id+"/definicje").add('');
-    
-  // }
+
   getSlowa() {
     return this.slowo;
   }

@@ -1,3 +1,5 @@
-<p>
-  slowa-lista works!
-</p>
+<ul class="list-group">
+  <li class="list-group-item" *ngFor="let slo of slowa" > <app-slowo [slowo]="slo" ></app-slowo> </li>
+
+</ul>
+<!-- {{slowa|json}} -->
