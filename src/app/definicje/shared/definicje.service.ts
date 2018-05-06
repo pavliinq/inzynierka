@@ -10,21 +10,23 @@ export class DefinicjeService {
   definicjaDocument: AngularFirestoreDocument<Definicja>;
   definicjaCollection: AngularFirestoreCollection<Definicja[]>;
   definicja: Observable<Definicja[]>;
+  
   constructor(public db: AngularFirestore) {
     this.definicjaCollection = db.collection<Definicja[]>('/slowa').doc(this.current).collection('definicje');
-    this.definicja = this.definicjaCollection.snapshotChanges().map(actions => {
+    
+
+  }
+
+  
+  getDefinicja() {
+    let defCollection = this.db.collection<Definicja[]>('/slowa').doc(this.current).collection('definicje');
+    this.definicja = defCollection.snapshotChanges().map(actions => {
       return actions.map(a => {
         const data = a.payload.doc.data() as Definicja;
         const id = a.payload.doc.id;
         return { id, ...data };
       })
     });
-
-
-
-
-  }
-  getDefinicja() {
     return this.definicja;
   }
 
@@ -37,8 +39,5 @@ export class DefinicjeService {
     this.definicjaCollection.add(JSON.parse(JSON.stringify(turn)));
   }
 
-  
-
-  
 
 }

@@ -13,7 +13,21 @@ export class SlowaService {
   slowo: Observable<Slowo[]>;
   constructor(public db: AngularFirestore) {
     this.slowoCollection = db.collection<Slowo[]>('/slowa');
-    this.slowo = this.slowoCollection.snapshotChanges().map(actions => {
+    // this.slowo = this.slowoCollection.snapshotChanges().map(actions => {
+    //   return actions.map(a => {
+    //     const data = a.payload.doc.data() as Slowo;
+    //     const id = a.payload.doc.id;
+    //     return { id, ...data };
+    //   })
+    // });
+
+
+  }
+
+
+  getSlowa() {
+    let sloCollection = this.db.collection<Slowo[]>('/slowa');
+    this.slowo = sloCollection.snapshotChanges().map(actions => {
       return actions.map(a => {
         const data = a.payload.doc.data() as Slowo;
         const id = a.payload.doc.id;
@@ -21,13 +35,6 @@ export class SlowaService {
       })
     });
 
-
-
-
-  }
-
-
-  getSlowa() {
     return this.slowo;
   }
   DeleteSlowo(idDokumentu) {
