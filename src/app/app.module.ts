@@ -1,6 +1,7 @@
 import { SlowaService } from './slowa/shared/slowa.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import {RouterModule} from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { environment } from '../environments/environment';
@@ -16,6 +17,9 @@ import { SlowaListaComponent } from './slowa/slowa-lista/slowa-lista.component';
 import { DefinicjaComponent } from './definicje/definicja/definicja.component';
 import { DefinicjeListaComponent } from './definicje/definicje-lista/definicje-lista.component';
 import { FormDodajSlowoComponent } from './slowa/form-dodaj-slowo/form-dodaj-slowo.component';
+import { FormDodajDefinicjeComponent } from './definicje/form-dodaj-definicje/form-dodaj-definicje.component';
+import { DefinicjeService } from './definicje/shared/definicje.service';
+import { KeysPipePipe } from './definicje/shared/keys-pipe.pipe';
 
 
 
@@ -26,7 +30,9 @@ import { FormDodajSlowoComponent } from './slowa/form-dodaj-slowo/form-dodaj-slo
     SlowaListaComponent,
     DefinicjaComponent,
     DefinicjeListaComponent,
-    FormDodajSlowoComponent
+    FormDodajSlowoComponent,
+    FormDodajDefinicjeComponent,
+    KeysPipePipe
   ],
   imports: [
     NgbModule.forRoot(),
@@ -35,9 +41,14 @@ import { FormDodajSlowoComponent } from './slowa/form-dodaj-slowo/form-dodaj-slo
     FormsModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFirestoreModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    RouterModule.forRoot([
+      {path:'',component: FormDodajSlowoComponent},
+      {path:'definicje/:def_id',component: FormDodajDefinicjeComponent}
+    
+  ]),
   ],
-  providers: [SlowaService],
+  providers: [SlowaService,DefinicjeService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

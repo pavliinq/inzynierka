@@ -1,0 +1,19 @@
+<form ngForm #f="ngForm" (keyup.enter)="dodajDefinicja(f)" 
+(ngSubmit)="dodajDefinicja(f)" style="margin: 20px; width:40%"  >
+ 
+
+    <div class="form-group row ">
+
+      <textarea
+      id="definicja" 
+      type="text" 
+      class="form-control" 
+      placeholder="Dodaj definicje"
+      ngModel 
+      name="definicja" 
+      #definicja="ngModel" cols="1" rows="5" style="resize:none"></textarea>
+      <button class="btn btn-light">+</button>
+    </div>
+
+</form>
+<app-definicje-lista></app-definicje-lista>

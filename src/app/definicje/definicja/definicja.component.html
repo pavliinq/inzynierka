@@ -1,3 +1,5 @@
-<p>
-  definicja works!
-</p>
+<div class="row" >
+  <div class="col-sm" >{{definicja.definicja}}</div>
+  <button class="btn btn-primary" (click)="dajLajka()">{{definicja.likes.length}} +</button>
+  <button class="btn btn-primary" (click)="dajDisLajka()"> {{definicja.dislikes.length}} -</button>
+</div>
