@@ -8,11 +8,17 @@
       type="text" 
       class="form-control col-4" 
       placeholder="Wprowadz słowo"
-      ngModel 
-      name="slowo" 
-      #slowo="ngModel" >
+      requried ngModel name="slowo" 
+      required minlength="2"
+      #slowo="ngModel"
+       >
       <button class="btn btn-light">+</button>
-    </div>
+      </div>
+      
+      
+      <!-- <div class = "alert alert-danger" *ngIf = "slowo.invalid && slowo.touched" style="margin: 20px">
+          <div *ngIf = "slowo.errors.required">Wprowadź słowo</div>
+          <div *ngIf ="slowo.errors.pattern">Słowo nie może zawierać cyfr ani znaków specjalnych</div></div> -->
     
   <!-- </div> -->
   <!-- {{f.value|json}} -->
