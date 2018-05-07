@@ -3,7 +3,7 @@
  
 
     <div class="form-group row ">
-
+    
       <textarea
       id="definicja" 
       type="text" 
@@ -11,9 +11,12 @@
       placeholder="Dodaj definicje"
       ngModel 
       name="definicja" 
-      #definicja="ngModel" cols="1" rows="5" style="resize:none"></textarea>
-      <button class="btn btn-light">+</button>
+      #definicja="ngModel" cols="1" rows="5" style="resize:none">
+    </textarea>
+     
+    <button type="button" class="btn btn-light">Dodaj definicje</button>
     </div>
+   
 
 </form>
 <app-definicje-lista></app-definicje-lista>
