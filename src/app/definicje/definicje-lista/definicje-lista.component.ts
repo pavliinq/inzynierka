@@ -19,7 +19,7 @@ export class DefinicjeListaComponent implements OnInit {
   autorzy = ['mua', 'bleble', 'ann', 'me'];
   autor: string;
   strona: string = window.location.href.substr(window.location.href.lastIndexOf('/') + 1);
-  slowa: Slowo[];
+  public slowa: Slowo[];
 
   slowoDocument: AngularFirestoreDocument<Slowo>;
   slowoCollection: AngularFirestoreCollection<Slowo[]>;

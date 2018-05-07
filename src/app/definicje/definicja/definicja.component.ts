@@ -25,10 +25,10 @@ export class DefinicjaComponent implements OnInit {
     this.lajkii =this.definicja.likes.length;
     this.dislajkii=this.definicja.dislikes.length;
     this.suma=this.lajkii-this.dislajkii
-    console.log(this.suma)
+    
   }  
   dajLajka() {
-    console.log(this.autor);
+    
     if (this.definicja.likes.indexOf(this.autor) == -1) {
       this.definicja.likes.push(this.autor);
     }

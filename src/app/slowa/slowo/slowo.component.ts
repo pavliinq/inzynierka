@@ -19,7 +19,7 @@ export class SlowoComponent implements OnInit {
 
   }
   dajLajka() {
-    console.log(this.autor);
+    
     if (this.slowo.likes.indexOf(this.autor) == -1) {
       this.slowo.likes.push(this.autor);
     }
