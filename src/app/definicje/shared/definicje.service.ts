@@ -5,33 +5,33 @@ import { Definicja } from './definicja.model';
 
 @Injectable()
 export class DefinicjeService {
-  public current = window.location.href.substr(window.location.href.lastIndexOf('/') + 1);
+  // public current = window.location.href.substr(window.location.href.lastIndexOf('/') + 1);
   
   definicjaDocument: AngularFirestoreDocument<Definicja>;
   definicjaCollection: AngularFirestoreCollection<Definicja[]>;
-  definicja: Observable<Definicja[]>;
+  // definicja: Observable<Definicja[]>;
   
   constructor(public db: AngularFirestore) {
-    this.definicjaCollection = db.collection<Definicja[]>('/slowa').doc(this.current).collection('definicje');
+    // this.definicjaCollection = db.collection<Definicja[]>('/slowa').doc(current).collection('definicje');
     
 
   }
 
   
-  getDefinicja() {
-    let defCollection = this.db.collection<Definicja[]>('/slowa').doc(this.current).collection('definicje');
-    this.definicja = defCollection.snapshotChanges().map(actions => {
+  getDefinicja(current:string) {
+    let defCollection = this.db.collection<Definicja[]>('/slowa').doc(current).collection('definicje');
+    let definicja:Observable<Definicja[]> = defCollection.snapshotChanges().map(actions => {
       return actions.map(a => {
         const data = a.payload.doc.data() as Definicja;
         const id = a.payload.doc.id;
         return { id, ...data };
       })
     });
-    return this.definicja;
+    return definicja;
   }
 
-  updateDefinicja(def: Definicja, idDokumentu) {
-    this.definicjaDocument = this.db.doc('/slowa/' + this.current+'/definicje/'+idDokumentu);
+  updateDefinicja(def: Definicja, idDokumentu, current) {
+    this.definicjaDocument = this.db.doc('/slowa/' + current+'/definicje/'+idDokumentu);
     this.definicjaDocument.update(def);
   }
 
