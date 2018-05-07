@@ -35,8 +35,8 @@ export class DefinicjeService {
     this.definicjaDocument.update(def);
   }
 
-  setDefinicja(turn: Definicja) {
-    this.definicjaCollection.add(JSON.parse(JSON.stringify(turn)));
+  setDefinicja(turn: Definicja,current) {
+    this.db.collection<Definicja[]>('/slowa').doc(current).collection('definicje').add(JSON.parse(JSON.stringify(turn)));
   }
 
 

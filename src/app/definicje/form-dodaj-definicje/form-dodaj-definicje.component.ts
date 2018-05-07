@@ -21,7 +21,7 @@ export class FormDodajDefinicjeComponent implements OnInit {
     def.dislikes = [];
     def.likes = [];
     def.definicja = f.value.definicja;
-    this.definicjaServe.setDefinicja(def);
+    this.definicjaServe.setDefinicja(def,this.strona);
     f.resetForm();
   }
   ngOnInit() {
