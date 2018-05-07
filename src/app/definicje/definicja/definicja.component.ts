@@ -10,14 +10,23 @@ import { DefinicjeService } from '../shared/definicje.service';
 })
 
 export class DefinicjaComponent implements OnInit {
-
+  lajkii : number;
+  dislajkii: number;
+  public suma: number;
   @Input('autor') autor: string;
   @Input('definicja') definicja: Definicja;
   constructor(private db: AngularFirestore, public definicjaServe: DefinicjeService) { }
 
   ngOnInit() {
+    this.lajki()
   }
-
+  
+  lajki(){
+    this.lajkii =this.definicja.likes.length;
+    this.dislajkii=this.definicja.dislikes.length;
+    this.suma=this.lajkii-this.dislajkii
+    console.log(this.suma)
+  }  
   dajLajka() {
     console.log(this.autor);
     if (this.definicja.likes.indexOf(this.autor) == -1) {
