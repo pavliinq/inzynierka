@@ -5,14 +5,16 @@ import { DefinicjeService } from '../shared/definicje.service';
 import { Definicja } from '../shared/definicja.model';
 import { Observable } from 'rxjs/Observable';
 import { Slowo } from '../../slowa/shared/slowo.model';
-import {KeysPipePipe} from '../shared/keys-pipe.pipe'
+import {KeysPipePipe} from '../shared/keys-pipe.pipe';
+import { Ng2OrderModule } from 'ng2-order-pipe';
+
 @Component({
   selector: 'app-definicje-lista',
   templateUrl: './definicje-lista.component.html',
   styleUrls: ['./definicje-lista.component.css']
 })
 export class DefinicjeListaComponent implements OnInit {
-
+  order: string = 'likes'
   definicje: Definicja[];
   autorzy = ['mua', 'bleble', 'ann', 'me'];
   autor: string;

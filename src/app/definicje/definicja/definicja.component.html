@@ -1,5 +1,8 @@
+
 <div class="row" >
   <div class="col-sm" >{{definicja.definicja}}</div>
-  <button class="btn btn-primary" (click)="dajLajka()">{{definicja.likes.length}} +</button>
-  <button class="btn btn-primary" (click)="dajDisLajka()"> {{definicja.dislikes.length}} -</button>
+  <h2>{{suma}}</h2>
+  
+  <button class="far fa-thumbs-up" (click)="dajLajka()" ></button>
+  <button class="far fa-thumbs-down" (click)="dajDisLajka()"></button>
 </div>

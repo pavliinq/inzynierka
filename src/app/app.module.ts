@@ -20,6 +20,7 @@ import { FormDodajSlowoComponent } from './slowa/form-dodaj-slowo/form-dodaj-slo
 import { FormDodajDefinicjeComponent } from './definicje/form-dodaj-definicje/form-dodaj-definicje.component';
 import { DefinicjeService } from './definicje/shared/definicje.service';
 import { KeysPipePipe } from './definicje/shared/keys-pipe.pipe';
+import { Ng2OrderModule } from 'ng2-order-pipe';
 
 
 
@@ -47,6 +48,7 @@ import { KeysPipePipe } from './definicje/shared/keys-pipe.pipe';
       {path:'definicje/:def_id',component: FormDodajDefinicjeComponent}
     
   ]),
+  Ng2OrderModule
   ],
   providers: [SlowaService,DefinicjeService],
   bootstrap: [AppComponent]
