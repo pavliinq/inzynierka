@@ -11,6 +11,8 @@ import { DefinicjeService } from '../shared/definicje.service';
 
 export class DefinicjaComponent implements OnInit {
   lajkii : number;
+  strona: string = window.location.href.substr(window.location.href.lastIndexOf('/') + 1);
+  
   dislajkii: number;
   public suma: number;
   @Input('autor') autor: string;
@@ -36,7 +38,7 @@ export class DefinicjaComponent implements OnInit {
       let index = this.definicja.likes.indexOf(this.autor);
       this.definicja.likes.splice(index, 1);
     }
-    this.definicjaServe.updateDefinicja(this.definicja, this.definicja.id);
+    this.definicjaServe.updateDefinicja(this.definicja, this.definicja.id,this.strona);
   }
   
   dajDisLajka() {
@@ -47,6 +49,6 @@ export class DefinicjaComponent implements OnInit {
       let index = this.definicja.dislikes.indexOf(this.autor);
       this.definicja.dislikes.splice(index, 1);
     }
-    this.definicjaServe.updateDefinicja(this.definicja, this.definicja.id);
+    this.definicjaServe.updateDefinicja(this.definicja, this.definicja.id,this.strona);
   }
 }
