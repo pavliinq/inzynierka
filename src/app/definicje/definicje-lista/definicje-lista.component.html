@@ -1,6 +1,6 @@
 
 <h1 *ngFor="let slo of slowa " class="display-4" >Ostatnie definicje: {{slo.slowo}} </h1>
-{{slowa |json}}
+<!-- {{slowa |json}} -->
 <ul class="list-group">
   <li class="list-group-item col-sm-7 slowko"  *ngFor="let def of definicje | orderBy: order:true"  >
     <app-definicja [definicja]="def" [autor]="autor" ></app-definicja>

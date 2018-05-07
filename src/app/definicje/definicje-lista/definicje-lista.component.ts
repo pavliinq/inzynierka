@@ -7,6 +7,7 @@ import { Observable } from 'rxjs/Observable';
 import { Slowo } from '../../slowa/shared/slowo.model';
 import {KeysPipePipe} from '../shared/keys-pipe.pipe';
 import { Ng2OrderModule } from 'ng2-order-pipe';
+import { SlowaService } from '../../slowa/shared/slowa.service';
 
 @Component({
   selector: 'app-definicje-lista',
@@ -25,26 +26,27 @@ export class DefinicjeListaComponent implements OnInit {
   slowoCollection: AngularFirestoreCollection<Slowo[]>;
   slowo: Observable<Slowo[]>;
 
-  constructor(private db: AngularFirestore, public definicjaServe: DefinicjeService) {
+  constructor(private db: AngularFirestore, public definicjaServe: DefinicjeService,public sloServ:SlowaService) {
     this.definicjaServe.getDefinicja(this.strona).subscribe(data => { this.definicje = data; })
 
 
     this.autor = this.autorzy[Math.floor(Math.random() * this.autorzy.length)]
 
-    this.slowoCollection = db.collection<Slowo[]>('/slowa',ref => {return ref.where('id','==',this.strona)});
-    this.slowo = this.slowoCollection.snapshotChanges().map(actions => {
-      return actions.map(a => {
-        const data = a.payload.doc.data() as Slowo;
-        const id = a.payload.doc.id;
+    // this.slowoCollection = db.collection<Slowo[]>('/slowa',ref => {return ref.where('id','==',this.strona)});
+    // this.slowo = this.slowoCollection.snapshotChanges().map(actions => {
+    //   return actions.map(a => {
+    //     const data = a.payload.doc.data() as Slowo;
+    //     const id = a.payload.doc.id;
         
-        return {id,...data };
+    //     return {id,...data };
         
-      })
-    });
-    this.slowo.subscribe(data => { this.slowa = data });
+    //   })
+    // });
+    // this.slowo.subscribe(data => { this.slowa = data });
     
+    this.sloServ.getSlowa().subscribe(data => {this.slowa = data.filter(c=> c.id == this.strona ) })
   }
-   
+  
   ngOnInit() {
   }
 
