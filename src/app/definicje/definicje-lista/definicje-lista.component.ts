@@ -22,9 +22,9 @@ export class DefinicjeListaComponent implements OnInit {
   strona: string = window.location.href.substr(window.location.href.lastIndexOf('/') + 1);
   public slowa: Slowo[];
 
-  slowoDocument: AngularFirestoreDocument<Slowo>;
-  slowoCollection: AngularFirestoreCollection<Slowo[]>;
-  slowo: Observable<Slowo[]>;
+  // slowoDocument: AngularFirestoreDocument<Slowo>;
+  // slowoCollection: AngularFirestoreCollection<Slowo[]>;
+  // slowo: Observable<Slowo[]>;
 
   constructor(private db: AngularFirestore, public definicjaServe: DefinicjeService,public sloServ:SlowaService) {
     this.definicjaServe.getDefinicja(this.strona).subscribe(data => { this.definicje = data; })
