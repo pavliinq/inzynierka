@@ -15,7 +15,7 @@ import { SlowaService } from '../../slowa/shared/slowa.service';
   styleUrls: ['./definicje-lista.component.css']
 })
 export class DefinicjeListaComponent implements OnInit {
-  order: string = 'likes'
+  order: string = 'sumlikes'
   definicje: Definicja[];
   autorzy = ['mua', 'bleble', 'ann', 'me'];
   autor: string;

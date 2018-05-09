@@ -27,6 +27,7 @@ export class FormDodajDefinicjeComponent implements OnInit {
     def.data_dod = new Date().toLocaleString();
     def.dislikes = [];
     def.likes = [];
+    def.sumlikes=0;
     def.definicja = f.value.definicja;
     this.definicjaServe.setDefinicja(def,this.strona);
     f.resetForm();

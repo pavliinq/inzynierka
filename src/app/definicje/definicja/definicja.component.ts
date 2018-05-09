@@ -11,10 +11,14 @@ import { DefinicjeService } from '../shared/definicje.service';
 
 export class DefinicjaComponent implements OnInit {
   lajkii : number;
+  dislajkii: number;
   strona: string = window.location.href.substr(window.location.href.lastIndexOf('/') + 1);
   
-  dislajkii: number;
-  public suma: number;
+  
+ 
+  
+
+  
   @Input('autor') autor: string;
   @Input('definicja') definicja: Definicja;
   constructor(private db: AngularFirestore, public definicjaServe: DefinicjeService) { }
@@ -24,19 +28,33 @@ export class DefinicjaComponent implements OnInit {
   }
   
   lajki(){
+    
     this.lajkii =this.definicja.likes.length;
     this.dislajkii=this.definicja.dislikes.length;
-    this.suma=this.lajkii-this.dislajkii
+    
+    
+    // console.log(this.definicja.sumlikes.valueOf())
     
   }  
   dajLajka() {
     
     if (this.definicja.likes.indexOf(this.autor) == -1) {
       this.definicja.likes.push(this.autor);
+      
+      if (this.definicja.dislikes.indexOf(this.autor) == -1) {
+        this.definicja.sumlikes=this.definicja.sumlikes.valueOf()+1;
+      }else{
+        let index = this.definicja.dislikes.indexOf(this.autor);
+        this.definicja.dislikes.splice(index, 1);
+        this.definicja.sumlikes=this.definicja.sumlikes.valueOf()+2;
+      }
+      
     }
     else {
       let index = this.definicja.likes.indexOf(this.autor);
       this.definicja.likes.splice(index, 1);
+      this.definicja.sumlikes=this.definicja.sumlikes.valueOf()-1;
+  
     }
     this.definicjaServe.updateDefinicja(this.definicja, this.definicja.id,this.strona);
   }
@@ -44,10 +62,23 @@ export class DefinicjaComponent implements OnInit {
   dajDisLajka() {
     if (this.definicja.dislikes.indexOf(this.autor) == -1) {
       this.definicja.dislikes.push(this.autor);
+      
+      if (this.definicja.likes.indexOf(this.autor) == -1) {
+        this.definicja.sumlikes=this.definicja.sumlikes.valueOf()-1;
+      }else{
+        let index = this.definicja.likes.indexOf(this.autor);
+        this.definicja.likes.splice(index, 1);
+        this.definicja.sumlikes=this.definicja.sumlikes.valueOf()-2;
+      }
+
+
     }
     else {
       let index = this.definicja.dislikes.indexOf(this.autor);
       this.definicja.dislikes.splice(index, 1);
+      this.definicja.sumlikes=this.definicja.sumlikes.valueOf()+1;
+      
+
     }
     this.definicjaServe.updateDefinicja(this.definicja, this.definicja.id,this.strona);
   }
