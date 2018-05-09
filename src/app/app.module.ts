@@ -21,6 +21,8 @@ import { FormDodajDefinicjeComponent } from './definicje/form-dodaj-definicje/fo
 import { DefinicjeService } from './definicje/shared/definicje.service';
 import { KeysPipePipe } from './definicje/shared/keys-pipe.pipe';
 import { Ng2OrderModule } from 'ng2-order-pipe';
+import { NavbarComponent } from './navbar/navbar.component';
+import { HomeComponent } from './home/home.component';
 
 
 
@@ -33,7 +35,9 @@ import { Ng2OrderModule } from 'ng2-order-pipe';
     DefinicjeListaComponent,
     FormDodajSlowoComponent,
     FormDodajDefinicjeComponent,
-    KeysPipePipe
+    KeysPipePipe,
+    NavbarComponent,
+    HomeComponent
   ],
   imports: [
     NgbModule.forRoot(),
@@ -44,8 +48,9 @@ import { Ng2OrderModule } from 'ng2-order-pipe';
     AngularFirestoreModule,
     ReactiveFormsModule,
     RouterModule.forRoot([
-      {path:'',component: FormDodajSlowoComponent},
-      {path:'definicje/:def_id',component: FormDodajDefinicjeComponent}
+      {path:'',component: HomeComponent},
+      {path:'przegladajslowa',component: FormDodajSlowoComponent},
+      {path:'definicje/:def_id',component: FormDodajDefinicjeComponent},
     
   ]),
   Ng2OrderModule

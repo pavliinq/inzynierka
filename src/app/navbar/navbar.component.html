@@ -1,0 +1,114 @@
+<body>
+  <div class="wrap-all">
+        <span class="navigation-toggle">
+          <span></span>
+          <span></span>
+          <span></span>
+        </span>
+  
+        <nav class="navigation" role="navigation">
+          <h1 href="" class="logo">
+            MENU
+          </h1>
+        <ul>
+          <li><a href="">Strona główna</a></li>
+          <li><a href="">Pora na naukę</a></li>
+          <li><a href="">Przeglądaj słowa</a></li>
+          <li><a href="">Testownik</a></li>
+          <li><a href="" data-toggle="modal" data-target="#exampleModal">Zaloguj się</a></li>
+        </ul>
+        </nav>
+      </div>
+  
+      <!-- MENU DESKTOPOWE -->
+      
+      <nav id="global-nav">
+         <div class="buttons">
+          <a routerLink="/" href="https://imgbb.com/"><img src="https://image.ibb.co/bsxSRx/logo.jpg" class="logo" alt="logo" border="0"></a>
+           <a routerLink="/" class="btn btn-outline-primary" role="button">Strona główna</a>   					
+              <!-- <a routerLink="/dodajslowa" class="btn btn-outline-primary" role="button">Dodaj słowa</a>     					 -->
+               <a routerLink="/przegladajslowa" class="btn btn-outline-primary" role="button">Lista słów</a>   					
+              <a href="#" class="btn btn-outline-primary" role="button">Testownik</a>
+          <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#exampleModal">Zaloguj się</button>
+         </div>
+      </nav>
+      
+      <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Zaloguj się</h5>
+                   <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+                 </div>
+                 <div class="modal-body">
+                    <div class="col-md-6 col-md-offset-3">
+      
+      <form name="form" ng-submit="vm.login()" role="form">
+          <div class="form-group" ng-class="{ 'has-error': form.username.$dirty && form.username.$error.required }">
+              <label for="username">Login</label>
+              <input type="text" name="username" id="username" class="form-control" ng-model="vm.username" required />
+              
+          </div>
+          <div class="form-group" ng-class="{ 'has-error': form.password.$dirty && form.password.$error.required }">
+              <label for="password">Hasło</label>
+              <input type="password" name="password" id="password" class="form-control" ng-model="vm.password" required />
+              
+          </div>
+          <div class="form-actions">
+              <button type="submit" ng-disabled="form.$invalid || vm.dataLoading" class="btn btn-primary">Zaloguj</button>
+              <button type="submit"  class="btn btn-primary">Nie pamiętam hasła</button>
+          </div>
+      </form>
+  </div>
+                </div>
+                 <div class="modal-footer">
+                  <a href="rejestracja/register/register.view.html"  data-toggle="modal" data-target="#exampleModale" class="btn btn-outline-danger" role="button">Zarejestruj się</a>
+                 </div>
+            </div>
+          </div>
+      </div>
+      
+      <div class="modal fade" id="exampleModale" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Rejestracja</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <form name="form" ng-submit="vm.register()" role="form">
+          <div class="form-group" ng-class="{ 'has-error': form.firstName.$dirty && form.firstName.$error.required }">
+              <label for="username">Imię</label>
+              <input type="text" name="firstName" id="firstName" class="form-control" ng-model="vm.user.firstName" required />
+              
+          </div>
+          <div class="form-group" ng-class="{ 'has-error': form.lastName.$dirty && form.lastName.$error.required }">
+              <label for="username">Nazwisko</label>
+              <input type="text" name="lastName" id="Text1" class="form-control" ng-model="vm.user.lastName" required />
+              
+          </div>
+          <div class="form-group" ng-class="{ 'has-error': form.username.$dirty && form.username.$error.required }">
+              <label for="username">E-mail</label>
+              <input type="text" name="username" id="username" class="form-control" ng-model="vm.user.username" required />
+              
+          </div>
+          <div class="form-group" ng-class="{ 'has-error': form.password.$dirty && form.password.$error.required }">
+              <label for="password">Hasło</label>
+              <input type="password" name="password" id="password" class="form-control" ng-model="vm.user.password" required />
+              
+          </div>
+          <div class="form-actions">
+              <button type="submit" ng-disabled="form.$invalid || vm.dataLoading" class="btn btn-outline-primary">Zarejestruj się</button>
+              
+        </div>
+      </form>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+      </body> 
