@@ -2,13 +2,14 @@
 
     <h1 class="display-2" *ngIf="slowa" >{{slowa.slowo}}  </h1>
       <form ngForm #f="ngForm"  
-      (ngSubmit)="dodajDefinicja(f)" style="margin: 20px; width:40%"  >
+      (ngSubmit)="dodajDefinicja(f)"  style="margin: 20px; width:40%"  >
       
       
         <div class="form-group row ">
           
             <textarea
             id="definicja" 
+            (keyup.enter)="dodajDefinicja(f)"
             type="text" 
             class="form-control" 
             placeholder="Dodaj definicję"
@@ -24,7 +25,7 @@
            <button  style="float: right;" class="btn btn-light" [disabled]="!f.form.valid">Dodaj definicję</button>
           
       </div>
-      
+      {{f.value.definicja}}
 
     </form>
   <app-definicje-lista></app-definicje-lista>
