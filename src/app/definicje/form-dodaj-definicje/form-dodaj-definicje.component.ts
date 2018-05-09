@@ -5,6 +5,7 @@ import { AngularFirestore } from 'angularfire2/firestore';
 import { DefinicjeService } from '../shared/definicje.service';
 import { SlowaService } from '../../slowa/shared/slowa.service';
 import { Slowo } from '../../slowa/shared/slowo.model';
+import { isEmpty } from '@firebase/util';
 
 @Component({
   selector: 'app-form-dodaj-definicje',
@@ -22,15 +23,16 @@ export class FormDodajDefinicjeComponent implements OnInit {
    }
 
   dodajDefinicja(f: NgForm) {
-    let def: Definicja = new Definicja();
-    // def.autor = "Ble Ble";
-    def.data_dod = new Date().toLocaleString();
-    def.dislikes = [];
-    def.likes = [];
-    def.sumlikes=0;
-    def.definicja = f.value.definicja;
-    this.definicjaServe.setDefinicja(def,this.strona);
-    f.resetForm();
+    if(f.value.definicja.length > 1 ){
+      let def: Definicja = new Definicja();
+      def.data_dod = new Date().toLocaleString();
+      def.dislikes = [];
+      def.likes = [];
+      def.sumlikes=0;
+      def.definicja = f.value.definicja;
+      this.definicjaServe.setDefinicja(def,this.strona);
+      f.resetForm();
+    }
   }
   ngOnInit() {
   }

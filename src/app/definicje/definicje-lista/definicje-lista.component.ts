@@ -17,7 +17,8 @@ import { SlowaService } from '../../slowa/shared/slowa.service';
 export class DefinicjeListaComponent implements OnInit {
   order: string = 'sumlikes'
   definicje: Definicja[];
-  autorzy = ['mua', 'bleble', 'ann', 'me'];
+  // autorzy = ['mua', 'bleble', 'ann', 'me'];
+  autorzy = ['mua', 'bleble', 'ann', 'me','gdy','pada','deszczyk','mam','na','plecach','dreszczyk','kwiatek','smofee','smarfranek','kocyk','kotek','maupek','hustunia','swiatelka','maturaToBzdura','kartofel','grill','karkowka'];  
   autor: string;
   strona: string = window.location.href.substr(window.location.href.lastIndexOf('/') + 1);
   public slowa: Slowo[];

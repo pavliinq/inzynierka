@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnChanges } from '@angular/core';
 import { AngularFirestore } from 'angularfire2/firestore';
 import { Slowo } from './../shared/slowo.model';
 import { SlowaService } from './../shared/slowa.service';
@@ -10,8 +10,12 @@ import { NgForm } from '@angular/forms';
   templateUrl: './form-dodaj-slowo.component.html',
   styleUrls: ['./form-dodaj-slowo.component.css']
 })
-export class FormDodajSlowoComponent implements OnInit {
+export class FormDodajSlowoComponent implements OnInit{
+  public values = '';
 
+  onKey(event: any) { 
+    this.values = event.target.value ;
+  }
 
   
   constructor(private db: AngularFirestore, public slowoServe: SlowaService) {
@@ -30,5 +34,5 @@ export class FormDodajSlowoComponent implements OnInit {
 
   ngOnInit() {
   }
-
+ 
 }

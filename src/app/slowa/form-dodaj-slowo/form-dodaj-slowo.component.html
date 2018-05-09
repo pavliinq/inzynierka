@@ -1,6 +1,7 @@
 
 <div id="containerSlowa">
-<form ngForm #f="ngForm" (ngSubmit)="dodajSlowo(f)">
+
+<form ngForm #f="ngForm" (ngSubmit)="dodajSlowo(f)" style="margin: 20px">
   <!-- <div class="row"> -->
 
     <div class="form-group row">
@@ -9,7 +10,7 @@
       id="slowo" 
       type="text" 
       class="form-control col-4" 
-      placeholder="Wprowadz słowo"
+      placeholder="Wprowadź słowo"
       ngModel name="slowo" 
       required minlength="2"
       #slowo="ngModel"
@@ -17,13 +18,7 @@
       <button class="btn btn-light" [disabled]="!f.form.valid">+</button>
 
       </div>
-      
-      
-    
-    
-
 </form>
- 
-    <app-slowa-lista ></app-slowa-lista>
-  
+<input (keyup)="onKey($event)" placeholder="Szukaj">
+<app-slowa-lista  [values]="values"></app-slowa-lista>
 </div>

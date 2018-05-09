@@ -14,9 +14,15 @@ export class SlowoComponent implements OnInit {
   // autor: string;
   @Input('autor') autor: string;
   @Input('slowo') slowo: Slowo;
+  @Input('values') public values: string;
+
+
+  public dlugosc:number;
+  
 
   constructor(private db: AngularFirestore, public slowoServe: SlowaService) {
-
+    
+  
   }
   dajLajka() {
     
@@ -42,7 +48,11 @@ export class SlowoComponent implements OnInit {
   }
 
 
+  
+
   ngOnInit() {
+    
+    
   }
 
 }

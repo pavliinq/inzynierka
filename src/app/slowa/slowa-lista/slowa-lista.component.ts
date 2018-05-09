@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { AngularFirestore } from 'angularfire2/firestore';
 import { SlowaService } from '../shared/slowa.service';
 import { Slowo } from '../shared/slowo.model';
@@ -8,11 +8,13 @@ import { Slowo } from '../shared/slowo.model';
   templateUrl: './slowa-lista.component.html',
   styleUrls: ['./slowa-lista.component.css']
 })
+
 export class SlowaListaComponent implements OnInit {
-  autorzy = ['mua', 'bleble', 'ann', 'me'];
+  autorzy = ['mua', 'bleble', 'ann', 'me','gdy','pada','deszczyk','mam','na','plecach','dreszczyk','kwiatek','smofee','smarfranek','kocyk','kotek','maupek','hustunia','swiatelka','maturaToBzdura','kartofel','grill','karkowka'];
   slowa: Slowo[];
   autor: string;
-
+  
+  @Input('values') public values: string;
   constructor(private db: AngularFirestore, public slowoServe: SlowaService) {
     this.slowoServe.getSlowa().subscribe(data => {
           this.slowa = data.sort((a: Slowo, b: Slowo) => {
