@@ -11,25 +11,19 @@
             MENU
           </h1>
         <ul>
-          <li><a href="">Strona główna</a></li>
-          <li><a href="">Pora na naukę</a></li>
-          <li><a href="">Przeglądaj słowa</a></li>
-          <li><a href="">Testownik</a></li>
-          <li><a href="" data-toggle="modal" data-target="#exampleModal">Zaloguj się</a></li>
+          <li><a routerLink="/">Strona główna</a></li>
+          <li><a routerLink="/przegladajslowa">Lista Słów</a></li>
+          <li><a data-toggle="modal" data-target="#exampleModal">Zaloguj się</a></li>
         </ul>
         </nav>
       </div>
   
       <!-- MENU DESKTOPOWE -->
-      
       <nav id="global-nav">
-         <div class="buttons">
-          <!-- <a routerLink="/"><img src="https://image.ibb.co/bsxSRx/logo.jpg" class="logo" alt="logo" border="0"></a> -->
-           <a routerLink="/" class="btn btn-outline-primary" role="button">Strona główna</a>   					
-              <!-- <a routerLink="/dodajslowa" class="btn btn-outline-primary" role="button">Dodaj słowa</a>     					 -->
-               <a routerLink="/przegladajslowa" class="btn btn-outline-primary" role="button">Lista słów</a>   					
-              <!-- <a href="#" class="btn btn-outline-primary" role="button">Testownik</a> -->
-          <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#exampleModal">Zaloguj się</button>
+         <div class="container menu">
+            <a routerLink="/">Strona Główna</a>
+            <a routerLink="/przegladajslowa">Lista Słów</a>
+            <a data-toggle="modal" data-target="#exampleModal">Zaloguj się</a>
          </div>
       </nav>
       
@@ -57,14 +51,14 @@
               
           </div>
           <div class="form-actions">
-              <button type="submit" ng-disabled="form.$invalid || vm.dataLoading" class="btn btn-primary">Zaloguj</button>
-              <button type="submit"  class="btn btn-primary">Nie pamiętam hasła</button>
+              <button type="submit"  class="btn btn-outline-primary">Nie pamiętam hasła</button>
           </div>
       </form>
   </div>
                 </div>
                  <div class="modal-footer">
-                  <a href="rejestracja/register/register.view.html"  data-toggle="modal" data-target="#exampleModale" class="btn btn-outline-danger" role="button">Zarejestruj się</a>
+                  <button type="submit" ng-disabled="form.$invalid || vm.dataLoading" class="btn btn-outline-primary">Zaloguj</button>
+                  <a href=""  data-toggle="modal" data-target="#exampleModale" class="btn btn-outline-danger" role="button">Zarejestruj się</a>
                  </div>
             </div>
           </div>
