@@ -247,6 +247,12 @@ button.btn.btn-outline-primary{
 	   top: -37px;
 	   -webkit-transition: all .5s;
         transition: all .5s;
-    }
+	}
+	
+    
+}
+.staleWymiary{
+    width: 50px;
+    height: 40px;
     
 }
