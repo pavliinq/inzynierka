@@ -1,27 +1,29 @@
+<div id="containerDefinicje">
 
+    <h1 class="display-4" *ngIf="slowa" >{{slowa.slowo}}  </h1>
+      <form ngForm #f="ngForm"  
+      (ngSubmit)="dodajDefinicja(f)" style="margin: 20px; width:40%"  >
+      
+      
+        <div class="form-group row ">
+          
+            <textarea
+            id="definicja" 
+            type="text" 
+            class="form-control" 
+            placeholder="Dodaj definicje"
+            ngModel 
+            required ngModel name="definicja" 
+            minlength="3"
+            maxlength="1000"
+            #definicja="ngModel" cols="1" rows="5" style="resize:none">
+          </textarea>
+        
+        
+          <button class="btn btn-light" [disabled]="!f.form.valid">Dodaj definicje</button>
+      </div>
+      
 
-<form ngForm #f="ngForm"  
-(ngSubmit)="dodajDefinicja(f)" style="margin: 20px; width:40%"  >
- 
-
-    <div class="form-group row ">
-    
-      <textarea
-      id="definicja" 
-      type="text" 
-      class="form-control" 
-      placeholder="Dodaj definicje"
-      ngModel 
-      required ngModel name="definicja" 
-      minlength="3"
-      maxlength="1000"
-      #definicja="ngModel" cols="1" rows="5" style="resize:none">
-    </textarea>
-    
-     
-    <button class="btn btn-light" [disabled]="!f.form.valid">Dodaj definicje</button>
-    </div>
-   
-
-</form>
-<app-definicje-lista></app-definicje-lista>
+    </form>
+  <app-definicje-lista></app-definicje-lista>
+</div>

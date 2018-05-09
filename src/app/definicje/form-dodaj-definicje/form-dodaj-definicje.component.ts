@@ -3,6 +3,8 @@ import { Definicja } from '../shared/definicja.model';
 import { NgForm } from '@angular/forms';
 import { AngularFirestore } from 'angularfire2/firestore';
 import { DefinicjeService } from '../shared/definicje.service';
+import { SlowaService } from '../../slowa/shared/slowa.service';
+import { Slowo } from '../../slowa/shared/slowo.model';
 
 @Component({
   selector: 'app-form-dodaj-definicje',
@@ -12,7 +14,12 @@ import { DefinicjeService } from '../shared/definicje.service';
 export class FormDodajDefinicjeComponent implements OnInit {
 
   strona: string = window.location.href.substr(window.location.href.lastIndexOf('/') + 1);
-  constructor(private db: AngularFirestore, public definicjaServe: DefinicjeService) { }
+  public slowa: Slowo;
+  constructor(private db: AngularFirestore, public definicjaServe: DefinicjeService,public sloServ:SlowaService) {
+
+    this.sloServ.getSlowa().subscribe(data => {this.slowa = data.filter(c=> c.id == this.strona )[0] });
+    
+   }
 
   dodajDefinicja(f: NgForm) {
     let def: Definicja = new Definicja();
