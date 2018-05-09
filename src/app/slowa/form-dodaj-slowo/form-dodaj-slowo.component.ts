@@ -16,10 +16,11 @@ export class FormDodajSlowoComponent implements OnInit {
   
   constructor(private db: AngularFirestore, public slowoServe: SlowaService) {
   }
+  // new Date().toLocaleString()
   dodajSlowo(f: NgForm) {
     let slo: Slowo = new Slowo();
     slo.autor = "Ble Ble";
-    slo.data_dod = new Date().toLocaleString();
+    slo.data_dod = new Date();
     slo.dislikes = [];
     slo.likes = [];
     slo.slowo = f.value.slowo;

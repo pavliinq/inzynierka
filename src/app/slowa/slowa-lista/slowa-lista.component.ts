@@ -14,9 +14,19 @@ export class SlowaListaComponent implements OnInit {
   autor: string;
 
   constructor(private db: AngularFirestore, public slowoServe: SlowaService) {
-    this.slowoServe.getSlowa().subscribe(data => { this.slowa = data; });
+    this.slowoServe.getSlowa().subscribe(data => {
+          this.slowa = data.sort((a: Slowo, b: Slowo) => {
+            return  +new Date(b.data_dod) - +new Date(a.data_dod) ;
+        }
+      );
+
+    });
     this.autor = this.autorzy[Math.floor(Math.random() * this.autorzy.length)]
   }
+
+  //   getTime(date?: Date) {
+  //     return date != null ? date.getTime() : 0;
+  // }
 
   ngOnInit() {
   }
