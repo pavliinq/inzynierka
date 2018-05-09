@@ -1,5 +1,6 @@
 
 <div id="containerSlowa">
+
 <form ngForm #f="ngForm" (ngSubmit)="dodajSlowo(f)" style="margin: 20px">
   <!-- <div class="row"> -->
 
@@ -17,11 +18,7 @@
       <button class="btn btn-light" [disabled]="!f.form.valid">+</button>
 
       </div>
-      
-      
-    
-    
-
 </form>
-<app-slowa-lista ></app-slowa-lista>
+<input (keyup)="onKey($event)" placeholder="Szukaj">
+<app-slowa-lista  [values]="values"></app-slowa-lista>
 </div>

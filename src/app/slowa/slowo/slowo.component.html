@@ -1,6 +1,8 @@
+
 <div class="row"  >
   <div class="col-sm" [routerLink]="['/definicje', slowo.id] " >{{slowo.slowo}}</div>
   <button class="btn btn-outline-primary staleWymiary" (click)="dajLajka()">{{slowo.likes.length}} +</button>
   <button class="btn btn-outline-danger staleWymiary" (click)="dajDisLajka()"> {{slowo.dislikes.length}} -</button>
 </div>
+
 
