@@ -1,6 +1,6 @@
 
 
-<form ngForm #f="ngForm" (keyup.enter)="dodajDefinicja(f)" 
+<form ngForm #f="ngForm"  
 (ngSubmit)="dodajDefinicja(f)" style="margin: 20px; width:40%"  >
  
 
@@ -12,11 +12,14 @@
       class="form-control" 
       placeholder="Dodaj definicje"
       ngModel 
-      name="definicja" 
+      required ngModel name="definicja" 
+      minlength="3"
+      maxlength="1000"
       #definicja="ngModel" cols="1" rows="5" style="resize:none">
     </textarea>
+    
      
-    <button class="btn btn-light">Dodaj definicje</button>
+    <button class="btn btn-light" [disabled]="!f.form.valid">Dodaj definicje</button>
     </div>
    
 
