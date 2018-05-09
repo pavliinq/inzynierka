@@ -12,10 +12,12 @@
           </h1>
         <ul>
           <li><a href="">Strona główna</a></li>
-          <li><a href="">Pora na naukę</a></li>
-          <li><a href="">Przeglądaj słowa</a></li>
-          <li><a href="">Testownik</a></li>
-          <li><a href="" data-toggle="modal" data-target="#exampleModal">Zaloguj się</a></li>
+          <li>
+            <a href="">Pora na naukę</a>
+          </li>
+          <!-- <li><a href="">Przeglądaj słowa</a></li>
+          <li><a href="">Testownik</a></li> -->
+          <!-- <li><a href="" data-toggle="modal" data-target="#exampleModal">Zaloguj się</a></li> -->
         </ul>
         </nav>
       </div>
@@ -29,7 +31,7 @@
               <!-- <a routerLink="/dodajslowa" class="btn btn-outline-primary" role="button">Dodaj słowa</a>     					 -->
                <a routerLink="/przegladajslowa" class="btn btn-outline-primary" role="button">Lista słów</a>   					
               <!-- <a href="#" class="btn btn-outline-primary" role="button">Testownik</a> -->
-          <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#exampleModal">Zaloguj się</button>
+          <!-- <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#exampleModal">Zaloguj się</button> -->
          </div>
       </nav>
       
@@ -45,7 +47,7 @@
                  <div class="modal-body">
                     <div class="col-md-6 col-md-offset-3">
       
-      <form name="form" ng-submit="vm.login()" role="form">
+      <!-- <form name="form" ng-submit="vm.login()" role="form">
           <div class="form-group" ng-class="{ 'has-error': form.username.$dirty && form.username.$error.required }">
               <label for="username">Login</label>
               <input type="text" name="username" id="username" class="form-control" ng-model="vm.username" required />
@@ -60,7 +62,7 @@
               <button type="submit" ng-disabled="form.$invalid || vm.dataLoading" class="btn btn-primary">Zaloguj</button>
               <button type="submit"  class="btn btn-primary">Nie pamiętam hasła</button>
           </div>
-      </form>
+      </form> -->
   </div>
                 </div>
                  <div class="modal-footer">
@@ -80,7 +82,7 @@
           </button>
         </div>
         <div class="modal-body">
-            <form name="form" ng-submit="vm.register()" role="form">
+            <!-- <form name="form" ng-submit="vm.register()" role="form">
           <div class="form-group" ng-class="{ 'has-error': form.firstName.$dirty && form.firstName.$error.required }">
               <label for="username">Imię</label>
               <input type="text" name="firstName" id="firstName" class="form-control" ng-model="vm.user.firstName" required />
@@ -105,7 +107,7 @@
               <button type="submit" ng-disabled="form.$invalid || vm.dataLoading" class="btn btn-outline-primary">Zarejestruj się</button>
               
         </div>
-      </form>
+      </form> -->
         </div>
         
       </div>
