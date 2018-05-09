@@ -23,6 +23,8 @@ import { KeysPipePipe } from './definicje/shared/keys-pipe.pipe';
 import { Ng2OrderModule } from 'ng2-order-pipe';
 import { NavbarComponent } from './navbar/navbar.component';
 import { HomeComponent } from './home/home.component';
+import { RankingListaComponent } from './ranking/ranking-lista/ranking-lista.component';
+import { RankingService } from './ranking/shared/ranking.service';
 
 
 
@@ -37,7 +39,8 @@ import { HomeComponent } from './home/home.component';
     FormDodajDefinicjeComponent,
     KeysPipePipe,
     NavbarComponent,
-    HomeComponent
+    HomeComponent,
+    RankingListaComponent
   ],
   imports: [
     NgbModule.forRoot(),
@@ -55,7 +58,7 @@ import { HomeComponent } from './home/home.component';
   ]),
   Ng2OrderModule
   ],
-  providers: [SlowaService,DefinicjeService],
+  providers: [SlowaService, DefinicjeService, RankingService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
