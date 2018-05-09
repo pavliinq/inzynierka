@@ -43,8 +43,9 @@ export class DefinicjeListaComponent implements OnInit {
     //   })
     // });
     // this.slowo.subscribe(data => { this.slowa = data });
+    // this.sloServ.getSlowa().subscribe(data => {this.slowa = data.filter(c=> c.id == this.strona ) });
     
-    this.sloServ.getSlowa().subscribe(data => {this.slowa = data.filter(c=> c.id == this.strona ) })
+    // this.sloServ.getSlowa().subscribe(data => {this.slowa = data.filter(c=> c.id == this.strona ) });
   }
   
   ngOnInit() {

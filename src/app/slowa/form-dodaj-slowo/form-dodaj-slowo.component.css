@@ -1,4 +1,4 @@
-.form-control.ng-pristine.ng-valid.ng-touched
+.form-control.col-4.ng-invalid.ng-touched
 {
-    border: solid red;
+    border: solid 1px #fc4d4d;
 }

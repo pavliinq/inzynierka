@@ -1,0 +1,7 @@
+.form-control.ng-invalid.ng-touched
+{
+    border: solid 1px #fc4d4d;
+}
+#containerDefinicje{
+    margin: 20px;
+}
