@@ -9,7 +9,7 @@ import { Slowo } from '../shared/slowo.model';
   styleUrls: ['./slowa-lista.component.css']
 })
 export class SlowaListaComponent implements OnInit {
-  autorzy = ['mua', 'bleble', 'ann', 'me'];
+  autorzy = ['mua', 'bleble', 'ann', 'me','gdy','pada','deszczyk','mam','na','plecach','dreszczyk','kwiatek','smofee','smarfranek','kocyk','kotek','maupek','hustunia','swiatelka','maturaToBzdura','kartofel','grill','karkowka'];
   slowa: Slowo[];
   autor: string;
 
