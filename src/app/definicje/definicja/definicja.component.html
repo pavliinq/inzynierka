@@ -3,7 +3,17 @@
   
   <div class="col-sm" >{{definicja.definicja}}</div>
   <p class="lead" style="margin: 5px;" >{{definicja.sumlikes}}</p>
-
-  <button class="btn btn-outline-primary staleWymiary" (click)="dajLajka()" >+</button>
-  <button class="btn btn-outline-danger staleWymiary" (click)="dajDisLajka()">-</button>
+<ng-container *ngIf="ktoreikony === '3'">
+    <button class="btn btn-outline-primary staleWymiary" (click)="dajLajka()" >+</button>
+    <button class="btn btn-outline-danger staleWymiary" (click)="dajDisLajka()">-</button>
+</ng-container>
+<ng-container *ngIf="ktoreikony === '2'">
+    <button class="btn btn-outline-primary staleWymiary" style="background-color:grey"(click)="dajLajka()" >+</button>
+    <button class="btn btn-outline-danger staleWymiary" style="background-color:red" (click)="dajDisLajka()">-</button>
+</ng-container>
+<ng-container *ngIf="ktoreikony === '1'">
+    <button class="btn btn-outline-primary staleWymiary" style="background-color:blue"(click)="dajLajka()" >+</button>
+    <button class="btn btn-outline-danger staleWymiary" style="background-color:grey" (click)="dajDisLajka()">-</button>
+</ng-container>
+  
 </div>
