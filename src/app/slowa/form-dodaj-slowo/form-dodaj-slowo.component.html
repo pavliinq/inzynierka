@@ -15,10 +15,14 @@
       required minlength="2"
       #slowo="ngModel"
        >
+       
       <button class="btn btn-light" [disabled]="!f.form.valid">+</button>
 
       </div>
+    
 </form>
-<input (keyup)="onKey($event)" placeholder="Szukaj">
+<div class="form-group row">
+<input  class="form-control col-2" style="margin: 20px" (keyup)="onKey($event)" placeholder="Szukaj">
+</div>
 <app-slowa-lista  [values]="values"></app-slowa-lista>
 </div>
