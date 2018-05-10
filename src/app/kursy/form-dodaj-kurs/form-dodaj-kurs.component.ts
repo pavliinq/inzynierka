@@ -23,7 +23,7 @@ export class FormDodajKursComponent implements OnInit {
     kurs.prowadzący='Endzik'
     kurs.zapisani = [];
     
-    this.kursServe.setSlowo(kurs);
+    this.kursServe.setKurs(kurs);
     f.resetForm();
   }
 }

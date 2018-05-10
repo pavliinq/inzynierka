@@ -23,7 +23,7 @@ export class KursyService {
   }
 
 
-  getSlowa() {
+  getKurs() {
     let sloCollection = this.db.collection<Kurs[]>('/kursy');
     this.slowo = sloCollection.snapshotChanges().map(actions => {
       return actions.map(a => {
@@ -35,19 +35,19 @@ export class KursyService {
 
     return this.slowo;
   }
-  DeleteSlowo(idDokumentu) {
+  DeleteKurs(idDokumentu) {
     this.kursDocument = this.db.doc('/kursy/' + idDokumentu);
     this.kursDocument.delete();
   }
 
 
 
-  updateSlowo(kurs: Kurs, idDokumentu) {
+  updateKurs(kurs: Kurs, idDokumentu) {
     this.kursDocument = this.db.doc('/kursy/' + idDokumentu);
     this.kursDocument.update(kurs);
   }
 
-  setSlowo(turn: Kurs) {
+  setKurs(turn: Kurs) {
     this.kursCollection.add(JSON.parse(JSON.stringify(turn)));
   }
 
