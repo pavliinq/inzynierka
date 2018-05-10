@@ -1,3 +1,11 @@
-<p>
-  kursy-lista works!
-</p>
+<h1 class="display-4">Ostatnie:</h1>
+
+
+<ul class="list-group">
+  <ng-container *ngFor="let kur of kursy">
+  <app-kurs [kurs]="kur"></app-kurs>
+
+  </ng-container>
+
+
+</ul>

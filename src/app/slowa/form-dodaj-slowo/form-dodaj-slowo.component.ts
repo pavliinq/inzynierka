@@ -10,9 +10,10 @@ import { NgForm } from '@angular/forms';
   templateUrl: './form-dodaj-slowo.component.html',
   styleUrls: ['./form-dodaj-slowo.component.css']
 })
+
 export class FormDodajSlowoComponent implements OnInit{
   public values = '';
-
+  public url:string[] = window.location.href.split('/');
   onKey(event: any) { 
     this.values = event.target.value ;
   }
@@ -29,11 +30,12 @@ export class FormDodajSlowoComponent implements OnInit{
     slo.likes = [];
     slo.slowo = f.value.slowo;
     slo.sumaLike=0;
-    this.slowoServe.setSlowo(slo);
+    this.slowoServe.setSlowo(slo,this.url[4]);
     f.resetForm();
   }
 
   ngOnInit() {
+    console.log(this.url[4])
   }
  
 }

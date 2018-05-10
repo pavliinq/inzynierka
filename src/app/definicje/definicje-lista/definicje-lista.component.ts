@@ -17,6 +17,7 @@ import { SlowaService } from '../../slowa/shared/slowa.service';
 export class DefinicjeListaComponent implements OnInit {
   order: string = 'sumlikes'
   definicje: Definicja[];
+  url:string[] = window.location.href.split('/');
   // autorzy = ['mua', 'bleble', 'ann', 'me'];
   autorzy = ['mua', 'bleble', 'ann', 'me','gdy','pada','deszczyk','mam','na','plecach','dreszczyk','kwiatek','smofee','smarfranek','kocyk','kotek','maupek','hustunia','swiatelka','maturaToBzdura','kartofel','grill','karkowka'];  
   autor: string;
@@ -28,7 +29,7 @@ export class DefinicjeListaComponent implements OnInit {
   // slowo: Observable<Slowo[]>;
 
   constructor(private db: AngularFirestore, public definicjaServe: DefinicjeService,public sloServ:SlowaService) {
-    this.definicjaServe.getDefinicja(this.strona).subscribe(data => { this.definicje = data; })
+    this.definicjaServe.getDefinicja(this.strona,this.url[4]).subscribe(data => { this.definicje = data; })
 
 
     this.autor = this.autorzy[Math.floor(Math.random() * this.autorzy.length)]

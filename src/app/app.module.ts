@@ -61,9 +61,9 @@ import { KursyService } from './kursy/shared/kursy.service';
     ReactiveFormsModule,
     RouterModule.forRoot([
       {path:'',component: HomeComponent},
-      {path:'przegladajslowa',component: FormDodajSlowoComponent},
+      {path:'kursy/:kurs_id',component: FormDodajSlowoComponent},
       {path:'kursy',component: KursyComponent},
-      {path:'definicje/:def_id',component: FormDodajDefinicjeComponent},
+      {path:'kursy/:kurs_id/:slowo_id',component: FormDodajDefinicjeComponent},
     
   ]),
   Ng2OrderModule

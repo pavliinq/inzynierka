@@ -22,7 +22,7 @@ export class SlowoComponent implements OnInit {
   lajkii : number;
   dislajkii: number;
   ktoreikony:string;
-
+  url:string[] = window.location.href.split('/');
   constructor(private db: AngularFirestore, public slowoServe: SlowaService) {
     
   
@@ -44,7 +44,7 @@ export class SlowoComponent implements OnInit {
       this.slowo.likes.splice(index, 1);
       this.slowo.sumaLike=this.slowo.sumaLike.valueOf()-1;
     }
-    this.slowoServe.updateSlowo(this.slowo, this.slowo.id);
+    this.slowoServe.updateSlowo(this.slowo, this.slowo.id,this.url[4]);
   }
   
   dajDisLajka() {
@@ -63,7 +63,7 @@ export class SlowoComponent implements OnInit {
       this.slowo.dislikes.splice(index, 1);
       this.slowo.sumaLike=this.slowo.sumaLike.valueOf()+1;
     }
-    this.slowoServe.updateSlowo(this.slowo, this.slowo.id);
+    this.slowoServe.updateSlowo(this.slowo, this.slowo.id,this.url[4]);
   }
 
   przyciski(){

@@ -14,7 +14,7 @@ export class DefinicjaComponent implements OnInit {
   dislajkii: number;
   strona: string = window.location.href.substr(window.location.href.lastIndexOf('/') + 1);
   test:boolean=false;
-
+  url:string[] = window.location.href.split('/');
   ktoreikony:string;
   
  
@@ -88,7 +88,7 @@ export class DefinicjaComponent implements OnInit {
       this.definicja.sumlikes=this.definicja.sumlikes.valueOf()-1;
   
     }
-    this.definicjaServe.updateDefinicja(this.definicja, this.definicja.id,this.strona);
+    this.definicjaServe.updateDefinicja(this.definicja, this.definicja.id,this.strona,this.url[4]);
   }
   
   dajDisLajka() {
@@ -112,6 +112,6 @@ export class DefinicjaComponent implements OnInit {
       
 
     }
-    this.definicjaServe.updateDefinicja(this.definicja, this.definicja.id,this.strona);
+    this.definicjaServe.updateDefinicja(this.definicja, this.definicja.id,this.strona,this.url[4]);
   }
 }
