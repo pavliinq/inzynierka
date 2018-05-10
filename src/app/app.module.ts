@@ -25,6 +25,10 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { HomeComponent } from './home/home.component';
 import { RankingListaComponent } from './ranking/ranking-lista/ranking-lista.component';
 import { RankingService } from './ranking/shared/ranking.service';
+import { KursyComponent } from './kursy/kursy.component';
+import { FormDodajKursComponent } from './kursy/form-dodaj-kurs/form-dodaj-kurs.component';
+import { KursyListaComponent } from './kursy/kursy-lista/kursy-lista.component';
+import { KursComponent } from './kursy/kurs/kurs.component';
 
 
 
@@ -40,7 +44,11 @@ import { RankingService } from './ranking/shared/ranking.service';
     KeysPipePipe,
     NavbarComponent,
     HomeComponent,
-    RankingListaComponent
+    RankingListaComponent,
+    KursyComponent,
+    FormDodajKursComponent,
+    KursyListaComponent,
+    KursComponent
   ],
   imports: [
     NgbModule.forRoot(),
