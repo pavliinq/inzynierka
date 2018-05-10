@@ -64,6 +64,7 @@ import { KursyService } from './kursy/shared/kursy.service';
       {path:'kursy/:kurs_id',component: FormDodajSlowoComponent},
       {path:'kursy',component: KursyComponent},
       {path:'kursy/:kurs_id/:slowo_id',component: FormDodajDefinicjeComponent},
+      {path:'formularz',component: FormDodajKursComponent},
     
   ]),
   Ng2OrderModule
