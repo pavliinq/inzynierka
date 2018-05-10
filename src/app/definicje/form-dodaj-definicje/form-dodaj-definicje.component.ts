@@ -13,12 +13,12 @@ import { isEmpty } from '@firebase/util';
   styleUrls: ['./form-dodaj-definicje.component.css']
 })
 export class FormDodajDefinicjeComponent implements OnInit {
-
+  url:string[] = window.location.href.split('/');
   strona: string = window.location.href.substr(window.location.href.lastIndexOf('/') + 1);
   public slowa: Slowo;
   constructor(private db: AngularFirestore, public definicjaServe: DefinicjeService,public sloServ:SlowaService) {
 
-    this.sloServ.getSlowa().subscribe(data => {this.slowa = data.filter(c=> c.id == this.strona )[0] });
+    this.sloServ.getSlowa(this.url[4]).subscribe(data => {this.slowa = data.filter(c=> c.id == this.strona )[0] });
     
    }
 
@@ -30,11 +30,12 @@ export class FormDodajDefinicjeComponent implements OnInit {
       def.likes = [];
       def.sumlikes=0;
       def.definicja = f.value.definicja;
-      this.definicjaServe.setDefinicja(def,this.strona);
+      this.definicjaServe.setDefinicja(def,this.strona,this.url[4]);
       f.resetForm();
     }
   }
   ngOnInit() {
+
   }
 
 }

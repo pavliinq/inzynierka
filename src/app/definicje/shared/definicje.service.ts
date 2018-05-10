@@ -10,7 +10,7 @@ export class DefinicjeService {
   definicjaDocument: AngularFirestoreDocument<Definicja>;
   definicjaCollection: AngularFirestoreCollection<Definicja[]>;
   // definicja: Observable<Definicja[]>;
-  
+  definicja: Observable<Definicja[]>;
   constructor(public db: AngularFirestore) {
     // this.definicjaCollection = db.collection<Definicja[]>('/slowa').doc(current).collection('definicje');
     
@@ -18,26 +18,36 @@ export class DefinicjeService {
   }
 
   
-  getDefinicja(current:string) {
-    let defCollection = this.db.collection<Definicja[]>('/slowa').doc(current).collection('definicje');
-    let definicja:Observable<Definicja[]> = defCollection.snapshotChanges().map(actions => {
+  getDefinicja(current:string,url:string) {
+ 
+
+    this.definicjaCollection = this.db.collection<Definicja[]>('/kursy/'+url+'/slowa/'+current+'/definicje/');
+    
+     this.definicja = this.definicjaCollection.snapshotChanges().map(actions => {
       return actions.map(a => {
         const data = a.payload.doc.data() as Definicja;
         const id = a.payload.doc.id;
         return { id, ...data };
       })
     });
-    return definicja;
+    return this.definicja;
   }
 
-  updateDefinicja(def: Definicja, idDokumentu, current) {
-    this.definicjaDocument = this.db.doc('/slowa/' + current+'/definicje/'+idDokumentu);
+  updateDefinicja(def: Definicja, idDokumentu, current,url:string) {
+    
+    this.definicjaDocument = this.db.doc('/kursy/'+url+'/slowa/'+current+'/definicje/'+idDokumentu);
+    
     this.definicjaDocument.update(def);
   }
 
-  setDefinicja(turn: Definicja,current) {
-    this.db.collection<Definicja[]>('/slowa').doc(current).collection('definicje').add(JSON.parse(JSON.stringify(turn)));
+  setDefinicja(turn: Definicja,current,url:string) {
+    this.getDefinicja(current,url);
+    this.definicjaCollection.add(JSON.parse(JSON.stringify(turn)));
   }
-
+  deleteDefinicja(idDokumentu,current,url) {
+    this.definicjaDocument = this.db.doc('/kursy/'+url+'/slowa/'+current+'/definicje/'+idDokumentu);
+    this.definicjaDocument.delete();
+  }
+  
 
 }

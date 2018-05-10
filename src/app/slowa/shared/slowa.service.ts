@@ -12,22 +12,15 @@ export class SlowaService {
   slowoCollection: AngularFirestoreCollection<Slowo[]>;
   slowo: Observable<Slowo[]>;
   constructor(public db: AngularFirestore) {
-    this.slowoCollection = db.collection<Slowo[]>('/slowa');
-    // this.slowo = this.slowoCollection.snapshotChanges().map(actions => {
-    //   return actions.map(a => {
-    //     const data = a.payload.doc.data() as Slowo;
-    //     const id = a.payload.doc.id;
-    //     return { id, ...data };
-    //   })
-    // });
+    
 
 
   }
 
 
-  getSlowa() {
-    let sloCollection = this.db.collection<Slowo[]>('/slowa');
-    this.slowo = sloCollection.snapshotChanges().map(actions => {
+  getSlowa(url) {
+    this.slowoCollection = this.db.collection<Slowo[]>('/kursy/'+url+'/slowa/');
+    this.slowo = this.slowoCollection.snapshotChanges().map(actions => {
       return actions.map(a => {
         const data = a.payload.doc.data() as Slowo;
         const id = a.payload.doc.id;
@@ -37,19 +30,20 @@ export class SlowaService {
 
     return this.slowo;
   }
-  DeleteSlowo(idDokumentu) {
-    this.slowoDocument = this.db.doc('/slowa/' + idDokumentu);
+  DeleteSlowo(idDokumentu,url) {
+    this.slowoDocument = this.db.doc('/kursy/'+url+'/slowa/' + idDokumentu);
     this.slowoDocument.delete();
   }
 
 
 
-  updateSlowo(slo: Slowo, idDokumentu) {
-    this.slowoDocument = this.db.doc('/slowa/' + idDokumentu);
+  updateSlowo(slo: Slowo, idDokumentu,url) {
+    this.slowoDocument = this.db.doc('/kursy/'+url+'/slowa/' + idDokumentu);
     this.slowoDocument.update(slo);
   }
 
-  setSlowo(turn: Slowo) {
+  setSlowo(turn: Slowo,url:string) {
+    this.getSlowa(url);
     this.slowoCollection.add(JSON.parse(JSON.stringify(turn)));
   }
 

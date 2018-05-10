@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { AngularFirestore } from 'angularfire2/firestore';
+import { KursyService } from '../shared/kursy.service';
+import { Kurs } from '../shared/kurs.model';
 
 @Component({
   selector: 'app-kursy-lista',
@@ -7,9 +10,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class KursyListaComponent implements OnInit {
 
-  constructor() { }
-
+  strona: string = window.location.href.substr(window.location.href.lastIndexOf('/') + 1);
   ngOnInit() {
+    
+    
+  }
+  kursy: Kurs[];
+  autor: string;
+  
+ 
+  constructor(private db: AngularFirestore, public kursServe: KursyService) {
+    this.kursServe.getKurs().subscribe(data => { this.kursy = data; })
+
+    }
   }
 
-}
+ 
+
+
