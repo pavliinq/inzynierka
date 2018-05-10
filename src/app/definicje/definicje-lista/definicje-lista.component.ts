@@ -33,7 +33,7 @@ export class DefinicjeListaComponent implements OnInit {
 
 
     this.autor = this.autorzy[Math.floor(Math.random() * this.autorzy.length)]
-
+   
     // this.slowoCollection = db.collection<Slowo[]>('/slowa',ref => {return ref.where('id','==',this.strona)});
     // this.slowo = this.slowoCollection.snapshotChanges().map(actions => {
     //   return actions.map(a => {
@@ -52,5 +52,6 @@ export class DefinicjeListaComponent implements OnInit {
   
   ngOnInit() {
   }
+  
 
 }

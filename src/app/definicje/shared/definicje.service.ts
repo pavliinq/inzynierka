@@ -44,6 +44,10 @@ export class DefinicjeService {
     this.getDefinicja(current,url);
     this.definicjaCollection.add(JSON.parse(JSON.stringify(turn)));
   }
-
+  deleteDefinicja(idDokumentu,current,url) {
+    this.definicjaDocument = this.db.doc('/kursy/'+url+'/slowa/'+current+'/definicje/'+idDokumentu);
+    this.definicjaDocument.delete();
+  }
+  
 
 }

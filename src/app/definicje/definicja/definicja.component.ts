@@ -28,6 +28,7 @@ export class DefinicjaComponent implements OnInit {
   ngOnInit() {
     this.lajki()
     this.przyciski()
+    this.delete()
   }
   
 
@@ -113,5 +114,13 @@ export class DefinicjaComponent implements OnInit {
 
     }
     this.definicjaServe.updateDefinicja(this.definicja, this.definicja.id,this.strona,this.url[4]);
+  }
+  delete(){
+    if(this.definicja.sumlikes < -9){
+      
+      this.definicjaServe.deleteDefinicja(this.definicja.id,this.url[5],this.url[4])
+    }
+    
+    
   }
 }

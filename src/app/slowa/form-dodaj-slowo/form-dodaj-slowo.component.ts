@@ -35,7 +35,7 @@ export class FormDodajSlowoComponent implements OnInit{
   }
 
   ngOnInit() {
-    console.log(this.url[4])
+  
   }
  
 }

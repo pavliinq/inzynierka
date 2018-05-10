@@ -35,7 +35,7 @@ export class FormDodajDefinicjeComponent implements OnInit {
     }
   }
   ngOnInit() {
-    console.log(this.url)
+
   }
 
 }
