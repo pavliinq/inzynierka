@@ -29,6 +29,7 @@ import { KursyComponent } from './kursy/kursy.component';
 import { FormDodajKursComponent } from './kursy/form-dodaj-kurs/form-dodaj-kurs.component';
 import { KursyListaComponent } from './kursy/kursy-lista/kursy-lista.component';
 import { KursComponent } from './kursy/kurs/kurs.component';
+import { KursyService } from './kursy/shared/kursy.service';
 
 
 
@@ -61,12 +62,13 @@ import { KursComponent } from './kursy/kurs/kurs.component';
     RouterModule.forRoot([
       {path:'',component: HomeComponent},
       {path:'przegladajslowa',component: FormDodajSlowoComponent},
+      {path:'kursy',component: KursyComponent},
       {path:'definicje/:def_id',component: FormDodajDefinicjeComponent},
     
   ]),
   Ng2OrderModule
   ],
-  providers: [SlowaService, DefinicjeService, RankingService],
+  providers: [SlowaService, DefinicjeService, RankingService,KursyService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

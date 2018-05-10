@@ -1,3 +1,20 @@
-<p>
-  form-dodaj-kurs works!
-</p>
+<form ngForm #f="ngForm" (ngSubmit)="dodajKurs(f)" style="margin: 20px">
+    <!-- <div class="row"> -->
+  
+      <div class="form-group row">
+        <!-- <label for="slowo">Wprowadź słowo</label> -->
+        <input 
+        id="slowo" 
+        type="text" 
+        class="form-control col-4" 
+        placeholder="Wprowadź słowo"
+        ngModel name="slowo" 
+        required minlength="2"
+        #slowo="ngModel"
+         >
+         
+        <button class="btn btn-light" [disabled]="!f.form.valid">+</button>
+  
+        </div>
+      
+  </form>
