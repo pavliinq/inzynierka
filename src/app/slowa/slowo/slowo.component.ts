@@ -18,7 +18,10 @@ export class SlowoComponent implements OnInit {
 
 
   public dlugosc:number;
-  
+  test:boolean=false;
+  lajkii : number;
+  dislajkii: number;
+  ktoreikony:string;
 
   constructor(private db: AngularFirestore, public slowoServe: SlowaService) {
     
@@ -28,33 +31,81 @@ export class SlowoComponent implements OnInit {
     
     if (this.slowo.likes.indexOf(this.autor) == -1) {
       this.slowo.likes.push(this.autor);
+      if (this.slowo.dislikes.indexOf(this.autor) == -1) {
+        this.slowo.sumaLike=this.slowo.sumaLike.valueOf()+1;
+      }else{
+        let index = this.slowo.dislikes.indexOf(this.autor);
+        this.slowo.dislikes.splice(index, 1);
+        this.slowo.sumaLike=this.slowo.sumaLike.valueOf()+2;
+      }
     }
     else {
       let index = this.slowo.likes.indexOf(this.autor);
       this.slowo.likes.splice(index, 1);
+      this.slowo.sumaLike=this.slowo.sumaLike.valueOf()-1;
     }
     this.slowoServe.updateSlowo(this.slowo, this.slowo.id);
   }
-
-
-  
   
   dajDisLajka() {
     if (this.slowo.dislikes.indexOf(this.autor) == -1) {
       this.slowo.dislikes.push(this.autor);
+      if (this.slowo.likes.indexOf(this.autor) == -1) {
+        this.slowo.sumaLike=this.slowo.sumaLike.valueOf()-1;
+      }else{
+        let index = this.slowo.likes.indexOf(this.autor);
+        this.slowo.likes.splice(index, 1);
+        this.slowo.sumaLike=this.slowo.sumaLike.valueOf()-2;
+      }
     }
     else {
       let index = this.slowo.dislikes.indexOf(this.autor);
       this.slowo.dislikes.splice(index, 1);
+      this.slowo.sumaLike=this.slowo.sumaLike.valueOf()+1;
     }
     this.slowoServe.updateSlowo(this.slowo, this.slowo.id);
   }
 
+  przyciski(){
+    while(this.test != true){
+      for (let lajki of this.slowo.likes) {
+        if(lajki == this.autor) {
+            this.ktoreikony='1'
+            this.test=true;
+            break;
+          }
+    }
+    for (let dislajki of this.slowo.dislikes) {
+      if(dislajki == this.autor) {
+        this.ktoreikony='2'
+        this.test=true;
+            break;
+      }
+   
+    }
+    if((this.ktoreikony != '1' ) && (this.ktoreikony != '2')){
+      this.ktoreikony='3'
+      this.test=true;
+      break;
+    }
+    
+  }
+}
+lajki(){
+    
+  this.lajkii =this.slowo.likes.length;
+  this.dislajkii=this.slowo.dislikes.length;
+  
+  
+  // console.log(this.definicja.sumlikes.valueOf())
+  
+} 
 
   
 
   ngOnInit() {
-    
+    this.lajki()
+    this.przyciski()
     
   }
 
