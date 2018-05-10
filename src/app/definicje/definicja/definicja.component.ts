@@ -15,7 +15,11 @@ export class DefinicjaComponent implements OnInit {
   strona: string = window.location.href.substr(window.location.href.lastIndexOf('/') + 1);
   test:boolean=false;
 
+<<<<<<< HEAD
    ktoreikony:string;
+=======
+  ktoreikony:string;
+>>>>>>> 001868c30cc34c38bae6464f5425cbb8a8da8ff0
   
  
   

@@ -28,6 +28,7 @@ export class FormDodajSlowoComponent implements OnInit{
     slo.dislikes = [];
     slo.likes = [];
     slo.slowo = f.value.slowo;
+    slo.sumaLike=0;
     this.slowoServe.setSlowo(slo);
     f.resetForm();
   }
