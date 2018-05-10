@@ -35,6 +35,9 @@ export class SlowoComponent implements OnInit {
     }
     this.slowoServe.updateSlowo(this.slowo, this.slowo.id);
   }
+
+
+  
   
   dajDisLajka() {
     if (this.slowo.dislikes.indexOf(this.autor) == -1) {
