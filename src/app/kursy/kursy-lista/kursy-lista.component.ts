@@ -14,7 +14,7 @@ export class KursyListaComponent implements OnInit {
 
   onKey(event: any) { 
     this.values = event.target.value ;
-    console.log(this.values);
+    // console.log(this.values);
   }
   ngOnInit() {
     
