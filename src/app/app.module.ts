@@ -30,6 +30,7 @@ import { FormDodajKursComponent } from './kursy/form-dodaj-kurs/form-dodaj-kurs.
 import { KursyListaComponent } from './kursy/kursy-lista/kursy-lista.component';
 import { KursComponent } from './kursy/kurs/kurs.component';
 import { KursyService } from './kursy/shared/kursy.service';
+import { FormZapiszSieComponent } from './kursy/form-zapisz-sie/form-zapisz-sie.component';
 
 
 
@@ -49,7 +50,8 @@ import { KursyService } from './kursy/shared/kursy.service';
     KursyComponent,
     FormDodajKursComponent,
     KursyListaComponent,
-    KursComponent
+    KursComponent,
+    FormZapiszSieComponent
   ],
   imports: [
     NgbModule.forRoot(),

@@ -13,9 +13,9 @@
       type="text" 
       class="form-control col-4" 
       placeholder="Wprowadź słowo"
-      ngModel name="slowo" 
+      ngModel name="slowo"  #slowo="ngModel"
       required minlength="2"
-      #slowo="ngModel"
+      
        >
        
       <button class="btn btn-light" [disabled]="!f.form.valid">+</button>
