@@ -1,4 +1,4 @@
-<!-- <form ngForm #f="ngForm" (ngSubmit)="dodajKurs(f)" style="margin: 20px">
+<!-- 
   
       <div class="form-group row">
         <input 
@@ -16,23 +16,32 @@
         </div>
       
   </form> -->
+  <form ngForm #f="ngForm" (ngSubmit)="dodajKurs(f)" style="margin: 20px">
 <h1 style="margin: 50px">Stwórz Kurs</h1>
  
     <div class="card-body "style="margin: 50px">
       <div class="row">
         <div class="form-group col-lg-6">
-            <label for="nazwaKurs" class="col-form-label" style="font-size:120%">Nazwa Kursu:</label>
-            <input class="form-control" id="nazwaKurs" placeholder="Wprowadź nazwę kursu" >
+            <label 
+            for="nazwaKurs" 
+            class="col-form-label" 
+            style="font-size:120%" >Nazwa Kursu:</label>
+            <input class="form-control" id="nazwaKurs" placeholder="Wprowadź nazwę kursu" requried ngModel name ="nazwaKurs" 
+            #nazwaKurs ="ngModel">
+            <div class="alert alert-danger" *ngIf = "nazwaKurs.touched && nazwaKurs.valid">Musisz podać nazwę kursu</div>
 
             <label for="rokKurs" class="col-form-label" style="font-size:120%">Rok Akademicki:</label>
-            <input class="form-control" id="rokKurs" placeholder="Rok Akademicki...">
+            <input class="form-control" id="rokKurs" placeholder="Rok Akademicki..."ngModel name="rokKurs" #rokKurs="ngModel">
             
             
             <label for="prowadzacyKurs" class="col-form-label" style="font-size:120%">Prowadzący</label>
-            <input class="form-control" id="prowadzacyKurs" placeholder="Kto prowadzi kurs..." >
+            <input class="form-control" id="prowadzacyKurs" placeholder="Kto prowadzi kurs..." requried ngModel name ="prowadzacyKurs" 
+            #prowadzacyKurs ="ngModel" >
+            <div class="alert alert-danger" *ngIf = "prowadzacyKurs.touched && prowadzacyKurs.valid">Wprowadź Imię i Nazwisko prowadzącego</div>
+
 
             <label for="hasloKurs"  class="col-form-label" style="font-size:120%">Hasło Dostępu</label>
-            <input class="form-control" id="hasloKurs" placeholder="Podaj hasło dostępu do kursu" >
+            <input class="form-control" id="hasloKurs" placeholder="Podaj hasło dostępu do kursu" ngModel name="hasloKurs" #hasloKurs="ngModel">
 
 
           </div>
@@ -45,7 +54,9 @@
 
          
       </div>
-      <button class="btn btn-primary" routerLink="/kursy">Dodaj Kurs</button>
+      <button class="btn btn-primary"  (click)="dodajKurs(f)" type="submit" routerLink="/kursy"> Kurs</button>
     </div>
+  </form>
+  {{f.value|json}}
 
-
+ 
