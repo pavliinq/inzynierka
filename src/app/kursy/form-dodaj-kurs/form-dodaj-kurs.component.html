@@ -37,10 +37,16 @@
               <div *ngIf = "rokKurs.errors.pattern"> Rok musi zawierać odpowiedni format</div>
             </div>
             
-            <label for="prowadzacyKurs" class="col-form-label" style="font-size:120%">Prowadzący</label>
-            <input class="form-control" id="prowadzacyKurs" placeholder="Kto prowadzi kurs..." requried ngModel name ="prowadzacyKurs" required type="text" class="form-control"
-            #prowadzacyKurs ="ngModel" >
-            <div class="alert alert-danger" *ngIf = "prowadzacyKurs.touched && !prowadzacyKurs.valid">Wprowadź Imię i Nazwisko prowadzącego</div>
+            <label for="prowadzacyImie" class="col-form-label" style="font-size:120%">Imie prowadzacego</label>
+            <input class="form-control" id="prowadzacyImie" placeholder="Imię prowadzacego" requried ngModel name ="prowadzacyImie" required type="text" class="form-control"
+            #prowadzacyImie ="ngModel" >
+            <div class="alert alert-danger" *ngIf = "prowadzacyImie.touched && !prowadzacyImie.valid">Wprowadź Imię prowadzącego</div>
+
+
+            <label for="prowadzacyNazwisko" class="col-form-label" style="font-size:120%"> Nazwisko prowadzącego</label>
+            <input class="form-control" id="prowadzacyNazwisko" placeholder="Nazwsiko prowadzacego" requried ngModel name ="prowadzacyNazwisko" required type="text" class="form-control"
+            #prowadzacyNazwisko ="ngModel" >
+            <div class="alert alert-danger" *ngIf = "prowadzacyNazwisko.touched && !prowadzacyNazwisko.valid">Wprowadź Nazwisko prowadzącego</div>
 
 
             <label for="hasloKurs"  class="col-form-label" style="font-size:120%">Hasło Dostępu</label>
