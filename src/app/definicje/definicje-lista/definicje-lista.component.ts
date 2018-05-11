@@ -24,9 +24,7 @@ export class DefinicjeListaComponent implements OnInit {
   strona: string = window.location.href.substr(window.location.href.lastIndexOf('/') + 1);
   public slowa: Slowo[];
 
-  // slowoDocument: AngularFirestoreDocument<Slowo>;
-  // slowoCollection: AngularFirestoreCollection<Slowo[]>;
-  // slowo: Observable<Slowo[]>;
+
 
   constructor(private db: AngularFirestore, public definicjaServe: DefinicjeService,public sloServ:SlowaService) {
     this.definicjaServe.getDefinicja(this.strona,this.url[4]).subscribe(data => { this.definicje = data; })
@@ -34,20 +32,6 @@ export class DefinicjeListaComponent implements OnInit {
 
     this.autor = this.autorzy[Math.floor(Math.random() * this.autorzy.length)]
    
-    // this.slowoCollection = db.collection<Slowo[]>('/slowa',ref => {return ref.where('id','==',this.strona)});
-    // this.slowo = this.slowoCollection.snapshotChanges().map(actions => {
-    //   return actions.map(a => {
-    //     const data = a.payload.doc.data() as Slowo;
-    //     const id = a.payload.doc.id;
-        
-    //     return {id,...data };
-        
-    //   })
-    // });
-    // this.slowo.subscribe(data => { this.slowa = data });
-    // this.sloServ.getSlowa().subscribe(data => {this.slowa = data.filter(c=> c.id == this.strona ) });
-    
-    // this.sloServ.getSlowa().subscribe(data => {this.slowa = data.filter(c=> c.id == this.strona ) });
   }
   
   ngOnInit() {
