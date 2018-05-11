@@ -26,18 +26,18 @@
             for="nazwaKurs" 
             class="col-form-label" 
             style="font-size:120%" >Nazwa Kursu:</label>
-            <input class="form-control" id="nazwaKurs" placeholder="Wprowadź nazwę kursu" requried ngModel name ="nazwaKurs" 
+            <input class="form-control" id="nazwaKurs" placeholder="Wprowadź nazwę kursu" requried ngModel name ="nazwaKurs" required type="text" class="form-control"
             #nazwaKurs ="ngModel">
-            <div class="alert alert-danger" *ngIf = "nazwaKurs.touched && nazwaKurs.valid">Musisz podać nazwę kursu</div>
+            <div class="alert alert-danger" *ngIf = "nazwaKurs.touched && !nazwaKurs.valid">Musisz podać nazwę kursu</div>
 
             <label for="rokKurs" class="col-form-label" style="font-size:120%">Rok Akademicki:</label>
-            <input class="form-control" id="rokKurs" placeholder="Rok Akademicki..."ngModel name="rokKurs" #rokKurs="ngModel">
+            <input class="form-control" id="rokKurs" placeholder="Rok Akademicki..." ngModel name="rokKurs" #rokKurs="ngModel">
             
             
             <label for="prowadzacyKurs" class="col-form-label" style="font-size:120%">Prowadzący</label>
-            <input class="form-control" id="prowadzacyKurs" placeholder="Kto prowadzi kurs..." requried ngModel name ="prowadzacyKurs" 
+            <input class="form-control" id="prowadzacyKurs" placeholder="Kto prowadzi kurs..." requried ngModel name ="prowadzacyKurs" required type="text" class="form-control"
             #prowadzacyKurs ="ngModel" >
-            <div class="alert alert-danger" *ngIf = "prowadzacyKurs.touched && prowadzacyKurs.valid">Wprowadź Imię i Nazwisko prowadzącego</div>
+            <div class="alert alert-danger" *ngIf = "prowadzacyKurs.touched && !prowadzacyKurs.valid">Wprowadź Imię i Nazwisko prowadzącego</div>
 
 
             <label for="hasloKurs"  class="col-form-label" style="font-size:120%">Hasło Dostępu</label>
