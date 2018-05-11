@@ -1,8 +1,13 @@
-<button type="button" class="btn btn-primary" [routerLink]="['/formularz']">Dodaj Kurs</button>
+<div class="buttons">
+  <a class="button" [routerLink]="['/formularz']" title="Dodaj kurs">Dodaj Kurs</a>
+  <input class="szukaj" (keyup)="onKey($event)" placeholder="Szukaj" >
 <!-- <button type="button" class="btn btn-primary" [routerLink]="['/zapiszSie']">Zapisz się do kursu</button> -->
-<h1 class="display-4">Ostatnie:</h1>
+</div>
+    <h1 class="display-4">Ostatnie:</h1>
 
-<input class="form-control col-sm-3" (keyup)="onKey($event)" placeholder="Szukaj" >
+
+
+
 
 <ul class="list-group "> 
   <ng-container *ngFor="let kur of kursy">
