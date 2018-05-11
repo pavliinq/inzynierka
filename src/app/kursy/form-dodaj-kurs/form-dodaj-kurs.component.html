@@ -50,7 +50,9 @@
 
 
             <label for="hasloKurs"  class="col-form-label" style="font-size:120%">Hasło Dostępu</label>
-            <input class="form-control" id="hasloKurs" placeholder="Podaj hasło dostępu do kursu" ngModel name="hasloKurs" #hasloKurs="ngModel">
+            <input type ="text" class="form-control" id="hasloKurs" placeholder="Podaj hasło dostępu do kursu" ngModel name="hasloKurs" #hasloKurs="ngModel">
+        
+
 
 
           </div>
@@ -63,7 +65,7 @@
 
          
       </div>
-      <button class="btn btn-primary"  (click)="dodajKurs(f)" type="submit" routerLink="/kursy"> Kurs</button>
+      <button class="btn btn-primary" [disabled]="!f.form.valid" (click)="dodajKurs(f)" type="submit" routerLink="/kursy"> Stworz Kurs</button>
     </div>
   </form>
   <!-- {{f.value|json}} -->
