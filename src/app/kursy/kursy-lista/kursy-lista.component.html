@@ -1,9 +1,12 @@
 <button type="button" class="btn btn-primary" [routerLink]="['/formularz']">Dodaj Kurs</button>
+<!-- <button type="button" class="btn btn-primary" [routerLink]="['/zapiszSie']">Zapisz się do kursu</button> -->
 <h1 class="display-4">Ostatnie:</h1>
 
 
 <ul class="list-group">
+  
   <ng-container *ngFor="let kur of kursy">
+      
   <app-kurs [kurs]="kur"></app-kurs>
 
   </ng-container>

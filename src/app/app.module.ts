@@ -67,6 +67,7 @@ import { FormZapiszSieComponent } from './kursy/form-zapisz-sie/form-zapisz-sie.
       {path:'kursy',component: KursyComponent},
       {path:'kursy/:kurs_id/:slowo_id',component: FormDodajDefinicjeComponent},
       {path:'formularz',component: FormDodajKursComponent},
+      {path: 'zapiszSie',component:FormZapiszSieComponent},
     
   ]),
   Ng2OrderModule
