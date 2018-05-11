@@ -18,10 +18,14 @@ export class FormDodajKursComponent implements OnInit {
 
   dodajKurs(f: NgForm) {
     let kurs: Kurs = new Kurs();
-    kurs.nazwa = f.value.slowo ;
+    kurs.nazwa = f.value.nazwaKurs ;
     kurs.data_utworzenia = new Date();
-    kurs.prowadzący='Endzik'
+    kurs.prowadzący= f.value.prowadzacyKurs;
     kurs.zapisani = [];
+    kurs.rokAkademicki = f.value.rokKurs;
+    kurs.haslo = f.value.hasloKurs;
+
+
     
     this.kursServe.setKurs(kurs);
     f.resetForm();
