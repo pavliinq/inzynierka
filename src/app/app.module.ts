@@ -25,6 +25,13 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { HomeComponent } from './home/home.component';
 import { RankingListaComponent } from './ranking/ranking-lista/ranking-lista.component';
 import { RankingService } from './ranking/shared/ranking.service';
+import { KursyComponent } from './kursy/kursy.component';
+import { FormDodajKursComponent } from './kursy/form-dodaj-kurs/form-dodaj-kurs.component';
+import { KursyListaComponent } from './kursy/kursy-lista/kursy-lista.component';
+import { KursComponent } from './kursy/kurs/kurs.component';
+import { KursyService } from './kursy/shared/kursy.service';
+import { FormZapiszSieComponent } from './kursy/form-zapisz-sie/form-zapisz-sie.component';
+import { MojeKursyListaComponent } from './kursy/moje-kursy-lista/moje-kursy-lista.component';
 
 
 
@@ -40,7 +47,13 @@ import { RankingService } from './ranking/shared/ranking.service';
     KeysPipePipe,
     NavbarComponent,
     HomeComponent,
-    RankingListaComponent
+    RankingListaComponent,
+    KursyComponent,
+    FormDodajKursComponent,
+    KursyListaComponent,
+    KursComponent,
+    FormZapiszSieComponent,
+    MojeKursyListaComponent
   ],
   imports: [
     NgbModule.forRoot(),
@@ -52,13 +65,17 @@ import { RankingService } from './ranking/shared/ranking.service';
     ReactiveFormsModule,
     RouterModule.forRoot([
       {path:'',component: HomeComponent},
-      {path:'przegladajslowa',component: FormDodajSlowoComponent},
-      {path:'definicje/:def_id',component: FormDodajDefinicjeComponent},
+      {path:'kursy/:kurs_id',component: FormDodajSlowoComponent},
+      {path:'kursy',component: KursyComponent},
+      {path:'mojekursy',component: MojeKursyListaComponent},      
+      {path:'kursy/:kurs_id/:slowo_id',component: FormDodajDefinicjeComponent},
+      {path:'formularz',component: FormDodajKursComponent},
+      {path: 'zapiszSie/:kurs_id',component:FormZapiszSieComponent},
     
   ]),
   Ng2OrderModule
   ],
-  providers: [SlowaService, DefinicjeService, RankingService],
+  providers: [SlowaService, DefinicjeService, RankingService,KursyService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

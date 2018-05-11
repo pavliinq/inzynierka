@@ -1,5 +1,12 @@
 
-<div id="containerSlowa">
+  <!-- dropdown kursy -->
+
+  <div id="containerSlowa">
+    <h1 class="display-4" >
+      <ng-container *ngIf="kurs">
+        {{kurs.nazwa}}
+      </ng-container>
+    </h1>
 
 <form ngForm #f="ngForm" (ngSubmit)="dodajSlowo(f)" style="margin: 20px">
   <!-- <div class="row"> -->
@@ -11,9 +18,8 @@
       type="text" 
       class="form-control col-4" 
       placeholder="Wprowadź słowo"
-      ngModel name="slowo" 
+      ngModel name="slowo"  #slowo="ngModel"
       required minlength="2"
-      #slowo="ngModel"
        >
        
       <button class="btn btn-light" [disabled]="!f.form.valid">+</button>
@@ -21,8 +27,8 @@
       </div>
     
 </form>
-<div class="form-group row">
-<input  class="form-control col-2" style="margin: 20px" (keyup)="onKey($event)" placeholder="Szukaj">
-</div>
-<app-slowa-lista  [values]="values"></app-slowa-lista>
+    <div class="form-group row">
+      <input  class="form-control col-2" style="margin: 20px" (keyup)="onKey($event)" placeholder="Szukaj">
+    </div>
+  <app-slowa-lista  [values]="values"></app-slowa-lista>
 </div>

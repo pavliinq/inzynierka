@@ -1,0 +1,73 @@
+<!-- 
+  
+      <div class="form-group row">
+        <input 
+        id="slowo" 
+        type="text" 
+        class="form-control col-4" 
+        placeholder="Wprowadź kurs"
+        ngModel name="slowo" 
+        required minlength="2"
+        #slowo="ngModel"
+         >
+         
+        <button class="btn btn-light" [disabled]="!f.form.valid">+</button>
+  
+        </div>
+      
+  </form> -->
+  <form ngForm #f="ngForm" (ngSubmit)="dodajKurs(f)" style="margin: 20px">
+<h1 style="margin: 50px">Stwórz Kurs</h1>
+ 
+    <div class="card-body "style="margin: 50px">
+      <div class="row">
+        <div class="form-group col-lg-6">
+            <label 
+            for="nazwaKurs" 
+            class="col-form-label" 
+            style="font-size:120%" >Nazwa Kursu:</label>
+            <input class="form-control" id="nazwaKurs" placeholder="Wprowadź nazwę kursu" requried ngModel name ="nazwaKurs" required type="text" class="form-control"
+            #nazwaKurs ="ngModel">
+            <div class="alert alert-danger" *ngIf = "nazwaKurs.touched && !nazwaKurs.valid">Musisz podać nazwę kursu</div>
+
+            <label for="rokKurs" class="col-form-label" style="font-size:120%">Rok Akademicki:</label>
+            <input class="form-control" id="rokKurs" placeholder="2017/2018" requried ngModel name="rokKurs" required type="text" pattern ="^([0-9]{4})[\/\-]([0-9]{4})$" class="form-control" #rokKurs="ngModel">
+            <div class="alert alert-danger" *ngIf = "rokKurs.touched && !rokKurs.valid">
+              <div *ngIf = "rokKurs.errors.required"> Rok Akademicki jest wymagany</div>
+              <div *ngIf = "rokKurs.errors.pattern"> Rok musi zawierać odpowiedni format</div>
+            </div>
+            
+            <label for="prowadzacyImie" class="col-form-label" style="font-size:120%">Imie prowadzacego</label>
+            <input class="form-control" id="prowadzacyImie" placeholder="Imię prowadzacego" requried ngModel name ="prowadzacyImie" required type="text" class="form-control"
+            #prowadzacyImie ="ngModel" >
+            <div class="alert alert-danger" *ngIf = "prowadzacyImie.touched && !prowadzacyImie.valid">Wprowadź Imię prowadzącego</div>
+
+
+            <label for="prowadzacyNazwisko" class="col-form-label" style="font-size:120%"> Nazwisko prowadzącego</label>
+            <input class="form-control" id="prowadzacyNazwisko" placeholder="Nazwsiko prowadzacego" requried ngModel name ="prowadzacyNazwisko" required type="text" class="form-control"
+            #prowadzacyNazwisko ="ngModel" >
+            <div class="alert alert-danger" *ngIf = "prowadzacyNazwisko.touched && !prowadzacyNazwisko.valid">Wprowadź Nazwisko prowadzącego</div>
+
+
+            <label for="hasloKurs"  class="col-form-label" style="font-size:120%">Hasło Dostępu</label>
+            <input type ="text" class="form-control" id="hasloKurs" placeholder="Podaj hasło dostępu do kursu" ngModel name="hasloKurs" #hasloKurs="ngModel">
+        
+
+
+
+          </div>
+
+         
+
+
+
+
+
+         
+      </div>
+      <button class="btn btn-primary" [disabled]="!f.form.valid" (click)="dodajKurs(f)" type="submit" routerLink="/kursy"> Stworz Kurs</button>
+    </div>
+  </form>
+  <!-- {{f.value|json}} -->
+
+ 

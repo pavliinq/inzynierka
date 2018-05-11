@@ -5,7 +5,7 @@
   <button class="btn btn-outline-danger staleWymiary" (click)="dajDisLajka()"> {{slowo.dislikes.length}} -</button>
 </div> -->
 <div class="row" >
-  <div class="col-sm" [routerLink]="['/definicje', slowo.id] ">{{slowo.slowo}}</div>
+  <div class="col-sm" [routerLink]="['/kursy/',url[4], slowo.id] ">{{slowo.slowo}}</div>
   
 <ng-container *ngIf="ktoreikony === '3'">
     
