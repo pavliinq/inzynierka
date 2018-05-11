@@ -21,15 +21,23 @@
     <div class="card-body "style="margin: 50px">
       <div class="row">
         <div class="form-group col-lg-6">
-            <label for="nazwaKurs" class="col-form-label" style="font-size:120%">Nazwa Kursu:</label>
-            <input class="form-control" id="nazwaKurs" placeholder="Wprowadź nazwę kursu" >
+            <label 
+            for="nazwaKurs" 
+            class="col-form-label" 
+            style="font-size:120%" >Nazwa Kursu:</label>
+            <input class="form-control" id="nazwaKurs" placeholder="Wprowadź nazwę kursu" requried ngModel name ="nazwaKurs" 
+            #nazwaKurs ="ngModel">
+            <div class="alert alert-danger" *ngIf = "nazwaKurs.touched && nazwaKurs.valid">Musisz podać nazwę kursu</div>
 
             <label for="rokKurs" class="col-form-label" style="font-size:120%">Rok Akademicki:</label>
             <input class="form-control" id="rokKurs" placeholder="Rok Akademicki...">
             
             
             <label for="prowadzacyKurs" class="col-form-label" style="font-size:120%">Prowadzący</label>
-            <input class="form-control" id="prowadzacyKurs" placeholder="Kto prowadzi kurs..." >
+            <input class="form-control" id="prowadzacyKurs" placeholder="Kto prowadzi kurs..." requried ngModel name ="prowadzacyKurs" 
+            #prowadzacyKurs ="ngModel" >
+            <div class="alert alert-danger" *ngIf = "prowadzacyKurs.touched && prowadzacyKurs.valid">Wprowadź Imię i Nazwisko prowadzącego</div>
+
 
             <label for="hasloKurs"  class="col-form-label" style="font-size:120%">Hasło Dostępu</label>
             <input class="form-control" id="hasloKurs" placeholder="Podaj hasło dostępu do kursu" >
