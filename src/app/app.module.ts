@@ -67,6 +67,7 @@ import { MojeKursyListaComponent } from './kursy/moje-kursy-lista/moje-kursy-lis
       {path:'',component: HomeComponent},
       {path:'kursy/:kurs_id',component: FormDodajSlowoComponent},
       {path:'kursy',component: KursyComponent},
+      {path:'mojekursy',component: MojeKursyListaComponent},      
       {path:'kursy/:kurs_id/:slowo_id',component: FormDodajDefinicjeComponent},
       {path:'formularz',component: FormDodajKursComponent},
       {path: 'zapiszSie/:kurs_id',component:FormZapiszSieComponent},

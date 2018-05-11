@@ -16,14 +16,15 @@ import { KursyService } from '../../kursy/shared/kursy.service';
 export class FormDodajSlowoComponent implements OnInit{
   public values = '';
   public url:string[] = window.location.href.split('/');
-  kursy: Kurs[];
+  kurs: Kurs;
   onKey(event: any) { 
     this.values = event.target.value ;
   }
 
   
   constructor(private db: AngularFirestore, public slowoServe: SlowaService,public kursServe: KursyService) {
-    this.kursServe.getKurs().subscribe(data => {this.kursy=data;})
+    this.kursServe.getKurs().subscribe(data => {this.kurs=data.filter(k => k.id==this.url[4])[0];});
+    
   }
   // new Date().toLocaleString()
   dodajSlowo(f: NgForm) {
