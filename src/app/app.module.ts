@@ -70,7 +70,7 @@ import { MojeKursyListaComponent } from './kursy/moje-kursy-lista/moje-kursy-lis
       {path:'mojekursy',component: MojeKursyListaComponent},      
       {path:'kursy/:kurs_id/:slowo_id',component: FormDodajDefinicjeComponent},
       {path:'formularz',component: FormDodajKursComponent},
-      {path: 'zapiszSie',component:FormZapiszSieComponent},
+      {path: 'zapiszSie/:kurs_id',component:FormZapiszSieComponent},
     
   ]),
   Ng2OrderModule
