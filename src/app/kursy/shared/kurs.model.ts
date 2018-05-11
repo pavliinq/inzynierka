@@ -3,7 +3,8 @@ export class Kurs {
     nazwa?:string;
     data_utworzenia?:Date ;
     // coś w stylu że jest powiązany z konkretnym rocznikiem
-    prowadzący?:string;
+    prowadzącyimie?:string;
+    prowadzacynazwisko?:string;
     zapisani?:string[];
     rokAkademicki?:string;
     haslo?:string;
