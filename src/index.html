@@ -22,10 +22,10 @@ $(window).scroll(function(){
   scrollTop = $(window).scrollTop();
    $('.counter').html(scrollTop);
   
-  if (scrollTop >= 100) {
-    $('#global-nav').addClass('scrolled-nav');
-  } else if (scrollTop < 100) {
-    $('#global-nav').removeClass('scrolled-nav');
+  if (scrollTop >= 400) {
+    $('.global-nav').addClass('scrolled-nav');
+  } else if (scrollTop < 400) {
+    $('.global-nav').removeClass('scrolled-nav');
   } 
   
 }); 
@@ -33,7 +33,7 @@ $(window).scroll(function(){
     });
 
   </script>
-  <script>
+  <!-- <script>
       $(function() {
   $('.navigation-toggle').on('click', function(e) {
     $('body').toggleClass('navigation-show');
@@ -41,7 +41,22 @@ $(window).scroll(function(){
 });
   
           
-  </script>
+  </script> -->
+  <script>
+      $(document).ready(function() {
+        $(document).delegate('.open', 'click', function(event){
+          $(this).addClass('oppenned');
+          event.stopPropagation();
+        })
+        $(document).delegate('body', 'click', function(event) {
+          $('.open').removeClass('oppenned');
+        })
+        $(document).delegate('.cls', 'click', function(event){
+          $('.open').removeClass('oppenned');
+          event.stopPropagation();
+        });
+      });
+    </script>
 </head>
 
 <body>

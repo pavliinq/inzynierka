@@ -1,33 +1,80 @@
 <body>
-  <div class="wrap-all">
-        <span class="navigation-toggle">
-          <span></span>
-          <span></span>
-          <span></span>
-        </span>
+    <!-- LOGO-->
+    <div class="navbartlo">
+        <div class="global-nav">
+        <div class="logo">
+          <svg viewBox="0 0 1418 116" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+            <g stroke="none" fill="none" fill-rule="evenodd" fill-opacity="0">
+              <text id="imle" stroke="white" fill="#645F5A" font-weight="normal" font-family="Sedgwick Ave" font-size="144">
+                <tspan x="3" y="109">
+                  <tspan>i</tspan>
+                  <tspan>M</tspan>
+                  <tspan>L</tspan>
+                  <tspan>E</tspan>
+                </tspan>
+              </text>
+            </g>
+          </svg>
+          </div>
+          <div class="logodwa">
+          <svg viewBox="0 0 1418 116" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+            <g stroke="none" fill="none" fill-rule="evenodd" fill-opacity="0">
+              <text id="imle" stroke="white" fill="#645F5A" font-weight="normal" font-family="Sedgwick Ave" font-size="90">
+                <tspan x="3" y="109">
+                  <tspan>J</tspan>
+                  <tspan>o</tspan>
+                  <tspan>i</tspan>
+                  <tspan>n</tspan>
+                  <tspan>&nbsp;</tspan>
+                  <tspan>u</tspan>
+                  <tspan>s</tspan>
+                  <tspan>!</tspan>
+                </tspan>
+              </text>
+            </g>
+          </svg>
+          </div>
+
+          
+          
+   
   
-        <nav class="navigation" role="navigation">
-          <h1 href="" class="logo">
-            MENU
-          </h1>
-        <ul>
-          <li ><a routerLink="/" >Strona główna</a></li>
-          <li><a routerLink="/przegladajslowa">Lista Słów</a></li>
-          <!-- <li><a data-toggle="modal" data-target="#exampleModal">Zaloguj się</a></li> -->
-        </ul>
-        </nav>
-      </div>
-  
-      <!-- MENU DESKTOPOWE -->
-      <nav id="global-nav">
-         <div class="container menu">
+      
+      
+          
+         <div class="menu">
             <a routerLink="/">Strona Główna</a>
             <a routerLink="/mojekursy">Moje Kursy</a>
             <a routerLink="/kursy">Kursy</a>
-            <!-- <a data-toggle="modal" data-target="#exampleModal">Zaloguj się</a> -->
+            <a data-toggle="modal" data-target="#exampleModal">Zaloguj się</a> 
          </div>
-      </nav>
+        </div>
+    </div>
       
+     
+    
+
+     <!-- MENU MOBILNE-->
+     <div  class="open">
+        <span class="cls"></span>
+        <span>
+          <ul class="sub-menu ">
+            <li>
+                
+                <br>
+              <a routerLink="/" title="stronaglowna">Strona Główna</a>
+            </li>
+            <li>
+              <a routerLink="/mojekursy" title="mojekursy">Moje Kursy</a>
+            </li>
+            <li>
+              <a routerLink="/kursy" title="kursy">Kursy</a>
+            </li>
+          </ul>
+        </span>
+        <span class="cls"></span>
+      </div>
+
       <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
           <div class="modal-dialog" role="document">
             <div class="modal-content">
@@ -107,3 +154,4 @@
     </div>
   </div>
       </body> 
+      

@@ -2,7 +2,11 @@
   <!-- dropdown kursy -->
 
   <div id="containerSlowa">
-    <h1 class="display-4" > {{kurs.nazwa}} </h1>
+    <h1 class="display-4" >
+      <ng-container *ngIf="kurs">
+        {{kurs.nazwa}}
+      </ng-container>
+    </h1>
 
 <form ngForm #f="ngForm" (ngSubmit)="dodajSlowo(f)" style="margin: 20px">
   <!-- <div class="row"> -->
@@ -16,7 +20,6 @@
       placeholder="Wprowadź słowo"
       ngModel name="slowo"  #slowo="ngModel"
       required minlength="2"
-      
        >
        
       <button class="btn btn-light" [disabled]="!f.form.valid">+</button>

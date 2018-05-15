@@ -9,8 +9,13 @@ import { Kurs } from '../shared/kurs.model';
   styleUrls: ['./kursy-lista.component.css']
 })
 export class KursyListaComponent implements OnInit {
-
+  values:string ='';
   strona: string = window.location.href.substr(window.location.href.lastIndexOf('/') + 1);
+
+  onKey(event: any) { 
+    this.values = event.target.value ;
+    // console.log(this.values);
+  }
   ngOnInit() {
     
     
