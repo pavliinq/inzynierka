@@ -1,19 +1,14 @@
+@import url("https://fonts.googleapis.com/css?family=Sedgwick+Ave");
+
 body{
-	margin-top: 200px;
-}
-.jumbotron{
-	width: 80%;
-	margin: 0 auto;
-	margin-bottom: 100px;
-	height: 450px;
+	margin: 0;
+	padding: 0;
 }
 footer{
 	background-color: #e9ecef;
 }
 
 /* ŁADOWANIE STRONY */
-
-
 .ladowanie{
 	background: #d2d2d2;
    	font-family: 'Oswald', sans-serif;
@@ -21,7 +16,7 @@ footer{
  	color: #B71427 ;
   	
 }
-  
+ 
   .outter {
 	position: absolute; 
 	top: 45%;
