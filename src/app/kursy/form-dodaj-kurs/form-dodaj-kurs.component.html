@@ -16,6 +16,7 @@
         </div>
       
   </form> -->
+  <div class="calosc">
   <form ngForm #f="ngForm" (ngSubmit)="dodajKurs(f)" style="margin: 20px">
 <h1 style="margin: 50px">Stwórz Kurs</h1>
  
@@ -68,6 +69,7 @@
       <button class="btn btn-primary" [disabled]="!f.form.valid" (click)="dodajKurs(f)" type="submit" routerLink="/kursy"> Stworz Kurs</button>
     </div>
   </form>
+</div>
   <!-- {{f.value|json}} -->
 
  
