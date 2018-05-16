@@ -16,17 +16,16 @@
 
       </div>
       <ng-container *ngIf="zleHaslo">
-          podales Zle haslo
+          podales zle haslo
       </ng-container>
 
     </div>
-    <button class="button" type="submit" [disabled]="!f.form.valid" title="Zapisz się">Zapisz się</button>
+    <button class="button" type="submit" [disabled]="!f.form.valid"  title="Zapisz się">Zapisz się</button>
     <br>
     <br>
   </form>
 </div>
-
-<!-- routerLink="/kursy"  -->
+<!-- [routerLink]="['/kursy', idkursu]" -->
 
 <!-- {{tenKurs|json}}
 
