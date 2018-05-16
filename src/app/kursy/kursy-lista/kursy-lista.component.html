@@ -1,20 +1,23 @@
+<h1 class="display-4">Kursy</h1>
 <div class="buttons">
+
   <a class="button" [routerLink]="['/formularz']" title="Dodaj kurs">Dodaj Kurs</a>
-  <input class="szukaj" (keyup)="onKey($event)" placeholder="Szukaj" >
-<!-- <button type="button" class="btn btn-primary" [routerLink]="['/zapiszSie']">Zapisz się do kursu</button> -->
+  <input class="szukaj" (keyup)="onKey($event)" placeholder="Szukaj">
+  <!-- <button type="button" class="btn btn-primary" [routerLink]="['/zapiszSie']">Zapisz się do kursu</button> -->
 </div>
-    <h1 class="display-4">Ostatnie:</h1>
 
 
 
 
 
-<ul class="list-group "> 
+<ul class="list-group ">
   <ng-container *ngFor="let kur of kursy">
-      <ng-container *ngIf="kur.nazwa.substring(0,values.length).toUpperCase() == values.toUpperCase()">
+    <ng-container *ngIf="kur.nazwa.substring(0,values.length).toUpperCase() == values.toUpperCase()">
 
-        <li class="list-group-item col-sm-7 kursStyle" ><app-kurs [kurs]="kur"></app-kurs></li>
-      </ng-container>
+      <li class="list-group-item col-sm-7 kursStyle">
+        <app-kurs [kurs]="kur"></app-kurs>
+      </li>
+    </ng-container>
 
   </ng-container>
 
