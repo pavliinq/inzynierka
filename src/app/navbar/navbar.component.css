@@ -298,7 +298,7 @@
       }
       .sub-menu li a {
         color: #fff;
-        font-family: "Lato", Arial, Helvetica, sans-serif;
+        font-family: 'Quicksand', sans-serif;
         font-size: 16px;
         width: 100%;
         display: block;
@@ -339,6 +339,9 @@
       }
       .oppenned li {
         margin-right: 168px;
+      }
+      .logo{
+        display: none;
       }
       
       
