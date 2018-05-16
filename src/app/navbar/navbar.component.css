@@ -149,7 +149,8 @@
 .menu a{
     color: #FFF;
     text-decoration: none;
-    font-size: 15px;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 17px;
     margin: 0px 10px;
     padding: 10px 10px;
     position: relative;
@@ -187,22 +188,22 @@
     transition: all 0.4s;
 }
 .scrolled-nav {
-  height: 150px !important;
-  line-height: 150px !important;
+  height: 100px !important;
+  line-height: 100px !important;
   /* background-image: url("https://preview.ibb.co/kWmzQd/bg.jpg");
   background-repeat:no-repeat;
   background-size:cover;
   background-position: center; */
-  background-color: rgb(38, 84, 133, 0.54);
+  background-color: rgb(38, 84, 133);
   width: 100% !important;
   -webkit-transition: all .5s;
   transition: all .5s;
-  font-size: 10px;
-  
- 
 }	
+.scrolled-nav .menu a{
+  font-size: 15px;
+}
 .scrolled-nav .logo{
-    top: -25px;
+    top: -45px;
     -webkit-transition: all .5s;
     transition: all .5s;
 }
