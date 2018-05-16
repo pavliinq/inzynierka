@@ -5,6 +5,7 @@
   background-size:cover;
   background-position: center center;
   margin-bottom: 300px;
+  
     
   
 }
@@ -137,7 +138,7 @@
 	-webkit-transition: height .5s, line-height .5s; /* Safari */
   transition: height .5s, line-height .5s;
   z-index: 100;
-  margin: 0 auto;
+
   
 }
 .menu{
@@ -186,11 +187,10 @@
     transition: all 0.4s;
 }
 .scrolled-nav {
-  height: 220px !important;
-  line-height: 220px !important;
+  height: 150px !important;
+  line-height: 150px !important;
   background-image: url("https://preview.ibb.co/kWmzQd/bg.jpg");
-  width: 80.1% !important;
-  margin: 0 0 0 190px !important;
+  width: 100% !important;
   background-repeat:no-repeat;
   background-size:cover;
   background-position: center;
@@ -201,15 +201,8 @@
 }	
 .scrolled-nav .logo{
     top: -25px;
-    margin-left: 13%;
     -webkit-transition: all .5s;
     transition: all .5s;
-}
-.scrolled-nav .logodwa{
-  top: 60px;
-  margin-left: 18%;
-  -webkit-transition: all .5s;
-  transition: all .5s;
 }
 .open{
 	display: none;
@@ -378,14 +371,6 @@
     transition: all .5s;
   
 }
-.logodwa{
-  padding:0;
-  top: 60px;
-  position: fixed;
-  margin-left: 15%;
-  -webkit-transition: all .5s;
-    transition: all .5s;
-}
 .logo svg {
   max-width: 40%;
   height: 200px;
@@ -395,15 +380,7 @@
   -webkit-transition: all .5s;
     transition: all .5s;
 }
-.logodwa svg {
-  max-width: 40%;
-  height: 200px;
-  fill: none;
-  stroke: white;
-  stroke-width: 4;
-  -webkit-transition: all .5s;
-    transition: all .5s;
-}
+
 .logo svg tspan > tspan {
   stroke-dasharray: 1500;
   stroke-dashoffset: -1500;
