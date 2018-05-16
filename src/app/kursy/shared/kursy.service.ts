@@ -11,13 +11,6 @@ export class KursyService {
   kurs: Observable<Kurs[]>;
   constructor(public db: AngularFirestore) {
     this.kursCollection = db.collection<Kurs[]>('/kursy');
-    // this.slowo = this.slowoCollection.snapshotChanges().map(actions => {
-    //   return actions.map(a => {
-    //     const data = a.payload.doc.data() as Slowo;
-    //     const id = a.payload.doc.id;
-    //     return { id, ...data };
-    //   })
-    // });
 
 
   }
