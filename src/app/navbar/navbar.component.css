@@ -105,13 +105,12 @@
     .menu a{
         display: none;
     }
-	
     .open {
         position: fixed;
         top: 70px;
         right: 40px; 
         width: 80px;
-        height: 80px;
+        height: 55px;
         display: block;
         cursor: pointer;
         transition: opacity 0.2s linear;
@@ -203,7 +202,6 @@
         color: rgb(154, 230, 213);
         
       }
-      
       .oppenned .sub-menu {
         opacity: 1;
         height: 570px;
