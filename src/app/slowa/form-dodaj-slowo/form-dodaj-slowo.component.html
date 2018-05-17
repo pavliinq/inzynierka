@@ -1,7 +1,7 @@
 
   <!-- dropdown kursy -->
 
-  <div id="containerSlowa">
+  <div class="calosc">
     <h1 class="display-4" >
       <ng-container *ngIf="kurs">
         {{kurs.nazwa}}
@@ -22,13 +22,14 @@
       required minlength="2"
        >
        
-      <button class="btn btn-light" [disabled]="!f.form.valid">+</button>
+      <button class="btn btn-light" [disabled]="!f.form.valid">Dodaj</button>
+      
 
       </div>
     
 </form>
     <div class="form-group row">
-      <input  class="form-control col-2" style="margin: 20px" (keyup)="onKey($event)" placeholder="Szukaj">
+      <input  class="szukaj" style="margin: 20px; margin-top: -10px;" (keyup)="onKey($event)" placeholder="Szukaj">
     </div>
   <app-slowa-lista  [values]="values"></app-slowa-lista>
 </div>

@@ -1,4 +1,4 @@
-<div id="containerDefinicje">
+<div class="calosc">
 
     <h1 class="display-2" *ngIf="slowa" >{{slowa.slowo}}  </h1>
       <form ngForm #f="ngForm"  
@@ -21,7 +21,7 @@
           </textarea>
          
 
-           <button  class="btn btn-light" [routerLink]="['/kursy',url[4]]">Wróć do listy słów</button>
+           <button  class="button" [routerLink]="['/kursy',url[4]]" title="Wróć do listy słów">Wróć do listy słów</button>
            <button  style="float: right;" class="btn btn-light" [disabled]="!f.form.valid">Dodaj definicję</button>
           
       </div>

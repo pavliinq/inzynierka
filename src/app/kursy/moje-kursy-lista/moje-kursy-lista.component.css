@@ -1,3 +1,54 @@
+.calosc{
+  background: #fff;
+  padding: 30px;
+  position: relative;
+  width: 80%;
+  margin: 0 auto;
+  margin-bottom: 200px;
+}
+
+.kursStyle{
+  margin: 10px;
+  /* -moz-border-radius-topright: 5px;
+  -moz-border-radius-bottomright: 5px;*/
+  border-radius: 10px;
+  /* border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px; */
+}
+.kursStyle:hover{
+  background:#f0f8ff;
+  cursor: pointer;
+}
+
+.calosc,
+.calosc::before,
+.calosc::after {
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.25);
+  border: 1px solid #bbb;
+}
+
+.calosc::before,
+.calosc::after {
+  content: "";
+  position: absolute;
+  height: 95%;
+  width: 99%;
+  background-color: #eee;
+}
+
+.calosc::before {
+  right: 15px;
+  top: 0;
+  transform: rotate(-1deg);
+  z-index: -1;
+}
+
+.calosc::after {
+  top: 5px;
+  right: -5px;
+  transform: rotate(1deg);
+  z-index: -2;
+}
 input.szukaj {
     border: 2px solid #10a1ea; 
     position: relative;
