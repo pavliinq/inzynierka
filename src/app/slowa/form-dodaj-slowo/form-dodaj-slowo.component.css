@@ -1,6 +1,6 @@
 .form-control.col-4.ng-invalid.ng-touched
 {
-    border: solid 1px #fc4d4d;
+    border: 2px solid #fc4d4d;
 }
 #search{
     margin: 50px;
