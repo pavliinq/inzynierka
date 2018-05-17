@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { KursyService } from '../shared/kursy.service';
 import { NgForm } from '@angular/forms';
 import { Kurs } from '../shared/kurs.model';
+import { RouterModule, Routes, Router } from '@angular/router';
 
 @Component({
   selector: 'app-form-zapisz-sie',
@@ -21,7 +22,7 @@ export class FormZapiszSieComponent implements OnInit {
 
   zleHaslo:boolean = false ;
   dobreHaslo:boolean = false ;
-  constructor(private kurSev:KursyService) { 
+  constructor(private kurSev:KursyService,private router: Router) { 
     // losuje jednego studenta pozniej zamieniy to na odczyt z logowania
     this.student = this.studenci[Math.floor(Math.random() * this.studenci.length)];
     this.idkursu = this.url[4];
@@ -38,7 +39,11 @@ export class FormZapiszSieComponent implements OnInit {
       this.kurSev.updateKurs(this.tenKurs, this.idkursu);
       f.resetForm();
       this.dobreHaslo = true;
-      window.location.href='/kursy/'+this.tenKurs.id;
+      setTimeout(
+        this.router.navigateByUrl('/kursy/'+this.tenKurs.id)
+      , 20000);
+      
+      
     }else{
       this.zleHaslo = true;
       
