@@ -21,7 +21,7 @@ export class KursComponent implements OnInit {
   }
 
   ngOnInit() {
-    console.log(this.user)
+    console.log(this.user);
     this.czyzapisany()
 
   }
@@ -29,8 +29,11 @@ export class KursComponent implements OnInit {
   czyzapisany() {
     this.zapisany_test = 0;
     for (let zapisany of this.kurs.zapisani) {
+      
       if (zapisany === this.user) {
+        
         this.zapisany_test = ++this.zapisany_test;
+        
       }
     }
 
