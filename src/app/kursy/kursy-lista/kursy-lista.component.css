@@ -78,3 +78,6 @@ h1.display-4{
     -webkit-transform: translateY(0);
             transform: translateY(0);
   }
+  .display-4{
+    font-size: 40px;
+  }

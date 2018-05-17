@@ -1,11 +1,11 @@
 /*MENU DESKTOPOWE*/
 .navbartlo{
   background-image: url("https://preview.ibb.co/kWmzQd/bg.jpg");
-  height:540px;
+  height:440px;
   background-repeat:no-repeat;
   background-size:cover;
   background-position: center center;
-  margin-bottom: 300px;
+  margin-bottom: 100px;
   
     
   
@@ -92,6 +92,8 @@
 }
 .scrolled-nav .logo svg{
     height: 150px;
+}.scrolled-nav .logo svg{
+    height: 150px;
 }
 .open{
 	display: none;
@@ -166,7 +168,7 @@
         transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
       }
       .sub-menu li:first-child {
-        margin-top: 180px;
+        margin-top: 210px;
       }
       .sub-menu li:nth-child(1) {
         -webkit-transition-delay: 0.05s;
@@ -238,6 +240,11 @@
       .logo{
         display: none;
       }
+      .scrolled-nav .open{
+        top: 30px;
+      }
+      
+  
       
       
 }
