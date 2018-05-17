@@ -15,7 +15,9 @@ export class MojeKursyListaComponent implements OnInit {
   // student:string;
   kursy: Kurs[];
   autor: string;
-  
+  studenci: string[] = ["franko", "koza", "woza"];
+  student: string;
+  zapisany_test: number;
 // na razie dziala tylko dla studnta franko
   constructor(private db: AngularFirestore, public kursServe: KursyService) {
     // this.student = this.studenci[Math.floor(Math.random() * this.studenci.length)];
@@ -31,7 +33,8 @@ export class MojeKursyListaComponent implements OnInit {
 
   }
   ngOnInit() {
-
+    
 
   }
+  
 }

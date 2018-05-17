@@ -10,13 +10,29 @@ import { AngularFirestore } from 'angularfire2/firestore';
 })
 
 export class KursComponent implements OnInit {
+  studenci: string[] = ["franko", "koza", "woza"];
+  student: string;
+  zapisany_test: number;
+
   @Input('kurs') kurs: Kurs;
-  constructor(private db: AngularFirestore, public kursServe: KursyService) { }
+  constructor(private db: AngularFirestore, public kursServe: KursyService) {
+    this.student = this.studenci[Math.floor(Math.random() * this.studenci.length)];
+
+  }
 
   ngOnInit() {
-    
-    
-  }
-  
+    this.czyzapisany()
 
+  }
+
+  czyzapisany() {
+    this.zapisany_test = 0;
+    for (let zapisany of this.kurs.zapisani) {
+      if (zapisany === this.student) {
+        this.zapisany_test = ++this.zapisany_test;
+      }
+    }
+
+
+  }
 }

@@ -20,6 +20,7 @@ export class FormZapiszSieComponent implements OnInit {
 
 
   zleHaslo:boolean = false ;
+  dobreHaslo:boolean = false ;
   constructor(private kurSev:KursyService) { 
     // losuje jednego studenta pozniej zamieniy to na odczyt z logowania
     this.student = this.studenci[Math.floor(Math.random() * this.studenci.length)];
@@ -36,6 +37,8 @@ export class FormZapiszSieComponent implements OnInit {
 
       this.kurSev.updateKurs(this.tenKurs, this.idkursu);
       f.resetForm();
+      this.dobreHaslo = true;
+      window.location.href='/kursy/'+this.tenKurs.id;
     }else{
       this.zleHaslo = true;
       

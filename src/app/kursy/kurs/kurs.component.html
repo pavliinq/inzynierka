@@ -1,6 +1,21 @@
 <div class="row">
-    <div class="col-sm" [routerLink]="['/kursy', kurs.id] ">{{kurs.nazwa}}</div>
-    <div>
-        <a class="button" [routerLink]="['/zapiszSie',kurs.id]" title="Zapisz się">Zapisz się</a>
-    </div>
+    <ng-container *ngIf="zapisany_test !== 0">
+        <div class="col-sm" >{{kurs.nazwa}}</div>
+            <div>
+                <a class="button" [routerLink]="['/zapiszSie',kurs.id]" title="Zapisz się">Zapisz się</a>
+            </div>
+    </ng-container>
+
+    <ng-container *ngIf="zapisany_test === 0">
+            <div class="col-sm" [routerLink]="['/kursy', kurs.id] ">{{kurs.nazwa}}</div>
+                <div>
+                </div>
+        </ng-container>
+    
+    
+   
+
+
+
+
 </div>
