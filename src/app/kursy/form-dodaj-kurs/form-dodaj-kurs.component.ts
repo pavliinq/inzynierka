@@ -16,6 +16,7 @@ export class FormDodajKursComponent implements OnInit {
   ngOnInit() {
   }
 
+
   dodajKurs(f: NgForm) {
     let kurs: Kurs = new Kurs();
     kurs.nazwa = f.value.nazwaKurs ;
