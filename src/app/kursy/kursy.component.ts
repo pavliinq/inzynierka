@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class KursyComponent implements OnInit {
 
   constructor() { }
-
+  
   ngOnInit() {
   }
 

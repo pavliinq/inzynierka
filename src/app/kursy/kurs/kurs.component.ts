@@ -12,6 +12,7 @@ import { AngularFirestore } from 'angularfire2/firestore';
 export class KursComponent implements OnInit {
   
   zapisany_test: number;
+  url:string[] = window.location.href.split('/');
 
   @Input('kurs') kurs: Kurs;
   @Input('user') user: string;
@@ -36,6 +37,11 @@ export class KursComponent implements OnInit {
         
       }
     }
+
+
+  }
+  delete() {
+    this.kursServe.DeleteKurs(this.kurs.id)
 
 
   }

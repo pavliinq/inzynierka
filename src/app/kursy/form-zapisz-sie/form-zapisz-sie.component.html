@@ -18,6 +18,9 @@
       <ng-container *ngIf="zleHaslo">
           Podane hasło nie jest prawidłowe!
       </ng-container>
+      <ng-container *ngIf="dobreHaslo">
+        Gratulacje zapisałeś sie na kurs
+    </ng-container>
     </div>
     <button class="button" type="submit" [disabled]="!f.form.valid"  title="Zapisz się">Zapisz się</button>
     <br>
