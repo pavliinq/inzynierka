@@ -1,0 +1,34 @@
+<div class="calosc">
+  <h1 class="display-4">Panel prowadzącego!</h1>
+  
+ <div class="row">
+  <div class="btn-group col-sm-8 " dropdown>
+    <button id="button-basic" dropdownToggle type="button" class="btn dropdown-toggle"
+            aria-controls="dropdown-basic">
+      <span *ngIf="selectedCourse"> {{selectedCourse.nazwa}} </span>
+      <span *ngIf="!selectedCourse"> Wybierz kurs </span>
+            <span class="caret"></span>
+    </button>
+    <ul  id="dropdown-basic" *dropdownMenu class="dropdown-menu"
+        role="menu" aria-labelledby="button-basic">
+      <li (click)="setCourse(course)" *ngFor="let course of coursesList" value="{{course}}" role="menuitem"><span class="dropdown-item"  > {{course.nazwa}} </span></li>
+     
+    </ul>
+  </div>
+  <div class="col-sm-4" >
+  <button class="btn btn-outline-danger staleWymiary" (click)="deleteWords()"> Usuń wszystkie słowa z listy </button>
+</div>
+</div>
+  
+
+  <ng-container *ngFor="let slo of slowa">
+    <ng-container *ngIf="slo">
+      <li class="list-group-item col-sm-7 slowko">
+        <app-slowo-nauczyciel [slowo]="slo" [autor]="autor" [course]="selectedCourse"></app-slowo-nauczyciel>
+      </li>
+ 
+    </ng-container>
+  </ng-container>
+
+
+</div>
