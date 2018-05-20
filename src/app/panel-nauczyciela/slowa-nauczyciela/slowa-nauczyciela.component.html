@@ -1,0 +1,30 @@
+
+<!-- <div class="row"  >
+  <div class="col-sm" [routerLink]="['/definicje', slowo.id] " >{{slowo.slowo}}</div>
+  <button class="btn btn-outline-primary staleWymiary" (click)="dajLajka()">{{slowo.likes.length}} +</button>
+  <button class="btn btn-outline-danger staleWymiary" (click)="dajDisLajka()"> {{slowo.dislikes.length}} -</button>
+</div> -->
+<div class="row" >
+  <div class="col-sm" [routerLink]="['/kursy/',url[4], slowo.id] ">{{slowo.slowo}}</div>
+  
+<ng-container *ngIf="ktoreikony === '3'">
+    
+    <p class="lead" style="margin: 5px;" >{{lajkii}}</p>
+    <button class="btn btn-outline-primary staleWymiary" (click)="dajLajka()" >+</button>
+    <p class="lead" style="margin: 5px;" >{{dislajkii}}</p>
+    <button class="btn btn-outline-danger staleWymiary" (click)="dajDisLajka()">-</button>
+</ng-container>
+<ng-container *ngIf="ktoreikony === '2'">
+    <p class="lead" style="margin: 5px;" >{{lajkii}}</p>
+    <button class="btn btn-outline-primary staleWymiary"(click)="dajLajka()" >+</button>
+    <p class="lead" style="margin: 5px;" >{{dislajkii}}</p>
+    <button class="btn btn-outline-danger staleWymiary" style="background-color:#DC3546;color:white" (click)="dajDisLajka()">-</button>
+</ng-container>
+<ng-container *ngIf="ktoreikony === '1'">
+    <p class="lead" style="margin: 5px;" >{{lajkii}}</p>
+    <button class="btn btn-outline-primary staleWymiary" style="background-color:#007AFF;color:white"(click)="dajLajka()" >+</button>
+    <p class="lead" style="margin: 5px;" >{{dislajkii}}</p>
+    <button class="btn btn-outline-danger staleWymiary" (click)="dajDisLajka()">-</button>
+</ng-container>
+  
+</div>

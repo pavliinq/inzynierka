@@ -33,7 +33,10 @@ import { KursyService } from './kursy/shared/kursy.service';
 import { FormZapiszSieComponent } from './kursy/form-zapisz-sie/form-zapisz-sie.component';
 import { MojeKursyListaComponent } from './kursy/moje-kursy-lista/moje-kursy-lista.component';
 import { FooterComponent } from './footer/footer.component';
-
+import { PanelNauczycielaComponent } from './panel-nauczyciela/panel-nauczyciela.component';
+ import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
+import { SlowoNauczycielComponent } from './panel-nauczyciela/slowo-nauczyciel/slowo-nauczyciel.component';
+  
 
 
 @NgModule({
@@ -55,16 +58,19 @@ import { FooterComponent } from './footer/footer.component';
     KursComponent,
     FormZapiszSieComponent,
     MojeKursyListaComponent,
-    FooterComponent
+    FooterComponent,
+    PanelNauczycielaComponent,
+    SlowoNauczycielComponent,
+   
   ],
   imports: [
     NgbModule.forRoot(),
     BrowserModule,
-    
     FormsModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFirestoreModule,
     ReactiveFormsModule,
+    BsDropdownModule.forRoot(),
     RouterModule.forRoot([
       {path:'',component: HomeComponent},
       {path:'kursy/:kurs_id',component: FormDodajSlowoComponent},
@@ -73,6 +79,7 @@ import { FooterComponent } from './footer/footer.component';
       {path:'kursy/:kurs_id/:slowo_id',component: FormDodajDefinicjeComponent},
       {path:'formularz',component: FormDodajKursComponent},
       {path: 'zapiszSie/:kurs_id',component:FormZapiszSieComponent},
+      {path: 'panel',component:PanelNauczycielaComponent},
     
   ]),
   Ng2OrderModule

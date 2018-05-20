@@ -30,6 +30,7 @@ export class SlowaService {
 
     return this.slowo;
   }
+  
   DeleteSlowo(idDokumentu,url) {
     this.slowoDocument = this.db.doc('/kursy/'+url+'/slowa/' + idDokumentu);
     this.slowoDocument.delete();
