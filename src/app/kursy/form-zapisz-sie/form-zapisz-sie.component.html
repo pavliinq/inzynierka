@@ -13,14 +13,28 @@
           required
           minlength="1"
           #hasloKurs="ngModel">
+          <div class = "alert alert-danger" *ngIf="zleHaslo">
+      
+              Podałeś złe hasło
+            
+          </div>
 
+          <div class = "alert alert-success" *ngIf="dobreHaslo">
+      
+              Gratulacje zapisałeś sie na kurs
+            
+          </div>
       </div>
+<<<<<<< HEAD
       <ng-container *ngIf="zleHaslo">
           Podane hasło nie jest prawidłowe!
       </ng-container>
       <ng-container *ngIf="dobreHaslo">
         Gratulacje zapisałeś sie na kurs
     </ng-container>
+=======
+      
+>>>>>>> 7ed0cf83702b34545902d17bc7f5cd4cf75ba292
     </div>
     <button class="button" type="submit" [disabled]="!f.form.valid"  title="Zapisz się">Zapisz się</button>
     <br>
