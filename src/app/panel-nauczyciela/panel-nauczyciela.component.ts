@@ -23,12 +23,14 @@ export class PanelNauczycielaComponent implements OnInit {
    {
     this.slowoServe.getSlowa(course).subscribe(data => {
       var cumulatedData = []
-      console.log(data)
+     
       data.forEach(word => 
       {
-        if(!word.teacherOff && word.sumaLike >= 2 )
+      
+        if(!word.teacherOff && word.likes.length >= 10 )
           cumulatedData.push(word)
       })
+   
       this.slowa = cumulatedData.sort((a: Slowo, b: Slowo) => {
           return  +new Date(b.data_dod) - +new Date(a.data_dod) ;
       } 
