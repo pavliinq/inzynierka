@@ -18,7 +18,7 @@ export class SlowoNauczycielComponent implements OnInit {
   @Input('course') course
 
 
-  public dlugosc:number;
+  dlugosc:number;
   test:boolean=false;
   lajkii : number;
   dislajkii: number;

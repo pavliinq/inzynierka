@@ -36,6 +36,7 @@ import { FooterComponent } from './footer/footer.component';
 import { PanelNauczycielaComponent } from './panel-nauczyciela/panel-nauczyciela.component';
  import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { SlowoNauczycielComponent } from './panel-nauczyciela/slowo-nauczyciel/slowo-nauczyciel.component';
+import { SlowaNauczycielaComponent } from './panel-nauczyciela/slowa-nauczyciela/slowa-nauczyciela.component';
   
 
 
@@ -61,6 +62,7 @@ import { SlowoNauczycielComponent } from './panel-nauczyciela/slowo-nauczyciel/s
     FooterComponent,
     PanelNauczycielaComponent,
     SlowoNauczycielComponent,
+    SlowaNauczycielaComponent
    
   ],
   imports: [
