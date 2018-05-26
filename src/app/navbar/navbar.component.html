@@ -16,15 +16,15 @@
             </g>
           </svg>
           </div>
-        <!-- KONIEC LOGO-->    
+        <!-- KONIEC LOGO-->
         <!-- MENU DESKTOPOWE-->
-          
+
          <div class="menu">
             <a routerLink="/">Strona Główna</a>
             <a routerLink="/mojekursy">Moje Kursy</a>
             <a routerLink="/kursy">Kursy</a>
             <a routerLink="/panel">Panel Prowadzącego</a>
-            <a data-toggle="modal" data-target="#exampleModal">Zaloguj się</a> 
+            <a data-toggle="modal" data-target="#exampleModal">Zaloguj się</a>
          </div>
          <!-- MENU MOBILNE-->
      <div  class="open">
@@ -44,7 +44,7 @@
             <a routerLink="/panel" title="panelProwadzacego">Panel Prowadzącego</a>
           </li>
           <li>
-            <a routerLink="" title="zaloguj">Zaloguj się</a>
+            <a routerLink="/login" title="zaloguj">Zaloguj się</a>
           </li>
         </ul>
       </span>
@@ -53,11 +53,11 @@
   <!-- KONIEC MENU MOBILNE-->
         </div>
     </div>
-      
-     
-    
 
-     
+
+
+
+
       <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
           <div class="modal-dialog" role="document">
             <div class="modal-content">
@@ -69,17 +69,17 @@
                  </div>
                  <div class="modal-body">
                     <div class="col-md-6 col-md-offset-3">
-      
+
       <!-- <form name="form" ng-submit="vm.login()" role="form">
           <div class="form-group" ng-class="{ 'has-error': form.username.$dirty && form.username.$error.required }">
               <label for="username">Login</label>
               <input type="text" name="username" id="username" class="form-control" ng-model="vm.username" required />
-              
+
           </div>
           <div class="form-group" ng-class="{ 'has-error': form.password.$dirty && form.password.$error.required }">
               <label for="password">Hasło</label>
               <input type="password" name="password" id="password" class="form-control" ng-model="vm.password" required />
-              
+
           </div>
           <div class="form-actions">
               <button type="submit"  class="btn btn-outline-primary">Nie pamiętam hasła</button>
@@ -88,13 +88,13 @@
   </div>
                 </div>
                  <div class="modal-footer">
-                  <button type="submit" ng-disabled="form.$invalid || vm.dataLoading" class="btn btn-outline-primary">Zaloguj</button>
-                  <a href=""  data-toggle="modal" data-target="#exampleModale" class="btn btn-outline-danger" role="button">Zarejestruj się</a>
+                  <button routerLink="/login" class="btn btn-outline-primary">Zaloguj</button>
+                  <button routerLink="/register" class="btn btn-outline-danger" role="button">Zarejestruj się</button>
                  </div>
             </div>
           </div>
       </div>
-      
+
       <div class="modal fade" id="exampleModale" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
@@ -109,32 +109,32 @@
           <div class="form-group" ng-class="{ 'has-error': form.firstName.$dirty && form.firstName.$error.required }">
               <label for="username">Imię</label>
               <input type="text" name="firstName" id="firstName" class="form-control" ng-model="vm.user.firstName" required />
-              
+
           </div>
           <div class="form-group" ng-class="{ 'has-error': form.lastName.$dirty && form.lastName.$error.required }">
               <label for="username">Nazwisko</label>
               <input type="text" name="lastName" id="Text1" class="form-control" ng-model="vm.user.lastName" required />
-              
+
           </div>
           <div class="form-group" ng-class="{ 'has-error': form.username.$dirty && form.username.$error.required }">
               <label for="username">E-mail</label>
               <input type="text" name="username" id="username" class="form-control" ng-model="vm.user.username" required />
-              
+
           </div>
           <div class="form-group" ng-class="{ 'has-error': form.password.$dirty && form.password.$error.required }">
               <label for="password">Hasło</label>
               <input type="password" name="password" id="password" class="form-control" ng-model="vm.user.password" required />
-              
+
           </div>
           <div class="form-actions">
               <button type="submit" ng-disabled="form.$invalid || vm.dataLoading" class="btn btn-outline-primary">Zarejestruj się</button>
-              
+
         </div>
       </form> -->
         </div>
-        
+
       </div>
     </div>
   </div>
-      </body> 
-      
+      </body>
+
