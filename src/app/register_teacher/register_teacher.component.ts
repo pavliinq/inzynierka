@@ -6,15 +6,15 @@ import { PasswordValidation } from './password-validation';
 
 
 @Component({
-  selector: 'register',
-  templateUrl: './register.component.html',
-  styleUrls: ['./register.component.css']
+  selector: 'register-teacher',
+  templateUrl: './register_teacher.component.html',
+  styleUrls: ['./register_teacher.component.css']
 })
-export class RegisterComponent {
+export class RegisterTeacherComponent {
   signUpForm = new FormGroup({
     'firstName': new FormControl('', [Validators.required]),
     'lastName': new FormControl('', [Validators.required]),
-    'registrationEmail': new FormControl('', [Validators.required, Validators.pattern('[0-9]+\@student\.pwr\.edu\.pl')]),
+    'registrationEmail': new FormControl('', [Validators.required, Validators.pattern('.*[a-z]\..*[a-z]\@pwr\.edu\.pl')]),
     'password': new FormControl('', [Validators.required, Validators.pattern(/^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])([a-zA-Z0-9]{6,12})$/)]),
     'confirmationPassword': new FormControl('', [Validators.required])
   }, PasswordValidation.MatchPassword);
@@ -33,7 +33,7 @@ export class RegisterComponent {
     this.authService.signUpWithEmail(this.email, this.password_)
       .then(() => {
         this.router.navigate(['/'])
-        alert('Link aktywacyjny zostal wyslany na podany adres e-mail!')
+        alert('Zostałeś zarejestrowany!')
       }).catch(_error => {
         this.error = _error
         console.log(this.error);
