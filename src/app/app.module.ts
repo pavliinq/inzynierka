@@ -38,6 +38,7 @@ import {AuthGuard} from './services/auth-guard.service';
 import {environment} from './environment/environment';
 import {LoginComponent} from './login/login.component';
 import {RegisterComponent} from './register/register.component';
+import {RegisterTeacherComponent} from './register_teacher/register_teacher.component';
 import {AngularFireAuthModule} from 'angularfire2/auth';
 
 
@@ -64,7 +65,8 @@ import {AngularFireAuthModule} from 'angularfire2/auth';
     PanelNauczycielaComponent,
     SlowoNauczycielComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    RegisterTeacherComponent
 
   ],
   imports: [
@@ -88,6 +90,10 @@ import {AngularFireAuthModule} from 'angularfire2/auth';
       {
         path: 'register',
         component: RegisterComponent
+      },
+      {
+        path: 'register-teacher',
+        component: RegisterTeacherComponent
       },
       {
         path: 'kursy', component: KursyComponent,

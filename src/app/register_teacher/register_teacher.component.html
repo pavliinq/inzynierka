@@ -22,12 +22,12 @@
     </div>
   </div>
   <div class="form-group">
-    <label for="registrationEmail">E-mail studencki</label>
+    <label for="registrationEmail">E-mail pracowniczy</label>
     <input formControlName="registrationEmail"
            id="registrationEmail"
            type="text"
            class="form-control"
-           placeholder="indeks@student.pwr.edu.pl">
+           placeholder="imie.nazwisko@pwr.edu.pl">
     <div *ngIf="registrationEmail.touched && registrationEmail.invalid" class="alert alert-danger">
       <div *ngIf="registrationEmail.errors.required">E-mail jest wymagany</div>
       <div *ngIf="registrationEmail.errors.pattern">Wymagany jest e-mail prowadzącego w formacie: imię.nazwisko@pwr.edu.pl</div>
