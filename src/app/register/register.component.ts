@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {FormGroup, FormControl, Validators, AbstractControl} from '@angular/forms';
+import { FormGroup, FormControl, Validators, AbstractControl } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from '../services/auth.service';
 import { PasswordValidation } from './password-validation';
@@ -15,20 +15,20 @@ export class RegisterComponent {
     'firstName': new FormControl('', [Validators.required]),
     'lastName': new FormControl('', [Validators.required]),
     'registrationEmail': new FormControl('', [Validators.required, Validators.pattern('[0-9]+\@student\.pwr\.edu\.pl')]),
-    'password': new FormControl('', [Validators.required]),
+    'password': new FormControl('', [Validators.required], [Validators.pattern(/^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])([a-zA-Z0-9]{6,12})$/)]),
     'confirmationPassword': new FormControl('', [Validators.required])
   }, PasswordValidation.MatchPassword);
-  error: {name: string, message: string} = {name: '', message: ''};
+  error: { name: string, message: string } = { name: '', message: '' };
   email: string;
   password_: string;
-  confirmationPassword_ : string;
+  confirmationPassword_: string;
 
   constructor(
     private authService: AuthService,
-    private router: Router){ }
+    private router: Router) { }
 
 
-  signUpWithEmail(signUpFormValue){
+  signUpWithEmail(signUpFormValue) {
     this.setCredentials(signUpFormValue);
     this.authService.signUpWithEmail(this.email, this.password_)
       .then(() => {
@@ -46,20 +46,20 @@ export class RegisterComponent {
     this.confirmationPassword_ = signUpFormValue['confirmationPassword'];
   };
 
-  get confirmationPassword(){
+  get confirmationPassword() {
     return this.signUpForm.get('confirmationPassword');
   };
-  get registrationEmail(){
+  get registrationEmail() {
     return this.signUpForm.get('registrationEmail');
   };
-  get firstName(){
+  get firstName() {
     return this.signUpForm.get('firstName');
   };
-  get lastName(){
+  get lastName() {
     return this.signUpForm.get('lastName');
   };
 
-  get password(){
+  get password() {
     return this.signUpForm.get('password');
   };
 
