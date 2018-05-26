@@ -24,6 +24,7 @@
             <a routerLink="/mojekursy">Moje Kursy</a>
             <a routerLink="/kursy">Kursy</a>
             <a routerLink="/panel">Panel Prowadzącego</a>
+            <a (click)="this.authService.logOut()" routerLink="/">Wyloguj sie</a>
             <a data-toggle="modal" data-target="#exampleModal">Zaloguj się</a>
          </div>
          <!-- MENU MOBILNE-->
