@@ -1,0 +1,16 @@
+form {
+  margin: 0 auto;
+  width: 20%;
+  margin-bottom: 20%;
+}
+label {
+    color: #555;
+    display: inline-block;
+    margin-left: 18px;
+    padding-top: 10px;
+    font-size: 14px;
+}
+
+.form-control.ng-invalid.ng-touched {
+    border: 1px solid red;
+}

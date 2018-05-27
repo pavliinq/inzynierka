@@ -1,0 +1,62 @@
+<form [formGroup]="signUpForm" #f="ngForm" (ngSubmit)="signUpWithEmail(f.value)">
+  <div class="form-group">
+    <label for="firstName">Imię</label>
+    <input formControlName="firstName"
+           id="firstName"
+           type="text"
+           class="form-control"
+           placeholder="Imię">
+    <div *ngIf="firstName.touched && firstName.invalid" class="alert alert-danger">
+      <div *ngIf="firstName.errors.required">Imię jest wymagane</div>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="lastName">Nazwisko</label>
+    <input formControlName="lastName"
+           id="lastName"
+           type="text"
+           class="form-control"
+           placeholder="Nazwisko">
+    <div *ngIf="lastName.touched && lastName.invalid" class="alert alert-danger">
+      <div *ngIf="lastName.errors.required">Nazwisko jest wymagane</div>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="registrationEmail">E-mail pracowniczy</label>
+    <input formControlName="registrationEmail"
+           id="registrationEmail"
+           type="text"
+           class="form-control"
+           placeholder="imie.nazwisko@pwr.edu.pl">
+    <div *ngIf="registrationEmail.touched && registrationEmail.invalid" class="alert alert-danger">
+      <div *ngIf="registrationEmail.errors.required">E-mail jest wymagany</div>
+      <div *ngIf="registrationEmail.errors.pattern">Wymagany jest e-mail prowadzącego w formacie: imię.nazwisko@pwr.edu.pl</div>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="password">Hasło</label>
+    <input formControlName="password"
+           id="password"
+           type=password
+           class="form-control"
+           placeholder="Hasło">
+    <div *ngIf="password.touched && password.invalid" class="alert alert-danger">
+      <div *ngIf="password.errors.required">Proszę wprowadzić hasło</div>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="confirmationPassword">Proszę potwierdzić hasło</label>
+    <input formControlName="confirmationPassword"
+           id="confirmationPassword"
+           type=password
+           class="form-control"
+           placeholder="Potwierdź hasło">
+    <div *ngIf="confirmationPassword.touched && confirmationPassword.invalid" class="alert alert-danger">
+      <div *ngIf="confirmationPassword.errors.required">Proszę potwierdzić hasło</div>
+      <div *ngIf="signUpForm.controls.confirmationPassword.errors?.MatchPassword">Hasła muszą się zgadzać</div>
+      <div *ngIf="password.errors.pattern">Wymagane hasło musi składać się z 6-12 znaków (w tym conajmniej jedna duża litera i jedna cyfra).</div>
+    </div>
+
+  </div>
+  <button class="btn btn-primary" [disabled]="!f.valid" type="submit">Zarejestruj się</button>
+</form>
