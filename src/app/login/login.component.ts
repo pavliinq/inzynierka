@@ -36,13 +36,16 @@ export class LoginComponent {
 
 
   sendResetEmail() {
-  let email = (<HTMLInputElement>document.getElementById('loginEmail')).value;
-
-    this.authService.resetPassword(email)
-      .then(() => {this.resetPassword = true; this.email_g = email;})
-      .catch(_error => {
-        this.error = _error
-      })
+      let email = (<HTMLInputElement>document.getElementById('loginEmail')).value;
+      if (email != "") { 
+            this.authService.resetPassword(email)
+            .then(() => {this.resetPassword = true; this.email_g = email;})
+            .catch(_error => {
+                this.error = _error
+            })
+       }else {
+            alert("Podaj email");
+       }
   }
 }
 

@@ -27,8 +27,8 @@
     </div>
     <button class="btn btn-primary" [disabled]="!f.valid" type="submit">Zaloguj się</button>
 
-    		<a *ngIf="!resetPassword" class="text-danger" (click)="sendResetEmail()">Reset Password</a>
-		<p *ngIf="resetPassword" class="text-success">Email has been sent to {{email_g}}. Check your email to reset password!</p>
+    		<a *ngIf="!resetPassword" class="text-danger" (click)="sendResetEmail()">Reset Hasła</a>
+		<p *ngIf="resetPassword" class="text-success">Email został wysłany na adres {{email_g}}. Sprawdź swoją skrzynkę pocztową, aby zmienić hasło</p>
   <div id = "verifyEmail" > </div>
 
 </form>
