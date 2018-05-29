@@ -1,6 +1,7 @@
 
 
 export class Slowo {
+  teacherOff: any;
     id?:string;
     autor:string;
     data_dod:Date ;
