@@ -1,6 +1,6 @@
 /*MENU DESKTOPOWE*/
 .navbartlo{
-  background-image: url("https://preview.ibb.co/kWmzQd/bg.jpg");
+  /* background-image: url("https://preview.ibb.co/kWmzQd/bg.jpg"); */
   height:540px;
   background-repeat:no-repeat;
   background-size:cover;
@@ -9,6 +9,14 @@
   
     
   
+}
+.navbartlo2{
+  height:540px;
+  background-repeat:no-repeat;
+  background-size:cover;
+  background-position: center center;
+  margin-bottom: 300px;
+
 }
 
 .global-nav{

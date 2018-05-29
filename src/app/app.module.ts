@@ -1,8 +1,8 @@
+import {  HttpClientModule } from '@angular/common/http';
 import { SlowaService } from './slowa/shared/slowa.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import {RouterModule} from '@angular/router';
-
 import { AppComponent } from './app.component';
 import { environment } from '../environments/environment';
 import { FirebaseApp } from '@firebase/app-types';
@@ -35,6 +35,7 @@ import { MojeKursyListaComponent } from './kursy/moje-kursy-lista/moje-kursy-lis
 
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -53,11 +54,13 @@ import { MojeKursyListaComponent } from './kursy/moje-kursy-lista/moje-kursy-lis
     KursyListaComponent,
     KursComponent,
     FormZapiszSieComponent,
-    MojeKursyListaComponent
+    MojeKursyListaComponent, 
   ],
   imports: [
     NgbModule.forRoot(),
     BrowserModule,
+    HttpClientModule,
+   
     
     FormsModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),

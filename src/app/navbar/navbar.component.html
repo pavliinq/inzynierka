@@ -1,6 +1,29 @@
 <body>
     <!-- LOGO-->
     <div class="navbartlo">
+        <ngb-carousel *ngIf="images">
+            <ng-template ngbSlide>
+              <img src="assets/myimages/notes.jpg" alt="Random first slide">
+              <div class="carousel-caption">
+                <h3>Skończ z toną notatek!</h3>
+                <p>Miej je wszystkie w kieszeni.</p>
+              </div>
+            </ng-template>
+            <ng-template ngbSlide>
+              <img src="assets/myimages/banner.jpg" alt="Random second slide">
+              <div class="carousel-caption">
+                <h3>Nauka nigdy nie była tak prosta!</h3>
+                <p>Wystarczy chwila i wszystko jest jasne.</p>
+              </div>
+            </ng-template>
+            <ng-template ngbSlide>
+              <img src="assets/myimages/calculator.jpg" alt="Random third slide">
+              <div class="carousel-caption">
+                <h3>Dziel się swoją wiedzą!</h3>
+                <p>W grupie siła. Pomagaj i otrzymuj pomoc od innych.</p>
+              </div>
+            </ng-template>
+          </ngb-carousel>
         <div class="global-nav">
         <div class="logo">
           <svg viewBox="0 0 1418 116" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -135,3 +158,8 @@
   </div>
       </body> 
       
+      
+     
+
+
+     
