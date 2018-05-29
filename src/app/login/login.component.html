@@ -1,0 +1,34 @@
+<form [formGroup]="loginForm" #f="ngForm" (ngSubmit)="singInWithEmail(f.value)">
+    <div class="form-group">
+        <label for="loginEmail">E-mail studencki</label>
+        <input
+            formControlName="loginEmail"
+            id="loginEmail"
+            type="text"
+            class="form-control"
+            placeholder="E-mail">
+            <div *ngIf="loginEmail.touched && loginEmail.invalid" class="alert alert-danger">
+                <div *ngIf="loginEmail.errors.required">E-mail jest wymagany.</div>
+                <div *ngIf="loginEmail.errors.pattern">Wymagany e-mail studencki indeks@student.pwr.edu.pl</div>
+            </div>
+    </div>
+    <div class="form-group">
+        <label for="loginPassword">Hasło</label>
+        <input
+            type=password
+            formControlName="loginPassword"
+            id="loginPassword"
+            class="form-control"
+            placeholder="Hasło">
+            <div *ngIf="loginPassword.touched && loginPassword.invalid" class="alert alert-danger">
+                <div *ngIf="loginPassword.errors.required">Podaj hasło.</div>
+            </div>
+    <div *ngIf="this.authService.errorMessage" class="alert alert-danger">E-mail lub hasło są niepoprawne.</div>
+    </div>
+    <button class="btn btn-primary" [disabled]="!f.valid" type="submit">Zaloguj się</button>
+
+    		<a *ngIf="!resetPassword" class="text-danger" (click)="sendResetEmail()">Reset Hasła</a>
+		<p *ngIf="resetPassword" class="text-success">Email został wysłany na adres {{email_g}}. Sprawdź swoją skrzynkę pocztową, aby zmienić hasło</p>
+  <div id = "verifyEmail" > </div>
+
+</form>
