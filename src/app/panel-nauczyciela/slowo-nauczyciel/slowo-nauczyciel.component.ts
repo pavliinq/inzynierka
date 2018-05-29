@@ -35,9 +35,9 @@ lajki(){
   this.lajkii =this.slowo.likes.length;
   this.dislajkii=this.slowo.dislikes.length;
   // ustaw także kolor backgroundu w zależności od ilości lajków
-  if(this.lajkii > 20 )
+  if(this.dislajkii > 20 )
   this.backgroundColor  =   '#ff010126';
-   else if(this.lajkii >= 15  &&  this.lajkii < 20  )
+   else if(this.dislajkii >= 15  &&  this.dislajkii < 20  )
   this.backgroundColor  =   '#fbd20d5c';
    else  
   this.backgroundColor  =   '#0dfb535c';
