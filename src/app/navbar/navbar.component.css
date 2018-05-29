@@ -1,19 +1,21 @@
 /*MENU DESKTOPOWE*/
-.teacher-button{background-color: dodgerblue;
-                color: white}
-
-.student-button{background-color: deeppink;
-                color:white}
-
 .navbartlo{
-  background-image: url("https://preview.ibb.co/kWmzQd/bg.jpg");
-  height:440px;
+  /* background-image: url("https://preview.ibb.co/kWmzQd/bg.jpg"); */
+  height:540px;
   background-repeat:no-repeat;
   background-size:cover;
   background-position: center center;
-  margin-bottom: 100px;
-
-
+  margin-bottom: 300px;
+  
+    
+  
+}
+.navbartlo2{
+  height:540px;
+  background-repeat:no-repeat;
+  background-size:cover;
+  background-position: center center;
+  margin-bottom: 300px;
 
 }
 
@@ -29,12 +31,12 @@
   transition: height .5s, line-height .5s;
   z-index: 100;
 
-
+  
 }
 .menu{
     text-align: right;
     width: 90%;
-
+    
 }
 .menu a{
     color: #FFF;
@@ -46,11 +48,11 @@
     position: relative;
     z-index: 100;
     cursor: pointer;
-
+    
 }
 
 .menu a:focus{
-  color: rgb(154, 230, 213);
+  color: rgb(154, 230, 213);  
 }
 .menu a:before, .menu a:after{
     position: absolute;
@@ -66,7 +68,7 @@
     opacity: 0;
     transition: all 0.3s;
     z-index: -1;
-}
+} 
 
 .menu a:hover:before{
     opacity: 1;
@@ -87,7 +89,7 @@
   width: 100% !important;
   -webkit-transition: all .5s;
   transition: all .5s;
-}
+}	
 .scrolled-nav .menu a{
   font-size: 15px;
 }
@@ -97,8 +99,6 @@
     transition: all .5s;
 }
 .scrolled-nav .logo svg{
-    height: 150px;
-}.scrolled-nav .logo svg{
     height: 150px;
 }
 .open{
@@ -111,12 +111,13 @@
     .menu a{
         display: none;
     }
+	
     .open {
         position: fixed;
         top: 70px;
-        right: 40px;
+        right: 40px; 
         width: 80px;
-        height: 55px;
+        height: 80px;
         display: block;
         cursor: pointer;
         transition: opacity 0.2s linear;
@@ -124,7 +125,7 @@
       }
       .open:hover {
         opacity: 0.8;
-
+        
       }
       .open span {
         display: block;
@@ -139,7 +140,7 @@
         top: -15px;
         overflow: hidden;
         transition: all 0.4s ease;
-
+        
       }
       .open span:nth-child(1) {
         margin-top: 5px;
@@ -151,7 +152,7 @@
       .open span:nth-child(3) {
         margin-top: 45px;
       }
-
+      
       .sub-menu {
         transition: all 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
         height: 0;
@@ -173,7 +174,7 @@
         transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
       }
       .sub-menu li:first-child {
-        margin-top: 210px;
+        margin-top: 180px;
       }
       .sub-menu li:nth-child(1) {
         -webkit-transition-delay: 0.05s;
@@ -202,12 +203,13 @@
       }
       .sub-menu li a:hover{
         color: rgb(154, 230, 213);
-
+        
       }
       .sub-menu li a:focus{
         color: rgb(154, 230, 213);
-
+        
       }
+      
       .oppenned .sub-menu {
         opacity: 1;
         height: 570px;
@@ -244,17 +246,12 @@
       .logo{
         display: none;
       }
-      .scrolled-nav .open{
-        top: 30px;
-      }
-
-
-
-
+      
+      
 }
 
 @media only screen and (min-width:1001px) and (max-width: 1360px) {
-
+    
     /* #global-nav{
 	   top: 0;
 	   position: fixed;
@@ -263,13 +260,13 @@
 	   height: 60px;
 	   line-height: 60px;
 	   background-color: #2196f3;
-	   -webkit-transition: height .5s, line-height .5s;
+	   -webkit-transition: height .5s, line-height .5s; 
         transition: height .5s, line-height .5s;
 } */
 .menu a{
 	font-size: 15px;
 }
-
+ 
 
 }
 
@@ -281,7 +278,7 @@
   margin-left: 10%;
   -webkit-transition: all .5s;
     transition: all .5s;
-
+  
 }
 .logo svg {
   max-width: 40%;

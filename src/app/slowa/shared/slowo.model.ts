@@ -8,5 +8,4 @@ export class Slowo {
     likes:string[];
     slowo:string;
     sumaLike:number;
-    teacherOff : Boolean;
 }

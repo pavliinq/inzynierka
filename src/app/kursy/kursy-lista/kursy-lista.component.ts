@@ -9,16 +9,13 @@ import { Kurs } from '../shared/kurs.model';
   styleUrls: ['./kursy-lista.component.css']
 })
 export class KursyListaComponent implements OnInit {
-  studenci: string[] = ["franko", "koza", "woza"];
-  student: string;
   values:string ='';
   strona: string = window.location.href.substr(window.location.href.lastIndexOf('/') + 1);
-  modo:boolean;
+
   onKey(event: any) { 
     this.values = event.target.value ;
     // console.log(this.values);
   }
-  
   ngOnInit() {
     
     
@@ -29,12 +26,7 @@ export class KursyListaComponent implements OnInit {
  
   constructor(private db: AngularFirestore, public kursServe: KursyService) {
     this.kursServe.getKurs().subscribe(data => { this.kursy = data; })
-    this.student = this.studenci[Math.floor(Math.random() * this.studenci.length)];
 
-    }
-    onKeydown(egg) {
-      
-      this.modo=true
     }
   }
 
