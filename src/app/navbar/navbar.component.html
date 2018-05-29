@@ -1,10 +1,31 @@
 <body>
-  <!-- LOGO-->
-  <div class="navbartlo">
-    <div class="global-nav">
-      <div class="logo">
-        <!-- link jest na za duzym polu i za da się na nie kliknąć przez przypadek -->
-        <!-- <a routerLink="/"> -->
+    <!-- LOGO-->
+    <div class="navbartlo">
+        <ngb-carousel *ngIf="images">
+            <ng-template ngbSlide>
+              <img src="assets/myimages/notes.jpg" alt="Random first slide">
+              <div class="carousel-caption">
+                <h3>Skończ z toną notatek!</h3>
+                <p>Miej je wszystkie w kieszeni.</p>
+              </div>
+            </ng-template>
+            <ng-template ngbSlide>
+              <img src="assets/myimages/banner.jpg" alt="Random second slide">
+              <div class="carousel-caption">
+                <h3>Nauka nigdy nie była tak prosta!</h3>
+                <p>Wystarczy chwila i wszystko jest jasne.</p>
+              </div>
+            </ng-template>
+            <ng-template ngbSlide>
+              <img src="assets/myimages/calculator.jpg" alt="Random third slide">
+              <div class="carousel-caption">
+                <h3>Dziel się swoją wiedzą!</h3>
+                <p>W grupie siła. Pomagaj i otrzymuj pomoc od innych.</p>
+              </div>
+            </ng-template>
+          </ngb-carousel>
+        <div class="global-nav">
+        <div class="logo">
           <svg viewBox="0 0 1418 116" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
             <g stroke="none" fill="none" fill-rule="evenodd" fill-opacity="0">
               <text id="imle" stroke="white" fill="#645F5A" font-weight="normal" font-family="Sedgwick Ave" font-size="144">
@@ -17,25 +38,30 @@
               </text>
             </g>
           </svg>
-        <!-- </a> -->
-      </div>
-      <!-- KONIEC LOGO-->
-      <!-- MENU DESKTOPOWE-->
+          </div>
+        <!-- KONIEC LOGO-->    
+        <!-- MENU DESKTOPOWE-->
+          
+         <div class="menu">
+            <a routerLink="/">Strona Główna</a>
+            <a routerLink="/mojekursy">Moje Kursy</a>
+            <a routerLink="/kursy">Kursy</a>
+            <a data-toggle="modal" data-target="#exampleModal">Zaloguj się</a> 
+         </div>
+        </div>
+    </div>
+      
+     
+    
 
-      <div class="menu">
-        <a routerLink="/">Strona Główna</a>
-        <a routerLink="/mojekursy">Moje Kursy</a>
-        <a routerLink="/kursy">Kursy</a>
-        <a routerLink="/panel">Panel Prowadzącego</a>
-        <a (click)="this.authService.logOut()" routerLink="/">Wyloguj sie</a>
-        <a data-toggle="modal" data-target="#exampleModal">Zaloguj się</a>
-      </div>
-      <!-- MENU MOBILNE-->
-      <div class="open">
+     <!-- MENU MOBILNE-->
+     <div  class="open">
         <span class="cls"></span>
         <span>
-          <ul class="sub-menu">
+          <ul class="sub-menu ">
             <li>
+                
+                <br>
               <a routerLink="/" title="stronaglowna">Strona Główna</a>
             </li>
             <li>
@@ -45,82 +71,51 @@
               <a routerLink="/kursy" title="kursy">Kursy</a>
             </li>
             <li>
-              <a routerLink="/panel" title="panelProwadzacego">Panel Prowadzącego</a>
-            </li>
-            <li>
-              <a routerLink="/login" title="zaloguj">Zaloguj się</a>
+              <a routerLink="" title="zaloguj">Zaloguj się</a>
             </li>
           </ul>
         </span>
         <span class="cls"></span>
       </div>
-      <!-- KONIEC MENU MOBILNE-->
-    </div>
-  </div>
-
-
-
-
-
-  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Zaloguj się</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          <div class="col-md-6 col-md-offset-3">
-
-            <!-- <form name="form" ng-submit="vm.login()" role="form">
+    <!-- KONIEC MENU MOBILNE-->
+      <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Zaloguj się</h5>
+                   <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+                 </div>
+                 <div class="modal-body">
+                    <div class="col-md-6 col-md-offset-3">
+      
+      <!-- <form name="form" ng-submit="vm.login()" role="form">
           <div class="form-group" ng-class="{ 'has-error': form.username.$dirty && form.username.$error.required }">
               <label for="username">Login</label>
               <input type="text" name="username" id="username" class="form-control" ng-model="vm.username" required />
-
+              
           </div>
           <div class="form-group" ng-class="{ 'has-error': form.password.$dirty && form.password.$error.required }">
               <label for="password">Hasło</label>
               <input type="password" name="password" id="password" class="form-control" ng-model="vm.password" required />
-
+              
           </div>
           <div class="form-actions">
               <button type="submit"  class="btn btn-outline-primary">Nie pamiętam hasła</button>
           </div>
       </form> -->
+  </div>
+                </div>
+                 <div class="modal-footer">
+                  <button type="submit" ng-disabled="form.$invalid || vm.dataLoading" class="btn btn-outline-primary">Zaloguj</button>
+                  <a href=""  data-toggle="modal" data-target="#exampleModale" class="btn btn-outline-danger" role="button">Zarejestruj się</a>
+                 </div>
+            </div>
           </div>
-        </div>
-        <div class="modal-footer">
-          <button routerLink="/login" class="btn btn-outline-primary">Zaloguj</button>
-          <button data-toggle="modal" data-target="#register-choice" class="btn btn-outline-danger" role="button">Zarejestruj się</button>
-        </div>
       </div>
-    </div>
-  </div>
-
-  <div class="modal fade" id="register-choice" tabindex="-1" role="dialog" aria-labelledby="register-choiceLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="register-choiceLabel">Rejestracja</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          <button routerLink="/register-teacher" type="button" class="btn teacher-button" data-dismiss="modal">Prowadzacy
-          </button>
-          <button routerLink="/register" type="button" class="btn student-button" data-dismiss="modal">Student
-          </button>
-        </div>
-
-      </div>
-    </div>
-  </div>
-
-
-  <div class="modal fade" id="exampleModale" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      
+      <div class="modal fade" id="exampleModale" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
@@ -130,35 +125,41 @@
           </button>
         </div>
         <div class="modal-body">
-          <!-- <form name="form" ng-submit="vm.register()" role="form">
+            <!-- <form name="form" ng-submit="vm.register()" role="form">
           <div class="form-group" ng-class="{ 'has-error': form.firstName.$dirty && form.firstName.$error.required }">
               <label for="username">Imię</label>
               <input type="text" name="firstName" id="firstName" class="form-control" ng-model="vm.user.firstName" required />
-
+              
           </div>
           <div class="form-group" ng-class="{ 'has-error': form.lastName.$dirty && form.lastName.$error.required }">
               <label for="username">Nazwisko</label>
               <input type="text" name="lastName" id="Text1" class="form-control" ng-model="vm.user.lastName" required />
-
+              
           </div>
           <div class="form-group" ng-class="{ 'has-error': form.username.$dirty && form.username.$error.required }">
               <label for="username">E-mail</label>
               <input type="text" name="username" id="username" class="form-control" ng-model="vm.user.username" required />
-
+              
           </div>
           <div class="form-group" ng-class="{ 'has-error': form.password.$dirty && form.password.$error.required }">
               <label for="password">Hasło</label>
               <input type="password" name="password" id="password" class="form-control" ng-model="vm.user.password" required />
-
+              
           </div>
           <div class="form-actions">
               <button type="submit" ng-disabled="form.$invalid || vm.dataLoading" class="btn btn-outline-primary">Zarejestruj się</button>
-
+              
         </div>
       </form> -->
         </div>
-
+        
       </div>
     </div>
   </div>
-</body>
+      </body> 
+      
+      
+     
+
+
+     

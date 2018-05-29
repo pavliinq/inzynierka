@@ -11,21 +11,14 @@
           placeholder="Podaj hasło dostępu do kursu" 
           ngModel name="hasloKurs"
           required
-          minlength="1"
+          minlength="2"
           #hasloKurs="ngModel">
-          <div class = "alert alert-danger" *ngIf="zleHaslo">
-      
-              Podałeś złe hasło
-            
-          </div>
 
-          <div class = "alert alert-success" *ngIf="dobreHaslo">
-      
-              Gratulacje zapisałeś sie na kurs
-            
-          </div>
       </div>
-      
+      <ng-container *ngIf="zleHaslo">
+          podales zle haslo
+      </ng-container>
+
     </div>
     <button class="button" type="submit" [disabled]="!f.form.valid"  title="Zapisz się">Zapisz się</button>
     <br>

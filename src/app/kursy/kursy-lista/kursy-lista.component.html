@@ -1,13 +1,8 @@
-<ng-container *ngIf="modo">
-  Ale bym ciachnął jakiegoś browara... #Endzik
- </ng-container>
 <h1 class="display-4">Kursy</h1>
-
 <div class="buttons">
-  
-  <a class="button" [routerLink]="['/formularz']" title="Dodaj kurs">Dodaj Kurs</a>
 
-  <input class="szukaj" (keyup.control.1)="onKeydown($event)" (keyup)="onKey($event)" placeholder="Szukaj">
+  <a class="button" [routerLink]="['/formularz']" title="Dodaj kurs">Dodaj Kurs</a>
+  <input class="szukaj" (keyup)="onKey($event)" placeholder="Szukaj">
   <!-- <button type="button" class="btn btn-primary" [routerLink]="['/zapiszSie']">Zapisz się do kursu</button> -->
 </div>
 
@@ -15,12 +10,12 @@
 
 
 
-<ul class="list-group "  >
+<ul class="list-group ">
   <ng-container *ngFor="let kur of kursy">
     <ng-container *ngIf="kur.nazwa.substring(0,values.length).toUpperCase() == values.toUpperCase()">
 
       <li class="list-group-item col-sm-7 kursStyle">
-        <app-kurs [user]="student" [kurs]="kur"></app-kurs>
+        <app-kurs [kurs]="kur"></app-kurs>
       </li>
     </ng-container>
 
