@@ -12,7 +12,7 @@ export class SlowaService {
   slowoCollection: AngularFirestoreCollection<Slowo[]>;
   slowo: Observable<Slowo[]>;
   constructor(public db: AngularFirestore) {
-    this.autor = "radek";
+    this.autor = "User1";
     
 
   }

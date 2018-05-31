@@ -30,7 +30,8 @@ export class DefinicjeListaComponent implements OnInit {
     this.definicjaServe.getDefinicja(this.strona,this.url[4]).subscribe(data => { this.definicje = data; })
 
 
-    this.autor = this.autorzy[Math.floor(Math.random() * this.autorzy.length)]
+    // this.autor = this.autorzy[Math.floor(Math.random() * this.autorzy.length)]
+    this.autor = this.sloServ.getAutor();
    
   }
   
