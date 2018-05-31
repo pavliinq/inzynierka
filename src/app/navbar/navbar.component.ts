@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { SlowaService } from '../slowa/shared/slowa.service';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-navbar',
@@ -7,9 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
 
-  constructor() { }
+  constructor(private sloServ:SlowaService) { }
 
   ngOnInit() {
+  }
+
+  dodajUsera(f:NgForm){
+    this.sloServ.setAutor(f.value.user);
+
   }
 
 }
