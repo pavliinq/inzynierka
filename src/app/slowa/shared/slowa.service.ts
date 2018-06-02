@@ -6,14 +6,14 @@ import { Observable } from 'rxjs/Observable';
 
 @Injectable()
 export class SlowaService {
-
+  autor:string;
 
   slowoDocument: AngularFirestoreDocument<Slowo>;
   slowoCollection: AngularFirestoreCollection<Slowo[]>;
   slowo: Observable<Slowo[]>;
   constructor(public db: AngularFirestore) {
+    this.autor = "User1";
     
-
 
   }
 
@@ -46,6 +46,16 @@ export class SlowaService {
   setSlowo(turn: Slowo,url:string) {
     this.getSlowa(url);
     this.slowoCollection.add(JSON.parse(JSON.stringify(turn)));
+  }
+
+  getAutor(){
+    return this.autor;
+  }
+
+  setAutor(newAutor:string){
+    this.autor = newAutor;
+    
+    
   }
 
 }

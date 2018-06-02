@@ -3,6 +3,7 @@ import { KursyService } from '../shared/kursy.service';
 import { NgForm } from '@angular/forms';
 import { Kurs } from '../shared/kurs.model';
 import { RouterModule, Routes, Router } from '@angular/router';
+import { KontoService } from './../../konto/shared/konto.service'
 
 @Component({
   selector: 'app-form-zapisz-sie',
@@ -22,9 +23,9 @@ export class FormZapiszSieComponent implements OnInit {
 
   zleHaslo:boolean = false ;
   dobreHaslo:boolean = false ;
-  constructor(private kurSev:KursyService,private router: Router) { 
+  constructor(private kurSev:KursyService,private router: Router,private userServe: KontoService) { 
     // losuje jednego studenta pozniej zamieniy to na odczyt z logowania
-    this.student = this.studenci[Math.floor(Math.random() * this.studenci.length)];
+    // this.student = this.studenci[Math.floor(Math.random() * this.studenci.length)];
     this.idkursu = this.url[4];
 
     kurSev.getKurs().subscribe(data => this.tenKurs = data.find(k => k.id == this.idkursu) );
@@ -54,6 +55,7 @@ export class FormZapiszSieComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.student=this.userServe.getCurUser()
   }
 
 }

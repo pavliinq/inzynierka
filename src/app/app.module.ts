@@ -37,6 +37,10 @@ import { PanelNauczycielaComponent } from './panel-nauczyciela/panel-nauczyciela
  import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { SlowoNauczycielComponent } from './panel-nauczyciela/slowo-nauczyciel/slowo-nauczyciel.component';
 import { SlowaNauczycielaComponent } from './panel-nauczyciela/slowa-nauczyciela/slowa-nauczyciela.component';
+import { LoginComponent } from './konto/login/login.component';
+import { RegisterComponent } from './konto/register/register.component';
+import { KontoService } from './konto/shared/konto.service';
+import { DataSharingService } from './data-sharing.service';
   
 
 
@@ -62,7 +66,9 @@ import { SlowaNauczycielaComponent } from './panel-nauczyciela/slowa-nauczyciela
     FooterComponent,
     PanelNauczycielaComponent,
     SlowoNauczycielComponent,
-    SlowaNauczycielaComponent
+    SlowaNauczycielaComponent,
+    LoginComponent,
+    RegisterComponent
    
   ],
   imports: [
@@ -82,11 +88,16 @@ import { SlowaNauczycielaComponent } from './panel-nauczyciela/slowa-nauczyciela
       {path:'formularz',component: FormDodajKursComponent},
       {path: 'zapiszSie/:kurs_id',component:FormZapiszSieComponent},
       {path: 'panel',component:PanelNauczycielaComponent},
+      {path: 'register',component:RegisterComponent},
+      {path: 'login',component:LoginComponent},
+      
+
+
     
   ]),
   Ng2OrderModule
   ],
-  providers: [SlowaService, DefinicjeService, RankingService,KursyService],
+  providers: [SlowaService, DefinicjeService, RankingService,KursyService,KontoService,DataSharingService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

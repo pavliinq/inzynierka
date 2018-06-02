@@ -1,0 +1,27 @@
+
+
+<div class="calosc">
+  <form ngForm #f="ngForm" (ngSubmit)="loginUser(f)" style="margin: 20px">
+<h1 style="margin: 50px">Zaloguj się</h1>
+ 
+    <div class="card-body "style="margin: 50px">
+      <div class="row">
+        <div class="form-group col-lg-6">
+            <label 
+            for="nazwaUser" 
+            class="col-form-label" 
+            style="font-size:120%" >Nazwa użytkownika:</label>
+            <input class="form-control" id="nazwaUser" requried ngModel name ="nazwaUser" required type="text" class="form-control"
+            #nazwaUser ="ngModel">
+
+
+            <label for="hasloUser"  class="col-form-label" style="font-size:120%">Hasło:</label>
+            <input type ="text" class="form-control" id="hasloUser" ngModel name="hasloUser" #hasloUser="ngModel">
+        
+
+          </div>
+      </div>
+      <button class="btn btn-primary" [disabled]="!f.form.valid" (click)="loginUser(f)" type="submit"  >Zaloguj</button>
+    </div>
+  </form>
+</div>

@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Kurs } from '../shared/kurs.model';
 import { AngularFirestore } from 'angularfire2/firestore';
 import { KursyService } from '../shared/kursy.service';
+import { KontoService } from './../../konto/shared/konto.service'
+
 
 @Component({
   selector: 'app-moje-kursy-lista',
@@ -15,17 +17,17 @@ export class MojeKursyListaComponent implements OnInit {
   // student:string;
   kursy: Kurs[];
   autor: string;
-  studenci: string[] = ["franko", "koza", "woza"];
+  // studenci: string[] = ["franko", "koza", "woza"];
   // student: string;
   student:string 
   zapisany_test: number;
 // na razie dziala tylko dla studnta franko
-  constructor(private db: AngularFirestore, public kursServe: KursyService) {
+  constructor(private db: AngularFirestore, public kursServe: KursyService,private userServe: KontoService) {
     // this.student = this.studenci[Math.floor(Math.random() * this.studenci.length)];
     //trzeba zrobić filtrowanie studnta
     this.kursServe.getKurs().subscribe(data => {
        this.kursy = data.filter(
-          k => k.zapisani[k.zapisani.findIndex( z => z == "franko")] == "franko" 
+          k => k.zapisani[k.zapisani.findIndex( z => z == this.student)] == this.student 
         )})
     
   }
@@ -34,7 +36,7 @@ export class MojeKursyListaComponent implements OnInit {
 
   }
   ngOnInit() {
-    this.student="franko"
+    this.student=this.userServe.getCurUser()
   }
   
 }
