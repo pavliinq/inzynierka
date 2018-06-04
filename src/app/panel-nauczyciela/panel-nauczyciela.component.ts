@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { KursyService } from '../kursy/shared/kursy.service';
 import { SlowaService } from '../slowa/shared/slowa.service';
 import { Slowo } from '../slowa/shared/slowo.model';
+import { KontoService } from './../konto/shared/konto.service'
 
 @Component({
   selector: 'app-panel-nauczyciela',
@@ -9,11 +10,12 @@ import { Slowo } from '../slowa/shared/slowo.model';
   styleUrls: ['./panel-nauczyciela.component.css']
 })
 export class PanelNauczycielaComponent implements OnInit {
+  prowadzacy: string;
   slowa: Slowo[];
   coursesList 
   selectedCourse
    constructor(private kursService :  KursyService,
-    public slowoServe: SlowaService) {
+    public slowoServe: SlowaService,private userServe: KontoService) {
        
 
 
@@ -46,6 +48,7 @@ export class PanelNauczycielaComponent implements OnInit {
     this.kursService.getKurs().subscribe(res => this.coursesList = res)
    }
   ngOnInit() {
+    this.prowadzacy=this.userServe.getCurUser()
     this. getCourses()
 
   } 

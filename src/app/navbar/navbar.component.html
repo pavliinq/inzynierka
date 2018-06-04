@@ -28,7 +28,7 @@
         <a routerLink="/kursy">Kursy</a>
         <a *ngIf="isUserLoggedIn" routerLink="/panel">Panel Prowadzącego</a>
         <a *ngIf="!isUserLoggedIn" routerLink="/login">Zaloguj</a>
-        <a *ngIf="isUserLoggedIn" routerLink="/">Wyloguj</a>
+        <a *ngIf="isUserLoggedIn" (click)="wyloguj()" routerLink="/" >Wyloguj</a>
         <!-- <a data-toggle="modal" data-target="#exampleModal">Wprowadź usera</a> -->
       </div>
       <!-- MENU MOBILNE-->

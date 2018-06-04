@@ -29,5 +29,10 @@ export class NavbarComponent implements OnInit {
     this.sloServ.setAutor(f.value.user);
 
   }
+  wyloguj(){
+        this.dataSharingService.isUserLoggedIn.next(false);
+        this.userServe.setCurUser('')
+        
+  }
 
 }
