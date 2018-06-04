@@ -27,7 +27,7 @@ export class FormDodajSlowoComponent implements OnInit{
     this.kursServe.getKurs().subscribe(data => {this.kurs=data.filter(k => k.id==this.url[4])[0];});
 
   }
-  // new Date().toLocaleString()
+
   dodajSlowo(f: NgForm) {
     let slo: Slowo = new Slowo();
     slo.autor = this.userServe.getCurUser()

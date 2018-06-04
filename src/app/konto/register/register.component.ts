@@ -10,6 +10,7 @@ import { KontoService } from '../shared/konto.service';
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent implements OnInit {
+  users: User[];
 
   constructor(private db: AngularFirestore, private userServe: KontoService) { }
 
@@ -22,7 +23,22 @@ export class RegisterComponent implements OnInit {
     user.haslo = f.value.hasloUser;
 
 
-    this.userServe.setUser(user);
-    f.resetForm();
+    this.userServe.checkUser(user.login).subscribe(data =>{
+      this.users = data
+      if (this.users.length == 0) {
+        this.userServe.setUser(user);
+      f.resetForm();
+
+    
+     }
+     else {
+      // console.log("login jest juz zajety");
+      
+   }  
+ 
+    } )
+
+   
   }
+
 }

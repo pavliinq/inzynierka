@@ -49,4 +49,22 @@ export class KontoService {
     
     this.userCollection.add(JSON.parse(JSON.stringify(user)));
 }
+
+checkUser(login?:string) {
+  
+  let userCollection = this.db.collection<User>('/users', ref => {
+    return ref.where('login', '==', login)
+  });
+  let user = userCollection.snapshotChanges().map(actions => {
+    return actions.map(a => {
+      const data = a.payload.doc.data() as User;
+      const id = a.payload.doc.id;
+      
+      return { id, ...data };
+    })
+  });
+
+  return user;
 }
+}
+

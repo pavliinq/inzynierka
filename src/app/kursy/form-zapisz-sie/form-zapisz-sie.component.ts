@@ -11,7 +11,7 @@ import { KontoService } from './../../konto/shared/konto.service'
   styleUrls: ['./form-zapisz-sie.component.css']
 })
 export class FormZapiszSieComponent implements OnInit {
-  //to osoba ktora chce sie zapisac na kurs
+
   studenci:string[] = ["franko","koza", "woza"];
   student:string;
 
@@ -24,8 +24,7 @@ export class FormZapiszSieComponent implements OnInit {
   zleHaslo:boolean = false ;
   dobreHaslo:boolean = false ;
   constructor(private kurSev:KursyService,private router: Router,private userServe: KontoService) { 
-    // losuje jednego studenta pozniej zamieniy to na odczyt z logowania
-    // this.student = this.studenci[Math.floor(Math.random() * this.studenci.length)];
+
     this.idkursu = this.url[4];
 
     kurSev.getKurs().subscribe(data => this.tenKurs = data.find(k => k.id == this.idkursu) );

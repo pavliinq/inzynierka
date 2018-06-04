@@ -16,12 +16,13 @@
 
 
             <label for="hasloUser"  class="col-form-label" style="font-size:120%">Hasło:</label>
-            <input type ="text" class="form-control" id="hasloUser" ngModel name="hasloUser" #hasloUser="ngModel">
+            <input type ="text" class="form-control" id="hasloUser" ngModel name="hasloUser" #hasloUser="ngModel" type ="password">
         
 
           </div>
       </div>
-      <button class="btn btn-primary" [disabled]="!f.form.valid" (click)="loginUser(f)" type="submit"  >Zaloguj</button>
+      <button class="btn btn-primary" [disabled]="!f.form.valid" (click)="loginUser(f)" type="submit"   >Zaloguj</button>
+      <button class="btn btn-primary" [routerLink]="['/register']">Zarejestruj się</button>
     </div>
   </form>
 </div>
