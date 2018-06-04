@@ -23,7 +23,8 @@ export class LoginComponent implements OnInit {
   
 
  
-    this.userServe.getUser(f.value.nazwaUser,f.value.hasloUser).subscribe(data => { this.users = data 
+    this.userServe.getUser(f.value.nazwaUser,f.value.hasloUser).subscribe(data => { 
+      this.users = data 
       if (this.users.length == 0) {
         // jakis komunikat w htmlu by sie przydał
         console.log("bledny login lub haslo");
@@ -33,7 +34,6 @@ export class LoginComponent implements OnInit {
         this.dataSharingService.isUserLoggedIn.next(true);
         console.log(this.users)
         this.router.navigateByUrl('/kursy')
-
      }     
     
     
