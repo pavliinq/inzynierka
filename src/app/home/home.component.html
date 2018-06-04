@@ -1,9 +1,9 @@
 <div class="calosc">
   <h1 class="display-4">Witaj drogi użytkowniku!</h1>
-    <p class="lead" >Zapraszamy CIę do darmowej rejestracji konta w naszym portalu!</p>
+    <p class="lead" *ngIf="!isUserLoggedIn"  >Zapraszamy CIę do darmowej rejestracji konta w naszym portalu!</p>
      <hr class="my-4">
     <p>Nauka nigdy nie była tak prosta! Dołącz do nas!</p>
     <!-- <p class="lead"><a [routerLink]='' class="btn btn-primary btn-lg" role="button">Rejestracja</a></p> -->
-     <a class="button" [routerLink]="['/register']" role="button" title="Dołącz do nas!">Rejestracja</a><br><br><br>
+     <a  *ngIf="!isUserLoggedIn" class="button" [routerLink]="['/register']" role="button" title="Dołącz do nas!">Rejestracja</a><br><br><br>
     
 </div>
