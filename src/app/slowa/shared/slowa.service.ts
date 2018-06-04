@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { AngularFirestoreDocument, AngularFirestoreCollection, AngularFirestore } from 'angularfire2/firestore';
 import { JsonPipe } from '@angular/common';
 import { Observable } from 'rxjs/Observable';
-
+import { KontoService } from '../../konto/shared/konto.service'
 @Injectable()
 export class SlowaService {
   autor:string;
@@ -11,8 +11,8 @@ export class SlowaService {
   slowoDocument: AngularFirestoreDocument<Slowo>;
   slowoCollection: AngularFirestoreCollection<Slowo[]>;
   slowo: Observable<Slowo[]>;
-  constructor(public db: AngularFirestore) {
-    this.autor = "User1";
+  constructor(public db: AngularFirestore,private userServe: KontoService) {
+    
     
 
   }
@@ -49,6 +49,7 @@ export class SlowaService {
   }
 
   getAutor(){
+    this.autor = this.userServe.getCurUser();
     return this.autor;
   }
 
