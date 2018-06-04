@@ -4,7 +4,8 @@
 	position: relative;
 	width: 80%;
 	margin: 0 auto;
-	margin-bottom: 200px;
+  margin-bottom: 200px;
+  margin-top: 200px;
   }
   .calosc,
   .calosc::before,
