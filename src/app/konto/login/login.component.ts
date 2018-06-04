@@ -13,6 +13,7 @@ import { Router } from '@angular/router';
 export class LoginComponent implements OnInit {
 
   users: User[];
+  corectUser : boolean = true;
 
   constructor(private db: AngularFirestore, private userServe: KontoService,private dataSharingService: DataSharingService,private router: Router) { }
 
@@ -28,6 +29,7 @@ export class LoginComponent implements OnInit {
       if (this.users.length == 0) {
         // jakis komunikat w htmlu by sie przydał
         console.log("bledny login lub haslo");
+        this.corectUser = false;
      } else {
        
         this.userServe.setCurUser(this.users[0].login)

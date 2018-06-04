@@ -1,6 +1,6 @@
 
 
-<div class="calosc">
+<div class="calosc container" >
   <form ngForm #f="ngForm" (ngSubmit)="loginUser(f)" style="margin: 20px">
 <h1 style="margin: 50px">Zaloguj się</h1>
  
@@ -16,8 +16,8 @@
 
 
             <label for="hasloUser"  class="col-form-label" style="font-size:120%">Hasło:</label>
-            <input type ="text" class="form-control" id="hasloUser" ngModel name="hasloUser" #hasloUser="ngModel" type ="password">
-        
+            <input  type ="text" class="form-control" id="hasloUser" ngModel name="hasloUser" #hasloUser="ngModel" type ="password">
+            <div class="alert alert-danger" *ngIf = "!corectUser">Niepoprawne hasło lub login !</div>
 
           </div>
       </div>

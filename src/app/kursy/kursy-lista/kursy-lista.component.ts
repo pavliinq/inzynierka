@@ -3,7 +3,7 @@ import { AngularFirestore } from 'angularfire2/firestore';
 import { KursyService } from '../shared/kursy.service';
 import { Kurs } from '../shared/kurs.model';
 import { KontoService } from './../../konto/shared/konto.service'
-
+import { DataSharingService } from './../../data-sharing.service';
 
 @Component({
   selector: 'app-kursy-lista',
@@ -11,6 +11,7 @@ import { KontoService } from './../../konto/shared/konto.service'
   styleUrls: ['./kursy-lista.component.css']
 })
 export class KursyListaComponent implements OnInit {
+  isUserLoggedIn: boolean;
   studenci: string[] = ["franko", "koza", "woza"];
   student: string;
   values:string ='';
@@ -30,8 +31,11 @@ export class KursyListaComponent implements OnInit {
   autor: string;
   
  
-  constructor(private db: AngularFirestore, public kursServe: KursyService,private userServe: KontoService) {
+  constructor(private db: AngularFirestore, public kursServe: KursyService,private userServe: KontoService, public dataSharingService: DataSharingService) {
     this.kursServe.getKurs().subscribe(data => { this.kursy = data; })
+    this.dataSharingService.isUserLoggedIn.subscribe( value => {
+      this.isUserLoggedIn = value;
+  });
     // this.student = this.studenci[Math.floor(Math.random() * this.studenci.length)];
 
     }
