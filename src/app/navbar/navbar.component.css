@@ -239,7 +239,13 @@
         display: none;
       }
       .scrolled-nav .open{
-        top: 30px;
+        top: 40px;
+      }
+      .scrolled-nav{
+        background-image: url("https://image.ibb.co/bPVyv8/bg.jpg");
+        background-repeat:no-repeat;
+        background-size:cover;
+        background-position: center center;
       }
       
   
