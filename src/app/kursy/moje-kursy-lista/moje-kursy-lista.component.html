@@ -3,7 +3,7 @@
 <div class="calosc">
   <h1 class="display-4">Moje kursy</h1>
   <div class="buttons">
-    <a class="button" [routerLink]="['/formularz']" title="Dodaj kurs">Dodaj Kurs</a>
+    <a class="button" *ngIf="account_type=='0'"  [routerLink]="['/formularz']" title="Dodaj kurs">Dodaj Kurs</a>
     <input class="szukaj" (keyup)="onKey($event)" placeholder="Szukaj">
     <!-- <button type="button" class="btn btn-primary" [routerLink]="['/zapiszSie']">Zapisz się do kursu</button> -->
   </div>
