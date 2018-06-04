@@ -17,27 +17,34 @@
         </li>
 
       </ul>
-      <form ngForm #f="ngForm">
-        <div class="col-sm-4">
-          <input id="ilosc" type="text" class="form-control" ngModel name="ilosc" #ilosc="ngModel" (keyup)="zmienilosc($event)">
-            <!-- {{selectedCourse|json}} -->
-        </div>
-    </form>
 
-    <div class="col-sm-4">
-      <button class="btn btn-outline-danger staleWymiary" (click)="deleteWords()"> Usuń wszystkie słowa z listy </button>
+      <div class="form-group" class="col-sm-4">
+        <input id="ilosc" type="text" class="form-control" placeholder="Próg wyświetlania" ngModel name="ilosc" #ilosc="ngModel"
+          (keyup)="zmienilosc($event)">
+
+        <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
+      </div>
+
+      <!-- <div class="col-sm-4">
+        <input id="ilosc" type="text" class="form-control" ngModel name="ilosc" #ilosc="ngModel" (keyup)="zmienilosc($event)">
+      </div> -->
+
+      <div class="col-sm-4">
+        <button class="btn btn-outline-danger staleWymiary" (click)="deleteWords()"> Usuń wszystkie słowa z listy </button>
+      </div>
     </div>
+
+
+
   </div>
-  
   <ul class="list-group">
 
-  <ng-container *ngFor="let slo of slowa">
-    <ng-container *ngIf="slo">
-      
+    <ng-container *ngFor="let slo of slowa">
+      <ng-container *ngIf="slo">
+
         <app-slowo-nauczyciel [slowo]="slo" [autor]="autor" [ile]="poczatkowailosc" [course]="selectedCourse"></app-slowo-nauczyciel>
 
+      </ng-container>
     </ng-container>
-  </ng-container>
-</ul>
-
+  </ul>
 </div>
