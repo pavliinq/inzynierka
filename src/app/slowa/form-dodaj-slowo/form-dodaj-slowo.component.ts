@@ -4,6 +4,7 @@ import { Slowo } from './../shared/slowo.model';
 import { SlowaService } from './../shared/slowa.service';
 import { NgForm } from '@angular/forms';
 import { Kurs } from '../../kursy/shared/kurs.model';
+import { KontoService } from './../../konto/shared/konto.service'
 import { KursyService } from '../../kursy/shared/kursy.service';
 
 
@@ -22,14 +23,14 @@ export class FormDodajSlowoComponent implements OnInit{
   }
 
   
-  constructor(private db: AngularFirestore, public slowoServe: SlowaService,public kursServe: KursyService) {
+  constructor(private db: AngularFirestore, public slowoServe: SlowaService,public kursServe: KursyService, public userServe: KontoService) {
     this.kursServe.getKurs().subscribe(data => {this.kurs=data.filter(k => k.id==this.url[4])[0];});
-    
+
   }
   // new Date().toLocaleString()
   dodajSlowo(f: NgForm) {
     let slo: Slowo = new Slowo();
-    slo.autor = "Ble Ble";
+    slo.autor = this.userServe.getCurUser()
     slo.data_dod = new Date();
     slo.dislikes = [];
     slo.likes = [];
@@ -40,7 +41,7 @@ export class FormDodajSlowoComponent implements OnInit{
   }
 
   ngOnInit() {
-  
+    
   }
  
 }
