@@ -15,7 +15,7 @@ export class PanelNauczycielaComponent implements OnInit {
   slowa: Slowo[];
   coursesList
   selectedCourse
-  poczatkowailosc = 10
+  poczatkowailosc:number = 1
   constructor(private kursService: KursyService,
     public slowoServe: SlowaService, private userServe: KontoService) {
 
@@ -29,7 +29,7 @@ export class PanelNauczycielaComponent implements OnInit {
 
       data.forEach(word => {
 
-        if (!word.teacherOff && word.dislikes.length >= 10)
+        if (!word.teacherOff && word.dislikes.length >= this.poczatkowailosc)
           cumulatedData.push(word)
       })
 
