@@ -21,6 +21,7 @@ export class RegisterComponent implements OnInit {
     let user: User = new User();
     user.login = f.value.nazwaUser ;
     user.haslo = f.value.hasloUser;
+    user.account_type = '2';
 
 
     this.userServe.checkUser(user.login).subscribe(data =>{

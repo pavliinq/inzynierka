@@ -30,8 +30,13 @@ export class PanelNauczycielaComponent implements OnInit {
      
       data.forEach(word => 
       {
+<<<<<<< HEAD
       
         if(!word.teacherOff && word.dislikes.length >= this.poczatkowailosc )
+=======
+        
+        if(!word.teacherOff && word.dislikes.length >= 10 )
+>>>>>>> a7dfc66c541651ca6217d78d68239a47db5a86c1
           cumulatedData.push(word)
       })
    

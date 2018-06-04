@@ -2,8 +2,8 @@
   <!-- LOGO-->
   <div class="navbartlo">
     <div class="global-nav">
-      <!-- <a routerLink="/"> -->
-        <div class="logo">
+       <a routerLink="/"> 
+        <!-- <div class="logo">
           <svg viewBox="0 0 1418 116" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
             <g stroke="none" fill="none" fill-rule="evenodd" fill-opacity="0">
               <text id="imle" stroke="white" fill="#645F5A" font-weight="normal" font-family="Sedgwick Ave" font-size="144">
@@ -16,8 +16,16 @@
               </text>
             </g>
           </svg>
+        </div> -->
+        <div class="logo">
+          <span>i</span>
+          <span>M</span>
+          <span>L</span>
+          <span>E</span>
+          
+         
         </div>
-      <!-- </a> -->
+       </a> 
       <!-- KONIEC LOGO-->
       <!-- MENU DESKTOPOWE-->
 
@@ -26,7 +34,7 @@
         
         <a *ngIf="isUserLoggedIn" routerLink="/mojekursy">Moje Kursy</a>
         <a routerLink="/kursy">Kursy</a>
-        <a *ngIf="isUserLoggedIn" routerLink="/panel">Panel Prowadzącego</a>
+        <a *ngIf="isUserLoggedIn && (account_type=='1' || account_type=='0') " routerLink="/panel">Panel Prowadzącego</a>
         <a *ngIf="!isUserLoggedIn" routerLink="/login">Zaloguj</a>
         <a *ngIf="isUserLoggedIn" (click)="wyloguj()" routerLink="/" >Wyloguj</a>
         <!-- <a data-toggle="modal" data-target="#exampleModal">Wprowadź usera</a> -->
