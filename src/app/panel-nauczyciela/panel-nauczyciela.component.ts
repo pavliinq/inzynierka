@@ -1,3 +1,4 @@
+import { NgForm } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 import { KursyService } from '../kursy/shared/kursy.service';
 import { SlowaService } from '../slowa/shared/slowa.service';
@@ -14,6 +15,7 @@ export class PanelNauczycielaComponent implements OnInit {
   slowa: Slowo[];
   coursesList 
   selectedCourse
+  poczatkowailosc = 10
    constructor(private kursService :  KursyService,
     public slowoServe: SlowaService,private userServe: KontoService) {
        
@@ -29,7 +31,7 @@ export class PanelNauczycielaComponent implements OnInit {
       data.forEach(word => 
       {
       
-        if(!word.teacherOff && word.dislikes.length >= 10 )
+        if(!word.teacherOff && word.dislikes.length >= this.poczatkowailosc )
           cumulatedData.push(word)
       })
    
@@ -59,6 +61,8 @@ export class PanelNauczycielaComponent implements OnInit {
       word.teacherOff = true
       this.slowoServe.updateSlowo(word, word.id, this.selectedCourse.id );
      })
+
+
   }
 
 
@@ -69,7 +73,13 @@ export class PanelNauczycielaComponent implements OnInit {
     this.getWords(course.id)
   }
 
+  zmienilosc(event: any){
+   this.poczatkowailosc = event.target.value;
+   console.log(event.target.value);
+   this.getWords(this.selectedCourse)
+  }
 
+  
 
 
 }
