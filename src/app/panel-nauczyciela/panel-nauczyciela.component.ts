@@ -26,18 +26,10 @@ export class PanelNauczycielaComponent implements OnInit {
   getWords(course) {
     this.slowoServe.getSlowa(course).subscribe(data => {
       var cumulatedData = []
-<<<<<<< HEAD
-     
-      data.forEach(word => 
-      {
-      
-        if(!word.teacherOff && word.dislikes.length >= this.poczatkowailosc )
-=======
 
       data.forEach(word => {
 
         if (!word.teacherOff && word.dislikes.length >= 10)
->>>>>>> c96e3bc89847d173860b636487da9ae38d4d8a58
           cumulatedData.push(word)
       })
 
