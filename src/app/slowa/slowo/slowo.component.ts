@@ -4,6 +4,7 @@ import { Slowo } from './../shared/slowo.model';
 import { SlowaService } from './../shared/slowa.service';
 import { NgForm } from '@angular/forms';
 
+
 @Component({
   selector: 'app-slowo',
   templateUrl: './slowo.component.html',
