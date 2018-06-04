@@ -31,7 +31,6 @@
 
       <div class="menu">
         <a routerLink="/">Strona Główna</a>
-        
         <a *ngIf="isUserLoggedIn" routerLink="/mojekursy">Moje Kursy</a>
         <a routerLink="/kursy">Kursy</a>
         <a *ngIf="isUserLoggedIn && (account_type=='1' || account_type=='0') " routerLink="/panel">Panel Prowadzącego</a>
@@ -48,17 +47,20 @@
               <a routerLink="/" title="stronaglowna">Strona Główna</a>
             </li>
             <li>
-              <a routerLink="/mojekursy" title="mojekursy">Moje Kursy</a>
+              <a *ngIf="isUserLoggedIn" routerLink="/mojekursy" title="mojekursy">Moje Kursy</a>
             </li>
             <li>
               <a routerLink="/kursy" title="kursy">Kursy</a>
             </li>
             <li>
-              <a routerLink="/panel" title="panelProwadzacego">Panel Prowadzącego</a>
+              <a *ngIf="isUserLoggedIn && (account_type=='1' || account_type=='0') " routerLink="/panel" title="panelProwadzacego">Panel Prowadzącego</a>
             </li>
             <li>
-              <a routerLink="" title="zaloguj">Zaloguj się</a>
+              <a *ngIf="!isUserLoggedIn" routerLink="/login" title="zaloguj">Zaloguj</a>
             </li>
+            <li>
+                <a *ngIf="isUserLoggedIn" (click)="wyloguj()" routerLink="/" title="wyloguj">Wyloguj</a>
+              </li>
           </ul>
         </span>
         <span class="cls"></span>

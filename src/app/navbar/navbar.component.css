@@ -78,16 +78,18 @@
   line-height: 100px !important;
   background-color: rgb(38, 84, 133);
   width: 100% !important;
-  -webkit-transition: all .5s;
-  transition: all .5s;
+  -webkit-transition: all .3s;
+  transition: all .3s;
 }	
 .scrolled-nav .menu a{
   font-size: 15px;
+  -webkit-transition: all .3s;
+  transition: all .3s;
 }
 .scrolled-nav .logo{
     top: 10px;
-    -webkit-transition: all .5s;
-    transition: all .5s;
+    -webkit-transition: all .3s;
+    transition: all .3s;
     font-size: 144px;
 }
 /* .scrolled-nav .logo svg{
@@ -368,7 +370,6 @@
   position: fixed;
   font-family: 'Londrina Outline', cursive;
   font-size: 160px;
-  font-weight: 900;
   width: 50%;
   text-align: center;
   text-decoration: none;
