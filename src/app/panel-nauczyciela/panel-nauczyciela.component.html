@@ -20,27 +20,24 @@
       <form ngForm #f="ngForm">
         <div class="col-sm-4">
           <input id="ilosc" type="text" class="form-control" ngModel name="ilosc" #ilosc="ngModel" (keyup)="zmienilosc($event)">
-
-
+            <!-- {{selectedCourse|json}} -->
         </div>
-        <button class="btn btn-primary"> Ustaw </button>
-   
     </form>
 
     <div class="col-sm-4">
       <button class="btn btn-outline-danger staleWymiary" (click)="deleteWords()"> Usuń wszystkie słowa z listy </button>
     </div>
   </div>
-
+  
+  <ul class="list-group">
 
   <ng-container *ngFor="let slo of slowa">
     <ng-container *ngIf="slo">
-      <li class="list-group-item col-sm-7 slowko">
-        <app-slowo-nauczyciel [slowo]="slo" [autor]="autor" [course]="selectedCourse"></app-slowo-nauczyciel>
-      </li>
+      
+        <app-slowo-nauczyciel [slowo]="slo" [autor]="autor" [ile]="poczatkowailosc" [course]="selectedCourse"></app-slowo-nauczyciel>
 
     </ng-container>
   </ng-container>
-
+</ul>
 
 </div>

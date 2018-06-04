@@ -13,78 +13,70 @@ import { KontoService } from './../konto/shared/konto.service'
 export class PanelNauczycielaComponent implements OnInit {
   prowadzacy: string;
   slowa: Slowo[];
-  coursesList 
+  coursesList
   selectedCourse
   poczatkowailosc = 10
-   constructor(private kursService :  KursyService,
-    public slowoServe: SlowaService,private userServe: KontoService) {
-       
+  constructor(private kursService: KursyService,
+    public slowoServe: SlowaService, private userServe: KontoService) {
 
 
-   }
 
-   getWords(course)
-   {
+  }
+
+  getWords(course) {
     this.slowoServe.getSlowa(course).subscribe(data => {
       var cumulatedData = []
-     
-      data.forEach(word => 
-      {
-<<<<<<< HEAD
-      
-        if(!word.teacherOff && word.dislikes.length >= this.poczatkowailosc )
-=======
-        
-        if(!word.teacherOff && word.dislikes.length >= 10 )
->>>>>>> a7dfc66c541651ca6217d78d68239a47db5a86c1
+
+      data.forEach(word => {
+
+        if (!word.teacherOff && word.dislikes.length >= 10)
           cumulatedData.push(word)
       })
-   
+
       this.slowa = cumulatedData.sort((a: Slowo, b: Slowo) => {
-          return  +new Date(b.data_dod) - +new Date(a.data_dod) ;
-      } 
-    );
+        return +new Date(b.data_dod) - +new Date(a.data_dod);
+      }
+      );
 
-  });
-   }
+    });
+  }
 
-   getCourses()
-   {
-        //TODO zamienic getKurs na inny serwis pobierajacy tylko kursy przypisane do danego usera
-    
+  getCourses() {
+    //TODO zamienic getKurs na inny serwis pobierajacy tylko kursy przypisane do danego usera
+
     this.kursService.getKurs().subscribe(res => this.coursesList = res)
-   }
+  }
   ngOnInit() {
-    this.prowadzacy=this.userServe.getCurUser()
-    this. getCourses()
+    this.prowadzacy = this.userServe.getCurUser()
+    this.getCourses()
 
-  } 
+  }
 
-  deleteWords()
-  {
-     this.slowa.forEach(word => {
+  deleteWords() {
+    this.slowa.forEach(word => {
       word.teacherOff = true
-      this.slowoServe.updateSlowo(word, word.id, this.selectedCourse.id );
-     })
+      this.slowoServe.updateSlowo(word, word.id, this.selectedCourse.id);
+    })
 
 
   }
 
 
 
-  setCourse(course)
-  {
-    this.selectedCourse= course
+  setCourse(course) {
+    this.selectedCourse = course
     this.getWords(course.id)
   }
 
-  zmienilosc(event: any){
-   this.poczatkowailosc = event.target.value;
-   console.log(event.target.value);
-   this.getWords(this.selectedCourse)
+  zmienilosc(event: any) {
+    this.poczatkowailosc = event.target.value;
+    // console.log(this.poczatkowailosc);
+    // this.getWords(course.id)
+    // this.getCourses();
+    // this.getWords(this.selectedCourse)
   }
 
-  
+
 
 
 }
