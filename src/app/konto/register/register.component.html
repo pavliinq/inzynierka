@@ -17,13 +17,13 @@
 
             <label for="hasloUser"  class="col-form-label" style="font-size:120%">Hasło:</label>
             <input type ="text" class="form-control" id="hasloUser" ngModel name="hasloUser" #hasloUser="ngModel">
-        
+            <div class="alert alert-danger" *ngIf = "!checkUser">Login jest już zajęty</div>
 
 
 
           </div>
       </div>
-      <button class="btn btn-primary" [disabled]="!f.form.valid" (click)="dodajUser(f)" type="submit" routerLink="/">Rejestruj</button>
+      <button class="btn btn-primary" [disabled]="!f.form.valid" (click)="dodajUser(f)" type="submit" >Rejestruj</button>
     </div>
   </form>
 </div>

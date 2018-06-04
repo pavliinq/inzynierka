@@ -27,6 +27,7 @@ export class RegisterComponent implements OnInit {
       this.users = data
       if (this.users.length == 0) {
         this.userServe.setUser(user);
+ 
       f.resetForm();
 
     
