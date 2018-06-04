@@ -1,10 +1,18 @@
 <div class="row">
-    <ng-container *ngIf="zapisany_test === 0">
+
+ 
+      
+        
+    <ng-container *ngIf="zapisany_test === 0"  >
         <div class="col-sm" >{{kurs.nazwa}}</div>
             <div>
-                <a class="button" [routerLink]="['/zapiszSie',kurs.id]" title="Zapisz się">Zapisz się</a>
+                
+                <a   *ngIf="isUserLoggedIn" class="button" [routerLink]="['/zapiszSie',kurs.id]" title="Zapisz się">Zapisz się</a>
+
             </div>
     </ng-container>
+
+
 
     <ng-container *ngIf="zapisany_test !== 0">
             <div class="col-sm" [routerLink]="['/kursy', kurs.id] ">{{kurs.nazwa}}</div>
