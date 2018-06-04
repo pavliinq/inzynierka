@@ -4,6 +4,7 @@ import { NgForm } from '@angular/forms';
 import { Kurs } from '../shared/kurs.model';
 import { RouterModule, Routes, Router } from '@angular/router';
 import { KontoService } from './../../konto/shared/konto.service'
+import { DataSharingService } from '../../data-sharing.service';
 
 @Component({
   selector: 'app-form-zapisz-sie',
@@ -20,14 +21,22 @@ export class FormZapiszSieComponent implements OnInit {
 
   tenKurs:Kurs;
 
+  isUserLoggedIn: boolean;
 
   zleHaslo:boolean = false ;
   dobreHaslo:boolean = false ;
-  constructor(private kurSev:KursyService,private router: Router,private userServe: KontoService) { 
+  constructor(private kurSev:KursyService,private userServe: KontoService,public dataSharingService: DataSharingService,private router: Router) { 
 
     this.idkursu = this.url[4];
 
     kurSev.getKurs().subscribe(data => this.tenKurs = data.find(k => k.id == this.idkursu) );
+    this.dataSharingService.isUserLoggedIn.subscribe( value => {
+      this.isUserLoggedIn = value;
+      if (this.isUserLoggedIn===false){
+        this.router.navigateByUrl('/')
+      }
+  
+      });
   }
 
   zapiszSie(f: NgForm) {

@@ -4,6 +4,7 @@ import { AngularFirestore } from 'angularfire2/firestore';
 import { KursyService } from '../shared/kursy.service';
 import { KontoService } from './../../konto/shared/konto.service'
 import { User } from '../../konto/shared/user.model';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -24,7 +25,7 @@ export class MojeKursyListaComponent implements OnInit {
   user: User[];
   account_type: string;
 
-  constructor(private db: AngularFirestore, public kursServe: KursyService,private userServe: KontoService) {
+  constructor(private db: AngularFirestore, public kursServe: KursyService,private userServe: KontoService,private router: Router) {
    
     this.kursServe.getKurs().subscribe(data => {
        this.kursy = data.filter(
@@ -34,6 +35,11 @@ export class MojeKursyListaComponent implements OnInit {
           data => {
             this.user = data
             if (this.user.length == 0) {
+              
+                  this.router.navigateByUrl('/')
+                
+            
+                
             } else {
               this.account_type = this.user[0].account_type
             }

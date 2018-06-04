@@ -6,6 +6,8 @@ import { DefinicjeService } from '../shared/definicje.service';
 import { SlowaService } from '../../slowa/shared/slowa.service';
 import { Slowo } from '../../slowa/shared/slowo.model';
 import { isEmpty } from '@firebase/util';
+import { DataSharingService } from '../../data-sharing.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-form-dodaj-definicje',
@@ -16,10 +18,17 @@ export class FormDodajDefinicjeComponent implements OnInit {
   url:string[] = window.location.href.split('/');
   strona: string = window.location.href.substr(window.location.href.lastIndexOf('/') + 1);
   public slowa: Slowo;
-  constructor(private db: AngularFirestore, public definicjaServe: DefinicjeService,public sloServ:SlowaService) {
+  isUserLoggedIn: boolean;
+  constructor(private db: AngularFirestore, public definicjaServe: DefinicjeService,public sloServ:SlowaService, public dataSharingService: DataSharingService,private router: Router) {
 
     this.sloServ.getSlowa(this.url[4]).subscribe(data => {this.slowa = data.filter(c=> c.id == this.strona )[0] });
-    
+    this.dataSharingService.isUserLoggedIn.subscribe( value => {
+      this.isUserLoggedIn = value;
+      if (this.isUserLoggedIn===false){
+        this.router.navigateByUrl('/')
+      }
+  
+      });
    }
 
   dodajDefinicja(f: NgForm) {

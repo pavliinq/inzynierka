@@ -8,16 +8,18 @@ import {DataSharingService} from '../data-sharing.service'
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
+  autor:string;
   isUserLoggedIn: boolean;
   constructor( private userServe: KontoService, public dataSharingService: DataSharingService ) {   
     this.dataSharingService.isUserLoggedIn.subscribe( value => {
     this.isUserLoggedIn = value;
 
-    });}
+    });
+    
+  }
 
   ngOnInit() {
-    let autor=this.userServe.getCurUser()
-    
+    this.autor=this.userServe.getCurUser()
   }
 
 }

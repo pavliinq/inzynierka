@@ -4,6 +4,9 @@ import { KursyService } from '../kursy/shared/kursy.service';
 import { SlowaService } from '../slowa/shared/slowa.service';
 import { Slowo } from '../slowa/shared/slowo.model';
 import { KontoService } from './../konto/shared/konto.service'
+import { DataSharingService } from '../data-sharing.service';
+import { Router } from '@angular/router';
+import { User } from '../konto/shared/user.model';
 
 @Component({
   selector: 'app-panel-nauczyciela',
@@ -13,12 +16,31 @@ import { KontoService } from './../konto/shared/konto.service'
 export class PanelNauczycielaComponent implements OnInit {
   prowadzacy: string;
   slowa: Slowo[];
+  user: User[];
+  account_type: string
   coursesList
   selectedCourse
   poczatkowailosc:number = 1
+  isUserLoggedIn: boolean;
   constructor(private kursService: KursyService,
-    public slowoServe: SlowaService, private userServe: KontoService) {
+    public slowoServe: SlowaService, private userServe: KontoService,public dataSharingService: DataSharingService,private router: Router) {
+      this.userServe.checkUser(this.userServe.getCurUser()).subscribe(
+        data => {
+          this.user = data
+          if (this.user.length == 0) {
+          } else {
+            this.account_type = this.user[0].account_type
+          }
 
+        }
+      )
+      this.dataSharingService.isUserLoggedIn.subscribe( value => {
+        this.isUserLoggedIn = value;
+        if (this.isUserLoggedIn===false){
+          this.router.navigateByUrl('/')
+        }
+    
+        });
 
 
   }
