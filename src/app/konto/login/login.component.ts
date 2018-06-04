@@ -29,10 +29,10 @@ export class LoginComponent implements OnInit {
         // jakis komunikat w htmlu by sie przydał
         console.log("bledny login lub haslo");
      } else {
-        console.log("Well done");
+       
         this.userServe.setCurUser(this.users[0].login)
         this.dataSharingService.isUserLoggedIn.next(true);
-        console.log(this.users)
+        
         this.router.navigateByUrl('/kursy')
      }     
     
