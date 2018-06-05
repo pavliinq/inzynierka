@@ -13,7 +13,6 @@ import { Kurs } from '../../kursy/shared/kurs.model';
 
 export class SlowaListaComponent implements OnInit {
   public url:string[] = window.location.href.split('/');
-  autorzy = ['mua', 'bleble', 'ann', 'me','gdy','pada','deszczyk','mam','na','plecach','dreszczyk','kwiatek','smofee','smarfranek','kocyk','kotek','maupek','hustunia','swiatelka','maturaToBzdura','kartofel','grill','karkowka'];
   slowa: Slowo[];
   autor: string;
 
@@ -30,19 +29,9 @@ export class SlowaListaComponent implements OnInit {
    
     this.autor = slowoServe.getAutor();
 
-    // this.autor = this.autorzy[Math.floor(Math.random() * this.autorzy.length)]
     
   }
-  // test(){
 
-  //   this.slowoServe.setAutor("annKu");
-  //   this.autor = this.slowoServe.getAutor();
-    
-  // }
-
-  //   getTime(date?: Date) {
-  //     return date != null ? date.getTime() : 0;
-  // }
 
   ngOnInit() {
     this.autor = this.slowoServe.getAutor();
