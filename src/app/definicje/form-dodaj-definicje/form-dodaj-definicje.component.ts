@@ -8,6 +8,8 @@ import { Slowo } from '../../slowa/shared/slowo.model';
 import { isEmpty } from '@firebase/util';
 import { DataSharingService } from '../../data-sharing.service';
 import { Router } from '@angular/router';
+import { KontoService } from '../../konto/shared/konto.service';
+import { User } from '../../konto/shared/user.model';
 
 @Component({
   selector: 'app-form-dodaj-definicje',
@@ -19,7 +21,8 @@ export class FormDodajDefinicjeComponent implements OnInit {
   strona: string = window.location.href.substr(window.location.href.lastIndexOf('/') + 1);
   public slowa: Slowo;
   isUserLoggedIn: boolean;
-  constructor(private db: AngularFirestore, public definicjaServe: DefinicjeService,public sloServ:SlowaService, public dataSharingService: DataSharingService,private router: Router) {
+  user: User[];
+  constructor(private db: AngularFirestore, public definicjaServe: DefinicjeService,public sloServ:SlowaService, public dataSharingService: DataSharingService,private router: Router,public userServe: KontoService) {
 
     this.sloServ.getSlowa(this.url[4]).subscribe(data => {this.slowa = data.filter(c=> c.id == this.strona )[0] });
     this.dataSharingService.isUserLoggedIn.subscribe( value => {
@@ -29,6 +32,12 @@ export class FormDodajDefinicjeComponent implements OnInit {
       }
   
       });
+      this.userServe.checkUser(this.userServe.getCurUser()).subscribe(
+        data => {
+          this.user = data
+          
+        }
+      )
    }
 
   dodajDefinicja(f: NgForm) {
@@ -38,6 +47,7 @@ export class FormDodajDefinicjeComponent implements OnInit {
       def.dislikes = [];
       def.likes = [];
       def.sumlikes=0;
+      def.autor=this.user[0].login
       def.definicja = f.value.definicja;
       this.definicjaServe.setDefinicja(def,this.strona,this.url[4]);
       f.resetForm();
