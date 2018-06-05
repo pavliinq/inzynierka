@@ -45,6 +45,29 @@ export class KontoService {
 
     return user;
   }
+
+
+  getUsers() {
+    
+
+    let userCollection = this.db.collection<User>('/users');
+    let user = userCollection.snapshotChanges().map(actions => {
+      return actions.map(a => {
+        const data = a.payload.doc.data() as User;
+        const id = a.payload.doc.id;
+        
+        return { id, ...data };
+      })
+    });
+
+    return user;
+  }
+  updateUser(user: User, idDokumentu) {
+    
+    this.userDocument = this.db.doc('/users/'+idDokumentu);
+    
+    this.userDocument.update(user);
+  }
   setUser (user: User) {
     
     this.userCollection.add(JSON.parse(JSON.stringify(user)));
@@ -65,6 +88,10 @@ checkUser(login?:string) {
   });
 
   return user;
+}
+deleteUser(idDokumentu){
+    this.userDocument = this.db.doc('/users/' + idDokumentu);
+    this.userDocument.delete();
 }
 }
 
