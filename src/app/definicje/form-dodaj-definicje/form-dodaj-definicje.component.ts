@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Definicja } from '../shared/definicja.model';
 import { NgForm } from '@angular/forms';
 import { AngularFirestore } from 'angularfire2/firestore';
