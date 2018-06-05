@@ -1,28 +1,26 @@
+<div class="calosc">
+  <div class="format">
+    <div class="formatka">
+      <form class="formularz" ngForm #f="ngForm" (ngSubmit)="loginUser(f)">
+
+        <label for="nazwaUser" class="col-form-label" style="font-size:120%">Nazwa użytkownika:</label>
+        <input class="form-control" id="nazwaUser" requried ngModel name="nazwaUser" required type="text" class="form-control" #nazwaUser="ngModel">
 
 
-<div class="calosc container" >
-  <form ngForm #f="ngForm" (ngSubmit)="loginUser(f)" style="margin: 20px">
-<h1 style="margin: 50px">Zaloguj się</h1>
- 
-    <div class="card-body "style="margin: 50px">
-      <div class="row">
-        <div class="form-group col-lg-6">
-            <label 
-            for="nazwaUser" 
-            class="col-form-label" 
-            style="font-size:120%" >Nazwa użytkownika:</label>
-            <input class="form-control" id="nazwaUser" requried ngModel name ="nazwaUser" required type="text" class="form-control"
-            #nazwaUser ="ngModel">
+        <label for="hasloUser" class="col-form-label" style="font-size:120%">Hasło:</label>
+        <input type="text" class="form-control" id="hasloUser" ngModel name="hasloUser" #hasloUser="ngModel" type="password">
+        <div class="alert alert-danger" *ngIf="!corectUser">Niepoprawne hasło lub login !</div>
 
 
-            <label for="hasloUser"  class="col-form-label" style="font-size:120%">Hasło:</label>
-            <input  type ="text" class="form-control" id="hasloUser" ngModel name="hasloUser" #hasloUser="ngModel" type ="password">
-            <div class="alert alert-danger" *ngIf = "!corectUser">Niepoprawne hasło lub login !</div>
 
-          </div>
-      </div>
-      <button class="btn btn-primary" [disabled]="!f.form.valid" (click)="loginUser(f)" type="submit"   >Zaloguj</button>
-      <button class="btn btn-primary" [routerLink]="['/register']">Zarejestruj się</button>
+        <div class="loguj">
+          <button class="button" [disabled]="!f.form.valid" (click)="loginUser(f)" type="submit" title1="Zaloguj się!" title="Uzupełnij dane!">Zaloguj</button>
+        </div>
+        <div class="rejestracja">
+          <a class="button" [routerLink]="['/register']" role="button" title="Dołącz do nas!">Rejestracja</a>
+        </div>
+
+      </form>
     </div>
-  </form>
+  </div>
 </div>
