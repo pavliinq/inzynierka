@@ -39,8 +39,6 @@ export class SlowoComponent implements OnInit {
           this.account_type = this.user[0].account_type
         }
 
-
-
       }
     )
 
@@ -49,7 +47,7 @@ export class SlowoComponent implements OnInit {
 
   czyUpdate() {
     this.czyMod = !this.czyMod;
-    console.log(this.czyMod);
+    // console.log(this.czyMod);
   }
   upDateSlowo(f: NgForm) {
     this.slowo.slowo = f.value.edycja;
@@ -129,9 +127,6 @@ export class SlowoComponent implements OnInit {
 
     this.lajkii = this.slowo.likes.length;
     this.dislajkii = this.slowo.dislikes.length;
-
-
-    // console.log(this.definicja.sumlikes.valueOf())
 
   }
 

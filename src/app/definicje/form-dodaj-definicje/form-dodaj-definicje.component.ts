@@ -17,39 +17,39 @@ import { User } from '../../konto/shared/user.model';
   styleUrls: ['./form-dodaj-definicje.component.css']
 })
 export class FormDodajDefinicjeComponent implements OnInit {
-  url:string[] = window.location.href.split('/');
+  url: string[] = window.location.href.split('/');
   strona: string = window.location.href.substr(window.location.href.lastIndexOf('/') + 1);
   public slowa: Slowo;
   isUserLoggedIn: boolean;
   user: User[];
-  constructor(private db: AngularFirestore, public definicjaServe: DefinicjeService,public sloServ:SlowaService, public dataSharingService: DataSharingService,private router: Router,public userServe: KontoService) {
+  constructor(private db: AngularFirestore, public definicjaServe: DefinicjeService, public sloServ: SlowaService, public dataSharingService: DataSharingService, private router: Router, public userServe: KontoService) {
 
-    this.sloServ.getSlowa(this.url[4]).subscribe(data => {this.slowa = data.filter(c=> c.id == this.strona )[0] });
-    this.dataSharingService.isUserLoggedIn.subscribe( value => {
+    this.sloServ.getSlowa(this.url[4]).subscribe(data => { this.slowa = data.filter(c => c.id == this.strona)[0] });
+    this.dataSharingService.isUserLoggedIn.subscribe(value => {
       this.isUserLoggedIn = value;
-      if (this.isUserLoggedIn===false){
+      if (this.isUserLoggedIn === false) {
         this.router.navigateByUrl('/')
       }
-  
-      });
-      this.userServe.checkUser(this.userServe.getCurUser()).subscribe(
-        data => {
-          this.user = data
-          
-        }
-      )
-   }
+
+    });
+    this.userServe.checkUser(this.userServe.getCurUser()).subscribe(
+      data => {
+        this.user = data
+
+      }
+    )
+  }
 
   dodajDefinicja(f: NgForm) {
-    if(f.value.definicja.length > 1 ){
+    if (f.value.definicja.length > 1) {
       let def: Definicja = new Definicja();
       def.data_dod = new Date().toLocaleString();
       def.dislikes = [];
       def.likes = [];
-      def.sumlikes=0;
-      def.autor=this.user[0].login
+      def.sumlikes = 0;
+      def.autor = this.user[0].login
       def.definicja = f.value.definicja;
-      this.definicjaServe.setDefinicja(def,this.strona,this.url[4]);
+      this.definicjaServe.setDefinicja(def, this.strona, this.url[4]);
       f.resetForm();
     }
   }

@@ -23,7 +23,7 @@ export class DefinicjaComponent implements OnInit {
   user: User[];
   account_type: string;
 
-  czyMod: boolean = true;
+  czyMod: boolean = false;
 
 
 
@@ -47,7 +47,7 @@ export class DefinicjaComponent implements OnInit {
   // edycja wpisow
   czyUpdate() {
     this.czyMod = !this.czyMod;
-    console.log(this.czyMod);
+    // console.log(this.czyMod);
   }
   upDateDefinicje(f: NgForm) {
     this.definicja.definicja = f.value.edycja;
