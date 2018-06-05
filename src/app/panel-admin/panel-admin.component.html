@@ -1,0 +1,52 @@
+<div class="calosc">
+  <h1 class="display-4" align="center">Panel administratora!</h1>
+  <table style="width:50%" class="table-striped">
+
+
+    <tr>
+      <th>Login</th>
+      <th>Haslo</th>
+      <th>Typ konta</th>
+    </tr>
+
+    <ng-container *ngFor="let user of users">
+
+      <tr>
+        <td>{{user.login}}</td>
+        <td>{{user.haslo}}</td>
+
+        <td>
+          <button class="btn btn-outline-danger" style="background-color:#DC3546;color:white;margin:2px" (click)="delete(user.id)">Delete</button>
+        </td>
+
+
+        <td class="dropdown">
+          <button class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+            >
+            <ng-container *ngIf="user.account_type=='0'">
+              <td>Admin</td>
+            </ng-container>
+            <ng-container *ngIf="user.account_type=='1'">
+              <td>Prowadzacy</td>
+            </ng-container>
+            <ng-container *ngIf="user.account_type=='2'">
+              <td>Student</td>
+            </ng-container>
+          </button>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <a (click)="change_account_type(user.id,'0')">Admin</a>
+            <a (click)="change_account_type(user.id,'1')">Prowadzacy</a>
+            <a (click)="change_account_type(user.id,'2')">Student</a>
+
+          </div>
+        </td>
+
+      </tr>
+    </ng-container>
+  </table>
+
+
+
+
+
+</div>

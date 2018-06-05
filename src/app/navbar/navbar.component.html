@@ -35,6 +35,8 @@
         <a *ngIf="isUserLoggedIn" routerLink="/mojekursy">Moje Kursy</a>
         <a routerLink="/kursy">Kursy</a>
         <a *ngIf="isUserLoggedIn && (account_type=='1' || account_type=='0') " routerLink="/panel">Panel Prowadzącego</a>
+        <a *ngIf="isUserLoggedIn && (account_type=='0') " routerLink="/panel-admin">Panel admin</a>
+
         <a *ngIf="!isUserLoggedIn" routerLink="/login">Zaloguj</a>
         <a *ngIf="isUserLoggedIn" (click)="wyloguj()" routerLink="/" >Wyloguj</a>
         <!-- <a data-toggle="modal" data-target="#exampleModal">Wprowadź usera</a> -->

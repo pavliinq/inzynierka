@@ -3,6 +3,7 @@ import { NgForm } from '@angular/forms';
 import { AngularFirestore } from 'angularfire2/firestore';
 import {User} from '../shared/user.model'
 import { KontoService } from '../shared/konto.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-register',
@@ -12,7 +13,7 @@ import { KontoService } from '../shared/konto.service';
 export class RegisterComponent implements OnInit {
   users: User[];
 
-  constructor(private db: AngularFirestore, private userServe: KontoService) { }
+  constructor(private db: AngularFirestore, private userServe: KontoService,private router: Router) { }
 
   ngOnInit() {
   }
@@ -28,7 +29,7 @@ export class RegisterComponent implements OnInit {
       this.users = data
       if (this.users.length == 0) {
         this.userServe.setUser(user);
-
+        this.router.navigateByUrl('/')
       f.resetForm();
 
     

@@ -41,6 +41,7 @@ import { LoginComponent } from './konto/login/login.component';
 import { RegisterComponent } from './konto/register/register.component';
 import { KontoService } from './konto/shared/konto.service';
 import { DataSharingService } from './data-sharing.service';
+import { PanelAdminComponent } from './panel-admin/panel-admin.component';
   
 
 
@@ -68,7 +69,8 @@ import { DataSharingService } from './data-sharing.service';
     SlowoNauczycielComponent,
     SlowaNauczycielaComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    PanelAdminComponent
    
   ],
   imports: [
@@ -90,6 +92,8 @@ import { DataSharingService } from './data-sharing.service';
       {path: 'panel',component:PanelNauczycielaComponent},
       {path: 'register',component:RegisterComponent},
       {path: 'login',component:LoginComponent},
+      {path: 'panel-admin',component:PanelAdminComponent}
+      
       
 
 

@@ -5,4 +5,5 @@ export class Definicja {
     dislikes?:string[];
     likes?:string[];
     sumlikes?:number;
+    autor?:string;
 }

@@ -33,7 +33,7 @@ export class FormDodajKursComponent implements OnInit {
     kurs.data_utworzenia = new Date();
     kurs.prowadzącyimie= f.value.prowadzacyImie;
     kurs.prowadzacynazwisko=f.value.prowadzacyNazwisko
-    kurs.zapisani = [];
+    kurs.zapisani = ['admin'];
     kurs.rokAkademicki = f.value.rokKurs;
     kurs.haslo = f.value.hasloKurs;
 

@@ -10,7 +10,7 @@
       </button>
       <ul id="dropdown-basic" *dropdownMenu class="dropdown-menu" role="menu" aria-labelledby="button-basic">
         <li (click)="setCourse(course)" *ngFor="let course of coursesList" value="{{course}}" role="menuitem">
-          <ng-container *ngIf="course.prowadzacynazwisko == prowadzacy ">
+          <ng-container *ngIf="((course.prowadzacynazwisko == prowadzacy) || (this.user[0].account_type=='0')) ">
             <span class="dropdown-item"> {{course.nazwa}}</span>
           </ng-container>
 
