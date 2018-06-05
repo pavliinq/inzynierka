@@ -2,6 +2,8 @@ import { Component, OnInit, Input } from '@angular/core';
 import { Definicja } from '../shared/definicja.model';
 import { AngularFirestore } from 'angularfire2/firestore';
 import { DefinicjeService } from '../shared/definicje.service';
+import { KontoService } from '../../konto/shared/konto.service';
+import { User } from '../../konto/shared/user.model';
 
 @Component({
   selector: 'app-definicja',
@@ -17,13 +19,28 @@ export class DefinicjaComponent implements OnInit {
   url:string[] = window.location.href.split('/');
   ktoreikony:string;
   
+  user: User[];
+  account_type: string;
  
   
 
   
   @Input('autor') public autor: string;
   @Input('definicja') definicja: Definicja;
-  constructor(private db: AngularFirestore, public definicjaServe: DefinicjeService) { }
+  constructor(private db: AngularFirestore, public definicjaServe: DefinicjeService,private userServe: KontoService) {
+    this.userServe.checkUser(this.userServe.getCurUser()).subscribe(
+      data => {
+        this.user = data
+        if (this.user.length == 0) {
+        } else {
+          this.account_type = this.user[0].account_type
+        }
+
+
+
+      }
+    )
+   }
 
   ngOnInit() {
     this.lajki()
@@ -31,6 +48,10 @@ export class DefinicjaComponent implements OnInit {
     this.delete()
   }
   
+  delete_def(){
+    this.definicjaServe.deleteDefinicja(this.definicja.id,this.url[5],this.url[4])
+  }
+
 
   przyciski(){
     while(this.test != true){

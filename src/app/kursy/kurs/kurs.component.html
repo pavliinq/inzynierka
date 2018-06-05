@@ -1,11 +1,16 @@
 <div class="row">
 
+    
  
-      
+    
         
     <ng-container *ngIf="zapisany_test === 0"  >
         <div class="col-sm" >{{kurs.nazwa}}</div>
+        <ng-container *ngIf="account_type=='0'">
+                <button class="btn btn-outline-danger staleWymiary" style="background-color:#DC3546;color:white" (click)="delete()">Del</button>
+        </ng-container>
             <div>
+                
                 
                 <a   *ngIf="isUserLoggedIn" class="button" [routerLink]="['/zapiszSie',kurs.id]" title="Zapisz się">Zapisz się</a>
 
@@ -16,6 +21,9 @@
 
     <ng-container *ngIf="zapisany_test !== 0">
             <div class="col-sm" [routerLink]="['/kursy', kurs.id] ">{{kurs.nazwa}}</div>
+            <ng-container *ngIf="account_type=='0'">
+                    <button class="btn btn-outline-danger staleWymiary" style="background-color:#DC3546;color:white" (click)="delete()">Del</button>
+            </ng-container>
                 <div>
                 </div>
         </ng-container>

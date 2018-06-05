@@ -3,6 +3,8 @@ import { AngularFirestore } from 'angularfire2/firestore';
 import { Slowo } from './../shared/slowo.model';
 import { SlowaService } from './../shared/slowa.service';
 import { NgForm } from '@angular/forms';
+import { KontoService } from '../../konto/shared/konto.service';
+import { User } from '../../konto/shared/user.model';
 
 
 @Component({
@@ -24,9 +26,26 @@ export class SlowoComponent implements OnInit {
   dislajkii: number;
   ktoreikony:string;
   url:string[] = window.location.href.split('/');
-  constructor(private db: AngularFirestore, public slowoServe: SlowaService) {
+  user: User[];
+  account_type: string;
+  constructor(private db: AngularFirestore, public slowoServe: SlowaService,private userServe: KontoService) {
+    this.userServe.checkUser(this.userServe.getCurUser()).subscribe(
+      data => {
+        this.user = data
+        if (this.user.length == 0) {
+        } else {
+          this.account_type = this.user[0].account_type
+        }
+
+
+
+      }
+    )
     
   
+  }
+  delete(){
+    this.slowoServe.DeleteSlowo(this.slowo.id,this.url[4])
   }
   dajLajka() {
     
