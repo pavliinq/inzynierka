@@ -85,3 +85,16 @@
     -webkit-transform: translateY(0);
             transform: translateY(0);
   }
+  table {
+    width: 80%;
+    border: 2px solid #ddd;
+    margin: 0 auto;
+}
+
+th, td {
+    text-align: center;
+    width: 10%;
+}
+.table-responsive{
+  margin-top: 20px;
+}

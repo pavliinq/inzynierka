@@ -6,13 +6,6 @@
 <div class="row">
     <div class="col-sm" [routerLink]="['/kursy/',url[4], slowo.id] ">{{slowo.slowo}}</div>
 
-    <ng-container *ngIf="slowo.autor === autor" >
-            <button class="btn btn-outline-primary staleWymiary" (click)="czyUpdate()">Edytuj</button>
-        </ng-container>
-        
-    <ng-container *ngIf="account_type=='0'">
-        <button class="btn btn-outline-danger staleWymiary" style="background-color:#DC3546;color:white" (click)="delete()">Del</button>
-    </ng-container>
     <ng-container *ngIf="ktoreikony === '3'">
 
         <p class="lead" style="margin: 5px;">{{lajkii}}</p>
@@ -22,7 +15,7 @@
     </ng-container>
     <ng-container *ngIf="ktoreikony === '2'">
 
-       
+
         <p class="lead" style="margin: 5px;">{{lajkii}}</p>
         <button class="btn btn-outline-primary staleWymiary" (click)="dajLajka()">Znam</button>
         <p class="lead" style="margin: 5px;">{{dislajkii}}</p>
@@ -36,32 +29,30 @@
         <button class="btn btn-outline-danger staleWymiary" (click)="dajDisLajka()">Nie znam</button>
     </ng-container>
 
+    <ng-container *ngIf="slowo.autor === autor">
+        <button class="btn btn-outline-primary staleWymiary" (click)="czyUpdate()">Edytuj</button>
+    </ng-container>
+
+    <ng-container *ngIf="account_type=='0'">
+        <button class="btn btn-outline-danger staleWymiary" style="background-color:#DC3546;color:white" (click)="delete()">Usuń</button>
+    </ng-container>
 </div>
 
-<ng-container *ngIf="czyMod" >
+<ng-container *ngIf="czyMod">
 
     <div class="row" style="margin: 5px">
-    <form ngForm #f="ngForm" class="col-md" (ngSubmit)="upDateSlowo(f)" >
-                    <!-- <div class="row"> -->
-                  
-                      <div class="form-group row">
-                        <!-- <label for="slowo">Wprowadź słowo</label> -->
-                        <input 
-                        id="edycja" 
-                        type="text" 
-                        class="form-control col-md" 
-                        placeholder="edytuj słowo"
-                        name="edycja"  #edycja="ngModel"
-                        [ngModel]="slowo.slowo"
-                        required minlength="2"
-                        
-                         >
-                         
-                        <button type="button" type="submit" [disabled]="!f.form.valid" class="btn btn-outline-info">+</button>
-                  
-                        </div>
-                      
-                    </form>
-                </div>
-</ng-container>
+        <form ngForm #f="ngForm" class="col-md" (ngSubmit)="upDateSlowo(f)">
+            <!-- <div class="row"> -->
 
+            <div class="form-group row">
+                <!-- <label for="slowo">Wprowadź słowo</label> -->
+                <input id="edycja" type="text" class="form-control col-md" placeholder="edytuj słowo" name="edycja" #edycja="ngModel" [ngModel]="slowo.slowo"
+                    required minlength="2">
+
+                <button type="button" type="submit" [disabled]="!f.form.valid" class="btn btn-outline-info">+</button>
+
+            </div>
+
+        </form>
+    </div>
+</ng-container>

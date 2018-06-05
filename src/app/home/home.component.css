@@ -2,11 +2,12 @@
 	background: #fff;
 	padding: 30px;
 	position: relative;
-  width: 80%;
-  min-height: 200px;
+  	width: 80%;
+  	min-height: 200px;
 	margin: 0 auto;
-  margin-bottom: 200px;
-  margin-top: 200px;
+  	margin-bottom: 200px;
+  	margin-top: 200px;
+  	text-decoration: none;
   }
   .calosc,
   .calosc::before,
@@ -90,7 +91,7 @@
 
   /* HASŁO MOTYWACYJNE */
 
-.sp-container {
+/* .sp-container {
   position: absolute;
 	top: 40px;
 	left: 0px;
@@ -354,5 +355,8 @@
 		opacity: 1;
 		transform: scale(1) rotate(0deg);
 	}
+} */
+.przejdz{
+	color: black;
+	text-decoration: none;
 }
-

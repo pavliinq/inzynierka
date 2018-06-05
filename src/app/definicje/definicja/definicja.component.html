@@ -1,9 +1,6 @@
 <div class="row">
 
     <div class="col-sm">{{definicja.definicja}}</div>
-    <ng-container *ngIf="account_type=='0'">
-        <button class="btn btn-outline-danger staleWymiary" style="background-color:#DC3546;color:white" (click)="delete_def()">Del</button>
-    </ng-container>
     <p class="lead" style="margin: 5px;">{{definicja.sumlikes}}</p>
     <ng-container *ngIf="ktoreikony === '3'">
         <button class="btn btn-outline-primary staleWymiary" (click)="dajLajka()">+</button>
@@ -22,35 +19,31 @@
         <button class="btn btn-outline-primary staleWymiary" (click)="czyUpdate()">Edytuj</button>
     </ng-container>
 
+
+    <ng-container *ngIf="account_type=='0'">
+        <button class="btn btn-outline-danger staleWymiary" style="background-color:#DC3546;color:white" (click)="delete_def()">Usuń</button>
+    </ng-container>
+
 </div>
 
-<ng-container *ngIf="czyMod" >
+<ng-container *ngIf="czyMod">
 
-        <div class="row" style="margin: 5px">
-        <form ngForm #f="ngForm" class="col-md" (ngSubmit)="upDateDefinicje(f)" >
-                      
-                          <div class="form-group row">
+    <div class="row" style="margin: 5px">
+        <form ngForm #f="ngForm" class="col-md" (ngSubmit)="upDateDefinicje(f)">
 
-                             
+            <div class="form-group row">
 
-                             <textarea
-                             id="edycja" 
-                             (keyup.enter)="upDateDefinicje(f)"
-                             type="text" 
-                             class="form-control col-md" 
-                             placeholder="Dodaj definicję"
-                             [ngModel]="definicja.definicja"
-                             required ngModel name="edycja" 
-                             minlength="3"
-                             maxlength="1000"
-                             #edycja="ngModel" cols="1" rows="5" style="resize:none">
+
+
+                <textarea id="edycja" (keyup.enter)="upDateDefinicje(f)" type="text" class="form-control col-md" placeholder="Dodaj definicję"
+                    [ngModel]="definicja.definicja" required ngModel name="edycja" minlength="3" maxlength="1000" #edycja="ngModel"
+                    cols="1" rows="5" style="resize:none">
                            </textarea>
-                             
-                            <button type="button" type="submit" [disabled]="!f.form.valid" class="btn btn-outline-info">+</button>
-                      
-                            </div>
-                          
-                        </form>
-                    </div>
-    </ng-container>
-    
+
+                <button type="button" type="submit" [disabled]="!f.form.valid" class="btn btn-outline-info">+</button>
+
+            </div>
+
+        </form>
+    </div>
+</ng-container>

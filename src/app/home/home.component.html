@@ -1,17 +1,20 @@
 <ng-container *ngIf="!isUserLoggedIn">
-<div class="calosc">
-  <h1 class="display-4">Witaj drogi użytkowniku!</h1>
-    <p class="lead"  >Zapraszamy CIę do darmowej rejestracji konta w naszym portalu!</p>
-     <hr class="my-4">
+  <div class="calosc">
+    <h1 class="display-4">Witaj drogi użytkowniku!</h1>
+    <p class="lead">Zapraszamy Cię do darmowej rejestracji konta w naszym portalu!</p>
+    <hr class="my-4">
     <p>Nauka nigdy nie była tak prosta! Dołącz do nas!</p>
     <!-- <p class="lead"><a [routerLink]='' class="btn btn-primary btn-lg" role="button">Rejestracja</a></p> -->
-     <a class="button" [routerLink]="['/register']" role="button" title="Dołącz do nas!">Rejestracja</a><br><br><br>
-    
-</div>
+    <a class="button" [routerLink]="['/register']" role="button" title="Dołącz do nas!">Rejestracja</a>
+    <br>
+    <br>
+    <br>
+
+  </div>
 </ng-container>
 <ng-container *ngIf="isUserLoggedIn">
-    <div class="calosc">
-        <div class="sp-container">
+  <div class="calosc">
+    <!-- <div class="sp-container">
             <div class="sp-content">
               <div class="sp-globe"></div>
               <h2 class="frame-1">{{autor}}</h2>
@@ -26,7 +29,13 @@
               </h2>
               
             </div>
-          </div>
-        
-    </div>
-    </ng-container>
+          </div> -->
+    <h1 class="display-4">Witaj <b>{{autor}}</b>!</h1>
+    <p class="lead">Zapraszamy Cię skorzystania ze wszystkich funkcjonalności aplikacji!</p>
+    <hr class="my-4">
+    <p>Aby sprawdzić listę kursów, do których możesz się zapisać przejdź do zakładki <b><a class="przejdz" [routerLink]="['/kursy']">Kursy</a></b>.</p>
+    <p>Aby sprawdzić listę kursów, do których posiadasz dostęp przejdź do zakładki <b><a class="przejdz" [routerLink]="['/kursy']">Moje kursy</a></b>.</p>
+    
+
+  </div>
+</ng-container>
