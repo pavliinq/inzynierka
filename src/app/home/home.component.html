@@ -1,41 +1,23 @@
 <ng-container *ngIf="!isUserLoggedIn">
   <div class="calosc">
-    <h1 class="display-4">Witaj drogi użytkowniku!</h1>
-    <p class="lead">Zapraszamy Cię do darmowej rejestracji konta w naszym portalu!</p>
+    <h1 class="display-4">Witaj użytkowniku!</h1>
+    <p class="lead">Poznaj łatwość prowadzenia spotkań z naszą aplikacją.</p>
     <hr class="my-4">
-    <p>Nauka nigdy nie była tak prosta! Dołącz do nas!</p>
-    <!-- <p class="lead"><a [routerLink]='' class="btn btn-primary btn-lg" role="button">Rejestracja</a></p> -->
-    <a class="button" [routerLink]="['/register']" role="button" title="Dołącz do nas!">Rejestracja</a>
-    <br>
+    <p>Przekonaj się jakie to łatwe!</p>
+    <a class="button" [routerLink]="['/register']" role="button" title="Dołącz do nas!">Dołącz do nas</a>
     <br>
     <br>
 
   </div>
 </ng-container>
+
 <ng-container *ngIf="isUserLoggedIn">
   <div class="calosc">
-    <!-- <div class="sp-container">
-            <div class="sp-content">
-              <div class="sp-globe"></div>
-              <h2 class="frame-1">{{autor}}</h2>
-              <h2 class="frame-2">WITAJ W NASZEJ APLIKACJI</h2>
-              <h2 class="frame-3">GDZIE NAUKA</h2>
-              <h2 class="frame-4">JESZCZE NIGDY</h2>
-              <h2 class="frame-5">NIE BYŁA TAK PROSTA!</h2>
-              <h2 class="frame-6">
-                <span>STWÓRZ KONTO,</span>
-                <span>ZALOGUJ SIĘ,</span>
-                <span>KORZYSTAJ.</span>
-              </h2>
-              
-            </div>
-          </div> -->
     <h1 class="display-4">Witaj <b>{{autor}}</b>!</h1>
     <p class="lead">Zapraszamy Cię skorzystania ze wszystkich funkcjonalności aplikacji!</p>
     <hr class="my-4">
     <p>Aby sprawdzić listę kursów, do których możesz się zapisać przejdź do zakładki <b><a class="przejdz" [routerLink]="['/kursy']">Kursy</a></b>.</p>
     <p>Aby sprawdzić listę kursów, do których posiadasz dostęp przejdź do zakładki <b><a class="przejdz" [routerLink]="['/kursy']">Moje kursy</a></b>.</p>
     
-
   </div>
 </ng-container>
