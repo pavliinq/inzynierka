@@ -1,8 +1,15 @@
+.display-4 {
+	margin-bottom: 20px;
+	font-size: 45px;
+	font-family: 'Bitter', 'Quicksand', sans-serif;
+}
+
 a {
 	color: #dbc43e;
 }
+
 .calosc{
-	background: #fff;
+	background: rgba(219, 218, 209, 0.85);
 	padding: 30px;
 	position: relative;
   	width: 80%;
@@ -10,46 +17,22 @@ a {
 	margin: 0 auto;
   	margin-bottom: 100px;
   	margin-top: 100px;
-  	text-decoration: none;
+	text-decoration: none;
+	border: 1px solid rgba(0, 0, 0, 0.25);
   }
-  .calosc,
-  .calosc::before,
-  .calosc::after {
-	box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.25);
-	border: 1px solid #bbb;
-  }
-  .calosc::before,
-  .calosc::after {
-	content: "";
-	position: absolute;
-	height: 95%;
-	width: 99%;
-	background-color: #eee;
-  }
-  .calosc::before {
-	right: 15px;
-	top: 0;
-	transform: rotate(-1deg);
-	z-index: -1;
-  }
-  .calosc::after {
-	top: 5px;
-	right: -5px;
-	transform: rotate(1deg);
-	z-index: -2;
-	}
-	
+
 	.button {
     display: block;
     float: left;
     clear: both;
     padding: 10px 40px;
-    background: #fff;
+    background: rgb(241, 240, 240);
     border-radius: 3px;
     border: 2px solid #dbc43e;
     overflow: hidden;
     position: relative;
   }
+
   .button:after {
     transition: -webkit-transform 0.3s ease;
     transition: transform 0.3s ease;
@@ -63,6 +46,7 @@ a {
     background: #dbc43e;
     z-index: 1;
   }
+
   .button:before {
     transition: -webkit-transform 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
     transition: transform 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
@@ -80,13 +64,16 @@ a {
     -webkit-transform: translateY(200px);
             transform: translateY(200px);
   }
+
   .button:hover {
     text-decoration: none;
   }
+
   .button:hover:after {
     -webkit-transform: translateX(-300px) translateY(-100px);
             transform: translateX(-300px) translateY(-100px);
   }
+  
   .button:hover:before {
     -webkit-transform: translateY(0);
             transform: translateY(0);

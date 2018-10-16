@@ -1,26 +1,24 @@
 <body>
-  
   <div class="navbartlo">
     
     <div class="global-nav">
         <!-- LOGO-->
       <a routerLink="/"> 
-        
         <div class="logo">
-          <span>Let's MeetUp!</span>
+          <span>MeetUpApp</span>
         </div>
       </a> 
       <!-- KONIEC LOGO-->
-      <!-- MENU DESKTOPOWE-->
 
+      <!-- MENU DESKTOPOWE-->
       <div class="menu">
-        <a routerLink="/">Strona Główna</a>
         <a *ngIf="isUserLoggedIn" routerLink="/mojekursy">Moje Pokoje</a>
         <a routerLink="/kursy">Pokoje</a>
         <a *ngIf="isUserLoggedIn && (account_type=='1' || account_type=='0') " routerLink="/panel">Panel Prowadzącego</a>
         <a *ngIf="isUserLoggedIn && (account_type=='0') " routerLink="/panel-admin">Panel admin</a>
 
         <a *ngIf="!isUserLoggedIn" routerLink="/login">Zaloguj</a>
+        <a *ngIf="!isUserLoggedIn" routerLink='/register'>Zarejestuj</a>
         <a *ngIf="isUserLoggedIn" (click)="wyloguj()" routerLink="/" >Wyloguj</a>
       </div>
       <!-- KONIEC MENU DESKTOPOWE-->
@@ -56,94 +54,4 @@
     </div>
   </div>
 
-
-
-
-
-  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">User</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          <div class="col-md-6 col-md-offset-3">
-
-            <form ngForm #f="ngForm" (ngSubmit)="dodajUsera(f)" style="margin: 20px">
-              <!-- <div class="row"> -->
-            
-                <div class="form-group row">
-                  <!-- <label for="slowo">Wprowadź słowo</label> -->
-                  <input 
-                  id="user" 
-                  type="text" 
-                  class="form-control" 
-                  placeholder="Wprowadź użytkownika"
-                  ngModel name="user"  #user="ngModel"
-                  required minlength="2"
-                   >
-                   
-                  <button class="btn btn-light" [disabled]="!f.form.valid">Dodaj</button>
-                  
-            
-                  </div>
-                
-            </form>
-
-
-
-          </div>
-        </div>
-        <div class="modal-footer">
-          <!-- <button type="submit" class="btn btn-outline-primary">Zaloguj</button> -->
-          <!-- <a href="" data-toggle="modal" data-target="#exampleModale" class="btn btn-outline-danger" role="button">Zarejestruj się</a> -->
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="modal fade" id="exampleModale" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Rejestracja</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          <!-- <form name="form" ng-submit="vm.register()" role="form">
-          <div class="form-group" ng-class="{ 'has-error': form.firstName.$dirty && form.firstName.$error.required }">
-              <label for="username">Imię</label>
-              <input type="text" name="firstName" id="firstName" class="form-control" ng-model="vm.user.firstName" required />
-              
-          </div>
-          <div class="form-group" ng-class="{ 'has-error': form.lastName.$dirty && form.lastName.$error.required }">
-              <label for="username">Nazwisko</label>
-              <input type="text" name="lastName" id="Text1" class="form-control" ng-model="vm.user.lastName" required />
-              
-          </div>
-          <div class="form-group" ng-class="{ 'has-error': form.username.$dirty && form.username.$error.required }">
-              <label for="username">E-mail</label>
-              <input type="text" name="username" id="username" class="form-control" ng-model="vm.user.username" required />
-              
-          </div>
-          <div class="form-group" ng-class="{ 'has-error': form.password.$dirty && form.password.$error.required }">
-              <label for="password">Hasło</label>
-              <input type="password" name="password" id="password" class="form-control" ng-model="vm.user.password" required />
-              
-          </div>
-          <div class="form-actions">
-              <button type="submit" ng-disabled="form.$invalid || vm.dataLoading" class="btn btn-outline-primary">Zarejestruj się</button>
-              
-        </div>
-      </form> -->
-        </div>
-
-      </div>
-    </div>
-  </div>
 </body>

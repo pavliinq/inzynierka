@@ -1,10 +1,17 @@
 <ng-container *ngIf="!isUserLoggedIn">
   <div class="calosc">
-    <h1 class="display-4">Witaj użytkowniku!</h1>
-    <p class="lead">Poznaj łatwość prowadzenia spotkań z naszą aplikacją.</p>
+    <h1 class="display-4">Witaj w MeetUpApp!</h1>
+    <p class="lead">MeetUpApp to darmowe i praktyczne rozwiązanie ułatwiające 
+      prowadzenie i uczestnictwo w spotkaniach. </p>
+    <p class="lead">Śledź każde niezrozumiałe słówko i nie przeocz ciekawego pytania.</p>
     <hr class="my-4">
-    <p>Przekonaj się jakie to łatwe!</p>
+    <p>Przekonaj się już dziś jak sprawnie to działa!</p>
     <a class="button" [routerLink]="['/register']" role="button" title="Dołącz do nas!">Dołącz do nas</a>
+    <br>
+    <br>
+    <br>
+    <a>Masz już konto?</a>
+    <a routerLink="/login">Zaloguj...</a>
     <br>
     <br>
 

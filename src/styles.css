@@ -1,21 +1,23 @@
 @import url("https://fonts.googleapis.com/css?family=Sedgwick+Ave");
 @import url("https://fonts.googleapis.com/css?family=Quicksand");
-@import url('https://fonts.googleapis.com/css?family=Londrina+Outline');
-@import url('https://fonts.googleapis.com/css?family=Kreon');
+@import url('https://fonts.googleapis.com/css?family=Pacifico');
+@import url('https://fonts.googleapis.com/css?family=Bitter');
+@import url('https://fonts.googleapis.com/css?family=Damion');
+
 
 body{
-	 background: rgb(243, 242, 240); 
-}
-footer{
-	background-color: #e9ecef;
+	 background-image: url("http://www.ctcw.com.br/img/blog/Untitled-2.jpg");
+	 background-repeat: no-repeat;
+	 background-size: cover;
+	 background-position: center 1px; 
 }
 
 /* ŁADOWANIE STRONY */
 .ladowanie{
-	background: #d2d2d2;
+		background: #d2d2d2;
    	font-family: 'Oswald', sans-serif;
   	font-size: 100px;
- 		color: rgb(218, 204, 79) ;
+ 		color: rgb(218, 204, 79);
   	
 }
 
@@ -30,8 +32,7 @@ footer{
 	-webkit-animation-name:             spin; 
 	-webkit-animation-duration:         1s; 
 	-webkit-animation-iteration-count:  infinite;
-	-webkit-animation-timing-function:  linear;
-	
+	-webkit-animation-timing-function:  linear;	
   }
   
   .mid {
