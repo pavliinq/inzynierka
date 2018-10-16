@@ -16,16 +16,12 @@ export class KontoService {
   
   }
 
-
-
   getCurUser(){
     return this.curUser;
   }
 
   setCurUser(newAutor:string){
-    this.curUser = newAutor;
-    
-    
+    this.curUser = newAutor; 
   }
 
   getUser(login?:string, haslo?:string) {

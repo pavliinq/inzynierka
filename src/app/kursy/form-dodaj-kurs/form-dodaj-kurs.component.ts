@@ -37,7 +37,6 @@ export class FormDodajKursComponent implements OnInit {
     kurs.rokAkademicki = f.value.rokKurs;
     kurs.haslo = f.value.hasloKurs;
 
-
     
     this.kursServe.setKurs(kurs);
     f.resetForm();

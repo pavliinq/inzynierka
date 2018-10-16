@@ -7,7 +7,7 @@
       <a routerLink="/"> 
         
         <div class="logo">
-          <span>Let's MeetUp!</span>
+          <span>MeetUpME!</span>
         </div>
       </a> 
       <!-- KONIEC LOGO-->
@@ -17,7 +17,7 @@
         <a routerLink="/">Strona Główna</a>
         <a *ngIf="isUserLoggedIn" routerLink="/mojekursy">Moje Pokoje</a>
         <a routerLink="/kursy">Pokoje</a>
-        <a *ngIf="isUserLoggedIn && (account_type=='1' || account_type=='0') " routerLink="/panel">Panel Prowadzącego</a>
+        <a *ngIf="isUserLoggedIn" routerLink="/panel">Panel live</a>
         <a *ngIf="isUserLoggedIn && (account_type=='0') " routerLink="/panel-admin">Panel admin</a>
 
         <a *ngIf="!isUserLoggedIn" routerLink="/login">Zaloguj</a>
@@ -40,7 +40,7 @@
               <a routerLink="/kursy" title="kursy">Kursy</a>
             </li>
             <li>
-              <a *ngIf="isUserLoggedIn && (account_type=='1' || account_type=='0') " routerLink="/panel" title="panelProwadzacego">Panel Prowadzącego</a>
+              <a *ngIf="isUserLoggedIn" routerLink="/panel" title="panelProwadzacego">Panel Prowadzącego</a>
             </li>
             <li>
               <a *ngIf="!isUserLoggedIn" routerLink="/login" title="zaloguj">Zaloguj</a>

@@ -1,12 +1,14 @@
+
 a {
 	color: #dbc43e;
 }
+
 .calosc{
 	background: #fff;
 	padding: 30px;
 	position: relative;
   	width: 80%;
-  	min-height: 200px;
+  	min-height: 380px;
 	margin: 0 auto;
   	margin-bottom: 100px;
   	margin-top: 100px;
@@ -48,7 +50,8 @@ a {
     border-radius: 3px;
     border: 2px solid #dbc43e;
     overflow: hidden;
-    position: relative;
+	position: relative;
+	margin-bottom: 10px;
   }
   .button:after {
     transition: -webkit-transform 0.3s ease;
